@@ -451,6 +451,12 @@ header .date-time {
         box-shadow: 0 6px 14px rgba(0,0,0,0.6);
     }
 
+    /* Скриваме заглавието на менюто и часовника */
+    .menu h2,
+    header .date-time {
+        display: none;
+    }
+
     /* Content: по-малко padding */
     .content {
         padding: 10px;
@@ -475,12 +481,12 @@ header .date-time {
         font-size: 12px;
     }
 
-    /* Header: лого отляво, часовник до него */
+    /* Header: лого отляво, ад-карта скрита */
     header {
         display: flex;
         justify-content: flex-start; /* логото отляво */
         align-items: center;         /* вертикално центриране */
-        gap: 12px;                   /* разстояние между логото и часовника */
+        gap: 12px;                   /* разстояние между логото и евентуален елемент */
         padding: 10px 16px;
     }
 
@@ -494,22 +500,6 @@ header .date-time {
 
     header .logo img {
         max-height: 36px;
-    }
-
-    header .date-time {
-        justify-self: auto;
-        margin: 0;
-        padding: 6px 10px;
-        font-size: 14px;
-        border-radius: 8px;
-        background: var(--panel);
-        border: 1px solid var(--border);
-        box-shadow: 0 2px 6px rgba(0,0,0,0.3);
-    }
-
-    header .date-time:hover {
-        transform: translateY(-1px);
-        box-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
 
     /* Скриваме ад-картата на мобилни */
@@ -545,4 +535,6 @@ header .date-time {
         height: auto;
     }
 }
+
+
 
