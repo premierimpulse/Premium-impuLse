@@ -49,30 +49,48 @@ header .logo img {
     max-height: 48px;
 }
 header .ad-card {
-    width: 468px;
+    width: auto;
     height: 60px;
-    background: linear-gradient(90deg, #ffffff 0%, #00966e 50%, #d62612 100%);
-    color: #fff;
-    font-weight: 700;
-    font-size: 40px;
+    font-weight: 900;
+    font-size: 46px;
+    font-family: 'Poppins', 'Inter', sans-serif; /* Нов шрифт */
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    text-align: center;
     flex-shrink: 0;
-    animation: pulse 2s infinite;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+
+    /* Градиент за текста: бяло → зелено → червено */
+    background: linear-gradient(90deg, #ffffff 0%, #00ff00 50%, #ff0000 100%);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Минимална сянка за четливост върху тъмен фон */
+    text-shadow: 0 0 1px rgba(0,0,0,0.5);
+
+    /* Анимация на движението на градиента */
+    animation: gradientSweep 6s linear infinite;
+
+    border: none;
+    box-shadow: none;
+    cursor: default;
+    position: relative;
+    overflow: hidden;
 }
-@keyframes pulse {
-    0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-    50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.7); }
-    100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
-}
+
+/* Hover ефект – леко увеличение */
 header .ad-card:hover {
-    transform: translateY(-2px);
+    transform: scale(1.05);
+    text-shadow: 0 0 2px rgba(0,0,0,0.6);
 }
+
+/* Анимация за леко движение на градиента */
+@keyframes gradientSweep {
+    0% { background-position: -200% 0%; }
+    50% { background-position: 200% 0%; }
+    100% { background-position: -200% 0%; }
+}
+
 header .date-time {
     background: var(--panel);
     border-radius: 10px;
@@ -616,3 +634,4 @@ header .logo img {
     max-height: 60px; /* можеш да увеличиш според нуждите */
     display: block;
 }
+
