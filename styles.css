@@ -399,4 +399,98 @@ header .date-time {
     height: 2px;
     background: linear-gradient(to right, transparent, var(--accent-2), transparent);
     margin: 20px 0;
+
+}
+
+
+/* =========================
+   MOBILE OPTIMIZATION
+   ========================= */
+@media (max-width: 768px) {
+    /* Main layout: stacked columns */
+    main {
+        display: block;
+        padding: 10px;
+    }
+
+    /* Menu и prediction aside: full width */
+    .menu, .prediction {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+    /* Content: по-малко padding */
+    .content {
+        padding: 10px;
+        min-height: auto;
+    }
+
+    /* Tables: responsive и по-малък шрифт */
+    .match-table, .ranking-table, .prognosis-table {
+        min-width: 100%;
+        font-size: 12px;
+    }
+
+    .match-list-container,
+    .ranking-list-container,
+    .prognosis-list-container {
+        overflow-x: auto;
+    }
+
+    /* Header: центриране */
+    header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        text-align: center;
+    }
+
+    header .logo,
+    header .ad-card,
+    header .date-time {
+        justify-self: center;
+        margin: 0 auto;
+    }
+
+    /* Лого и изображения: responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    /* Menu: вертикално подредено */
+    .menu ul {
+        display: block;
+    }
+
+    .menu li {
+        margin: 8px 0;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* Prediction table: по-малки клетки */
+    .prediction-card table td {
+        padding: 6px 2px;
+        font-size: 12px;
+    }
+
+    /* Welcome card: по-малък размер на текста и padding */
+    .welcome-card {
+        font-size: 24px;
+        padding: 20px 15px;
+    }
+
+    /* Discord card: full width и по-компактно */
+    .discord-card {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px;
+    }
+
+    .discord-text h3 {
+        font-size: 16px;
+    }
+    .discord-text p {
+        font-size: 12px;
+    }
 }
