@@ -1,0 +1,402 @@
+:root {
+    --bg: #0f1020;
+    --panel: #1a1a2e;
+    --muted: #ffffff;
+    --accent: #3b1464;
+    --accent-2: #2b6cb0;
+    --border: #2c2c3a;
+    --shadow: 0 4px 12px rgba(0,0,0,0.5);
+    --card-radius: 14px;
+}
+
+/* Общи стилове */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    font-family: Inter, Roboto, "Segoe UI", Arial, sans-serif;
+    background: var(--bg);
+    color: var(--muted);
+}
+
+/* Header */
+header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    justify-items: center;
+    gap: 18px;
+    padding: 10px 18px;
+    border-bottom: 2px solid #444;
+}
+header .logo {
+    background: #ffffff;
+    border-radius: var(--card-radius);
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: var(--shadow);
+    border: 2px solid var(--border);
+    transition: all 0.3s ease;
+}
+header .logo:hover {
+    transform: scale(1.05);
+}
+header .logo img {
+    max-height: 48px;
+}
+header .ad-card {
+    width: 468px;
+    height: 60px;
+    background: linear-gradient(90deg, #ffffff 0%, #00966e 50%, #d62612 100%);
+    color: #fff;
+    font-weight: 700;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    flex-shrink: 0;
+    animation: pulse 2s infinite;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+@keyframes pulse {
+    0% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+    50% { transform: scale(1.05); box-shadow: 0 8px 20px rgba(0,0,0,0.7); }
+    100% { transform: scale(1); box-shadow: 0 4px 12px rgba(0,0,0,0.5); }
+}
+header .ad-card:hover {
+    transform: translateY(-2px);
+}
+header .date-time {
+    background: var(--panel);
+    border-radius: 10px;
+    padding: 8px 12px;
+    border: 2px solid var(--border);
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+}
+
+/* Main grid */
+main {
+    display: grid;
+    grid-template-columns: 260px 1fr 320px;
+    gap: 16px;
+    padding: 16px;
+}
+
+/* Menu */
+.menu h2 {
+    font-size: 31px;
+    margin-bottom: 16px;
+    color: var(--muted);
+    text-align: center;
+}
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.menu li {
+    background: var(--panel);
+    color: #fff;
+    margin: 10px 0;
+    padding: 12px 16px;
+    border-radius: var(--card-radius);
+    border: 2px solid var(--border);
+    font-weight: 700;
+    text-align: center;
+    box-shadow: var(--shadow);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.menu li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+.menu li.active {
+    border-color: var(--accent);
+}
+
+/* Content */
+.content {
+    background: rgba(255,255,255,0.02);
+    border-radius: var(--card-radius);
+    padding: 20px;
+    min-height: 700px;
+}
+.content-block.hidden-content { display: none; }
+.content-block.active-content { display: block; }
+.content-title {
+    text-align: center;
+    margin-bottom: 16px;
+}
+.welcome-card {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    background: linear-gradient(135deg, #1a1a2e, #2c2c3a);
+    border: 2px solid var(--border);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.welcome-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 30px rgba(0,0,0,0.8);
+}
+
+/* Prediction aside */
+.prediction h3 {
+    font-size: 28px;
+    margin-bottom: 12px;
+    color: #fff;
+    text-align: center;
+}
+.prediction-card {
+    background: var(--panel);
+    border-radius: var(--card-radius);
+    padding: 14px;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 16px;
+    transition: all 0.3s ease;
+}
+.prediction-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+.prediction-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+}
+.prediction-card table td {
+    padding: 8px 4px;
+    border-bottom: 1px solid var(--border);
+}
+.prediction-card table tr:first-child td {
+    font-size: 18px;
+    font-weight: 800;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 10px;
+}
+
+/* Tables */
+.match-table, .ranking-table, .prognosis-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+.match-table th, .match-table td,
+.ranking-table th, .ranking-table td,
+.prognosis-table th, .prognosis-table td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    color: #fff;
+    text-align: center;
+}
+.match-table th, .ranking-table th, .prognosis-table th {
+    background: var(--accent);
+    font-weight: 700;
+}
+.match-table tbody tr:nth-child(even),
+.ranking-table tbody tr:nth-child(even),
+.prognosis-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+.match-table tbody tr:hover,
+.ranking-table tbody tr:hover,
+.prognosis-table tbody tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Team logos */
+.team-logo {
+    height: 35px;
+    vertical-align: middle;
+    margin: 0 8px;
+}
+.match-header {
+    text-align: center;
+    font-weight: 600;
+}
+.vs {
+    margin: 0 6px;
+    color: #555;
+}
+
+/* Colored text classes */
+.green-text { color: #00ff00; }
+.red-text { color: #ff4c4c; }
+.blue-text { color: #4c8cff; }
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 15px 0;
+    background-color: var(--panel);
+    color: #fff;
+    border-top: 2px solid var(--border);
+    font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width:1000px) {
+    main { grid-template-columns: 1fr; }
+    .menu, .prediction { margin-bottom: 16px; }
+    .menu ul { display: flex; overflow-x: auto; gap: 8px; }
+    .menu li { flex: 0 0 auto; }
+}
+@media (max-width:768px) {
+    header { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+    header .logo, header .ad-card, header .date-time { margin: 0 auto; }
+    .menu ul { display: block; }
+    .menu li { margin: 8px 0; }
+    .match-list-container,
+    .ranking-list-container,
+    .prognosis-list-container { overflow-x: auto; }
+    .match-table, .ranking-table, .prognosis-table { min-width: 600px; }
+}
+
+
+/* Лого вляво */
+header .logo {
+    justify-self: start; /* премества логото в ляво */
+    margin: 0; /* махаме всички ръчни отмествания */
+}
+
+/* Ad-card в центъра */
+header .ad-card {
+    justify-self: center; /* центрира ад-картата */
+    margin: 0; 
+}
+
+/* Часовник вдясно */
+header .date-time {
+    justify-self: end; /* премества часовника вдясно */
+    margin: 0; 
+}
+
+
+/* Цветове за класиране */
+.ranking-table tbody tr:nth-child(-n+4) { /* първи 4 отбора */
+    background-color: rgba(72, 133, 255, 0.2); /* светлосиньо */
+}
+.ranking-table tbody tr:nth-child(5) { /* 5-ти отбор */
+    background-color: rgba(255, 165, 0, 0.2); /* светлооранжево */
+}
+.ranking-table tbody tr:nth-last-child(-n+3) { /* последните 3 отбора */
+    background-color: rgba(255, 0, 0, 0.2); /* светлочервено */
+}
+
+
+
+.ranking-legend {
+    margin-top: 12px;
+    text-align: center;
+    font-weight: 700;
+    color: #fff;
+    font-size: 16px;
+}
+
+.ranking-legend .legend {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 6px;
+    margin: 0 6px;
+    font-weight: 600;
+}
+
+/* Цветове съответно на таблицата */
+.ranking-legend .champions {
+    background-color: rgba(72, 133, 255, 0.3); /* синьо */
+    color: #0451c5;
+}
+.ranking-legend .europa {
+    background-color: rgba(255, 165, 0, 0.3); /* оранжево */
+    color: #b35b00;
+}
+.ranking-legend .relegation {
+    background-color: rgba(255, 0, 0, 0.3); /* червено */
+    color: #c50000;
+}
+
+
+
+
+
+
+.discord-card {
+  background: #7289da; /* Discord син */
+  border-radius: 16px;
+  padding: 16px;
+  max-width: 500px;
+  margin: 20px auto;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.discord-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+
+.discord-link {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+}
+
+.discord-card-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.discord-icon {
+  width: 50px;
+  height: 50px;
+}
+
+.discord-text h3 {
+  margin: 0 0 6px 0;
+  font-size: 20px;
+}
+
+.discord-text p {
+  margin: 0;
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+
+
+.section-divider {
+  border: 0;
+  height: 1px;
+  background: rgba(255,255,255,0.2); /* леко прозрачна бяла линия */
+  margin: 24px 0; /* разстояние между секциите */
+}
+
+
+/* Разделител */
+.section-divider {
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent-2), transparent);
+    margin: 20px 0;
+}

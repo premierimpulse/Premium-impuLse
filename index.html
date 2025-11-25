@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Premier ImpuLse</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="Logo.png" alt="Logo">
+    </div>
+    <div class="ad-card">Premier impuLse</div>
+    <div class="date-time" id="dateTime"></div>
+</header>
+
+<main>
+    <!-- Меню -->
+    <aside class="menu">
+        <h2><span style="color: #7289da;">Меню</span></h2>
+<!-- Разделител -->
+<hr class="section-divider">
+        <ul>
+            <li id="menu-home" data-target="welcome-content" class="active">🏠 Начало</li>
+            <li id="menu-matches" data-target="matches-table">📅 Срещи</li>
+            <li id="menu-ranking" data-target="ranking-table">🥇 Класиране</li>
+            <li id="menu-prognosis" data-target="prognosis-content">🎯 Прогнози</li>
+            <li id="menu-news" data-target="news-content">📰 Новини</li>
+        </ul>
+<!-- Разделител -->
+<hr class="section-divider">
+    </aside>
+
+    <!-- Основно съдържание -->
+    <section class="content">
+        <!-- Начало -->
+        <div id="welcome-content" class="content-block active-content">
+            <div class="welcome-card">
+                Добре дошли в Premier impuLse!<br>
+                Всичко за Висшата лига на едно място – срещи, класиране, прогнози и най-горещите новини!<br>
+                Следете любимите си отбори и бъдете винаги в крак с последните резултати.
+            </div>
+        </div>
+
+<!-- Срещи -->
+<div id="matches-table" class="content-block hidden-content">
+    <h2 class="content-title">Висша лига - Предстоящи Срещи</h2>
+    <!-- Разделител -->
+    <hr class="section-divider">
+<!-- Разделител -->
+<hr class="section-divider">
+<!-- Събота -->
+    <h3><center>Събота</center></h3>
+<!-- Разделител -->
+<hr class="section-divider">
+    <div class="match-list-container card">
+        <table class="match-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Мач</th>
+                    <th>Дата</th>
+                    <th>Час</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>Съндърланд - Борнемут</td><td>29.11.2025г.</td><td>17:00</td></tr>
+                <tr><td>2</td><td>Манчестър Сити - Лийдс</td><td>29.11.2025г.</td><td>17:00</td></tr>
+                <tr><td>3</td><td>Брентфорд - Бърнли</td><td>29.11.2025г.</td><td>17:00</td></tr>
+                <tr><td>4</td><td>Евертън - Нюкасъл</td><td>29.11.2025г.</td><td>19:30</td></tr>
+                <tr><td>5</td><td>Тотнъм - Фулъм</td><td>29.11.2025г.</td><td>22:00</td></tr>
+            </tbody>
+        </table>
+    </div>
+<!-- Разделител -->
+<hr class="section-divider">
+    <!-- Неделя -->
+    <h3><center>Неделя</center></h3>
+<!-- Разделител -->
+<hr class="section-divider">
+    <div class="match-list-container card">
+        <table class="match-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Мач</th>
+                    <th>Дата</th>
+                    <th>Час</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>6</td><td>Кристъл Палас - Манчестър Юнайтед</td><td>30.11.2025г.</td><td>14:00</td></tr>
+                <tr><td>7</td><td>Нотингам Форест - Брайтън</td><td>30.11.2025г.</td><td>16:05</td></tr>
+                <tr><td>8</td><td>Астън Вила - Уулвърхямптън</td><td>30.11.2025г.</td><td>16:05</td></tr>
+                <tr><td>9</td><td>Уест Хям - Ливърпул</td><td>30.11.2025г.</td><td>16:05</td></tr>
+                <tr><td>10</td><td>Челси - Арсенал</td><td>30.11.2025г.</td><td>18:30</td></tr>
+            </tbody>
+        </table>
+    </div>
+<!-- Разделител -->
+<hr class="section-divider">
+    <!-- Понеделник -->
+    <h3><center>Понеделник</center></h3>
+<!-- Разделител -->
+<hr class="section-divider">
+    <div class="match-list-container card">
+        <table class="match-table">
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Мач</th>
+                    <th>Дата</th>
+                    <th>Час</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>-</td><td>-</td><td>-</td><td>-</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<!-- Разделител -->
+<hr class="section-divider">
+        </div>
+
+        <!-- Класиране -->
+        <div id="ranking-table" class="content-block hidden-content">
+            <h2 class="content-title">Висша лига - Класиране</h2>
+<!-- Разделител -->
+<hr class="section-divider">
+            <div class="ranking-list-container card">
+                <table class="ranking-table">
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Отбор</th>
+                            <th>Мачове</th>
+                            <th>Точки</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>1</td><td>Арсенал</td><td>12</td><td>29</td></tr>
+                        <tr><td>2</td><td>Челси</td><td>12</td><td>23</td></tr>
+                        <tr><td>3</td><td>Манчестър Сити</td><td>12</td><td>22</td></tr>
+                        <tr><td>4</td><td>Астън Вила</td><td>12</td><td>26</td></tr>
+                        <tr><td>5</td><td>Кристъл Палас</td><td>12</td><td>20</td></tr>
+                        <tr><td>6</td><td>Брайтън</td><td>12</td><td>19</td></tr>
+                        <tr><td>7</td><td>Съндърланд</td><td>12</td><td>19</td></tr>
+                        <tr><td>8</td><td>Борнемут</td><td>12</td><td>19</td></tr>
+                        <tr><td>9</td><td>Тотнъм</td><td>12</td><td>18</td></tr>
+                        <tr><td>10</td><td>Манчестър Юнайтед</td><td>11</td><td>18</td></tr>
+                        <tr><td>11</td><td>Ливърпул</td><td>12</td><td>18</td></tr>
+                        <tr><td>12</td><td>Брентфорд</td><td>12</td><td>16</td></tr>
+                        <tr><td>13</td><td>Евертън</td><td>11</td><td>15</td></tr>
+                        <tr><td>14</td><td>Нюкасъл</td><td>12</td><td>15</td></tr>
+                        <tr><td>15</td><td>Фулъм</td><td>12</td><td>14</td></tr>
+                        <tr><td>16</td><td>Нотингам Форест</td><td>12</td><td>12</td></tr>
+                        <tr><td>17</td><td>Уест Хям</td><td>12</td><td>11</td></tr>
+                        <tr><td>18</td><td>Лийдс</td><td>12</td><td>11</td></tr>
+                        <tr><td>19</td><td>Бърнли</td><td>12</td><td>10</td></tr>
+                        <tr><td>20</td><td>Уулвърхямптън</td><td>12</td><td>2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+<!-- Разделител -->
+<hr class="section-divider">
+<div class="ranking-legend">
+    <span class="legend champions">🏆 Шампионска лига</span>
+    <span class="legend europa">🌍 Лига Европа</span>
+    <span class="legend relegation">🔻 Понижение</span>
+</div>
+<!-- Разделител -->
+<hr class="section-divider">
+        </div>
+
+        <!-- Прогнози -->
+        <div id="prognosis-content" class="content-block hidden-content">
+            <h2 class="content-title">Прогнози</h2>
+<!-- Разделител -->
+<hr class="section-divider">
+            <div class="prognosis-list-container card">
+                <table class="prognosis-table">
+                    <thead>
+                        <tr>
+                            <th>Дата/Час</th>
+                            <th>Среща</th>
+                            <th>Прогноза</th>
+                            <th>Коефициент</th>
+                            <th>Резултат</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>23.11 / 18:30</td><td>Арсенал - Тотнъм</td><td>1</td><td>1.47</td><td><span class="green-text">4:1</span></td><td>✔️</td></tr>
+                        <tr><td>23.11 / 21:45</td><td>Интер - Милан</td><td>2</td><td>3,75</td><td><span class="green-text">0:1</span></td><td>✔️</td></tr>
+                    </tbody>
+                </table>
+            </div>
+<!-- Разделител -->
+<hr class="section-divider">
+        </div>
+
+        <!-- Новини -->
+        <div id="news-content" class="content-block hidden-content">
+            <h2 class="content-title">Висша лига - Новини</h2>
+<!-- Разделител -->
+<hr class="section-divider">
+            <div class="news-card card">
+                <p><center>Очаквайте скоро най-вълнуващите новини от Висшата лига!</center></p>
+                <p><center>Бъдете на линия за всички ключови моменти от света на футбола!</center></p>
+            </div>
+<!-- Разделител -->
+<hr class="section-divider">
+        </div>
+    </section>
+
+    <!-- Прогноза за деня -->
+    <aside class="prediction">
+        <h3><span style="color: #7289da;">Прогноза за деня</span></h3>
+<!-- Разделител -->
+<hr class="section-divider">
+        <div class="prediction-card">
+            <table>
+                <tr>
+                    <td colspan="2" class="match-header">
+                        <img src="images/man-utd.png" alt="Arsenal" class="team-logo">
+                        <span class="red-text">Ман. Юнайтед</span>
+                        <span class="vs">–</span>
+                        <span class="blue-text">Евертън</span>
+                        <img src="images/everton.png" alt="Tottenham" class="team-logo">
+                    </td>
+                </tr>
+                <tr><td>🗓️ Дата:</td><td><span class="green-text">24.11.2025</span></td></tr>
+                <tr><td>⏱️ Час:</td><td><span class="green-text">22:00</span></td></tr>
+                <tr><td>📈 Коефициент:</td><td><span class="green-text">1.80</span></td></tr>
+                <tr><td>🎯 Прогноза:</td><td><span class="green-text">1</span></td></tr>
+                <tr><td>⚽ Резултат:</td><td><span class="green-text">⏳</span></td></tr>
+                <tr><td>🔘 Статус:</td><td>⏳</td></tr>
+            </table>
+        </div>
+
+<!-- Разделител -->
+<hr class="section-divider">
+
+<!-- Discord картичка -->
+<div class="discord-card">
+  <a href="" target="_blank" class="discord-link">
+    <div class="discord-card-content">
+      <img src="images/discord.png" alt="" class="discord-icon">
+      <div class="discord-text">
+        <h3>Premier impuLse</h3>
+        <p><center>Discord сървър!</center></p>
+        <p><center>Очаквайте скоро!</center></p>
+      </div>
+    </div>
+  </a>
+</div>
+<!-- Разделител -->
+<hr class="section-divider">
+</aside>
+    </aside>
+</main>
+
+<footer>
+    &copy; 2025 Premier impuLse. Всички права запазени.
+</footer>
+
+<script>
+    // Динамичен час и дата
+    function updateDateTime() {
+        const now = new Date();
+        const options = { day:'2-digit', month:'2-digit', year:'numeric',
+                          hour:'2-digit', minute:'2-digit', second:'2-digit' };
+        document.getElementById('dateTime').textContent = now.toLocaleString('bg-BG', options);
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+
+    // Превключване на съдържание
+    const menuItems = document.querySelectorAll('.menu li');
+    menuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            menuItems.forEach(i => i.classList.remove('active'));
+            item.classList.add('active');
+            document.querySelectorAll('.content-block').forEach(block => {
+                block.classList.remove('active-content');
+                block.classList.add('hidden-content');
+            });
+            const targetId = item.getAttribute('data-target');
+            const targetBlock = document.getElementById(targetId);
+            if(targetBlock){
+                targetBlock.classList.add('active-content');
+                targetBlock.classList.remove('hidden-content');
+            }
+        });
+    });
+</script>
+<script>
+async function loadData() {
+    const response = await fetch('data.json');
+    const data = await response.json();
+
+    // Зареждане на мачове
+    const matchSections = document.querySelectorAll('.match-list-container');
+    matchSections.forEach(section => {
+        const dayHeader = section.previousElementSibling.textContent.trim();
+        const dayMatches = data.matches[dayHeader] || [];
+        const tbody = section.querySelector('tbody');
+        tbody.innerHTML = '';
+        dayMatches.forEach(match => {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `<td>${match.id}</td><td>${match.teams}</td><td>${match.date}г.</td><td>${match.time}</td>`;
+            tbody.appendChild(tr);
+        });
+    });
+
+    // Зареждане на класиране
+    const rankingTbody = document.querySelector('.ranking-table tbody');
+    rankingTbody.innerHTML = '';
+    data.ranking.forEach(team => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${team.position}</td><td>${team.team}</td><td>${team.matches}</td><td>${team.points}</td>`;
+        rankingTbody.appendChild(tr);
+    });
+
+    // Зареждане на прогнози
+    const prognosisTbody = document.querySelector('.prognosis-table tbody');
+    prognosisTbody.innerHTML = '';
+    data.prognosis.forEach(p => {
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${p.datetime}</td><td>${p.match}</td><td>${p.prediction}</td><td>${p.odds}</td><td><span class="green-text">${p.result}</span></td><td>${p.status}</td>`;
+        prognosisTbody.appendChild(tr);
+    });
+
+    // Прогноза за деня
+    const pod = data.predictionOfTheDay;
+    const podTable = document.querySelector('.prediction-card table');
+    podTable.rows[0].cells[0].innerHTML = `
+        <img src="${pod.homeLogo}" class="team-logo"><span class="red-text">${pod.homeTeam}</span>
+        <span class="vs">–</span>
+        <span class="blue-text">${pod.awayTeam}</span>
+        <img src="${pod.awayLogo}" class="team-logo">
+    `;
+    podTable.rows[1].cells[1].textContent = pod.date;
+    podTable.rows[2].cells[1].textContent = pod.time;
+    podTable.rows[3].cells[1].textContent = pod.odds;
+    podTable.rows[4].cells[1].textContent = pod.prediction;
+    podTable.rows[5].cells[1].textContent = pod.result;
+    podTable.rows[6].cells[1].textContent = pod.status;
+
+    // Зареждане на новини
+    const newsContainer = document.querySelector('.news-card');
+    newsContainer.innerHTML = '';
+    data.news.forEach(news => {
+        const div = document.createElement('div');
+        div.innerHTML = `<p><center>${news.title}</center></p><p><center>${news.content}</center></p>`;
+        newsContainer.appendChild(div);
+    });
+}
+
+loadData();
+</script>
+
+
+
+</body>
+</html>
