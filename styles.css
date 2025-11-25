@@ -607,3 +607,78 @@ header .logo img {
 }
 
 
+/* =========================
+   Фишове таблици
+   ========================= */
+.fiche-card {
+    background: var(--panel);
+    border-radius: var(--card-radius);
+    padding: 16px;
+    margin-bottom: 20px;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+.fiche-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
+}
+
+.fiche-card h3 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--muted);
+}
+
+.fiche-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+}
+.fiche-table th, .fiche-table td {
+    padding: 10px 8px;
+    border: 1px solid var(--border);
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+.fiche-table th {
+    background: var(--accent);
+}
+.fiche-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+.fiche-table tbody tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* Общ Коефициент под таблицата */
+.fiche-card p {
+    text-align: center;
+    font-weight: 700;
+    font-size: 16px;
+    color: #00ff00;
+    margin: 8px 0 0 0;
+}
+
+
+.fiche-total {
+    font-weight: 900;
+    font-size: 20px;
+    font-family: 'Poppins', 'Inter', sans-serif;
+
+    /* Градиент за текста */
+    background: linear-gradient(90deg, #ffffff 0%, #00ff00 50%, #ff0000 100%);
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    /* Чисто сияние */
+    text-shadow: 0 0 1px rgba(255,255,255,0.7);
+
+    /* Движение на градиента */
+    animation: gradientSweep 6s linear infinite;
+
+    display: inline-block;
+}
