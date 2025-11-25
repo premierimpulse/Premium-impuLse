@@ -600,3 +600,19 @@ body {
     vertical-align: middle;
     text-transform: uppercase;
 }
+
+/* Лого в header – прозрачен фон */
+header .logo {
+    justify-self: start;
+    margin: 0;
+    padding: 0; /* премахваме padding, ако искаш чисто изображение */
+    background: transparent; /* напълно прозрачен фон */
+    border: none; /* махаме граница, ако има */
+    box-shadow: none; /* махаме сенки */
+}
+
+/* Изображението вътре */
+header .logo img {
+    max-height: 60px; /* можеш да увеличиш според нуждите */
+    display: block;
+}
