@@ -522,5 +522,11 @@ header .date-time {
 }
 
 
+@media (max-width: 768px) {
+    header .ad-card {
+        display: none; /* скрива логото/ад-картата на мобилни */
+    }
+}
+
 
 
