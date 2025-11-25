@@ -403,7 +403,9 @@ header .date-time {
 }
 
 
-/* MOBILE: horizontal scroll menu */
+/* =========================
+   MOBILE OPTIMIZATION (до 768px)
+   ========================= */
 @media (max-width: 768px) {
 
     /* Main layout: stacked columns */
@@ -481,13 +483,17 @@ header .date-time {
     }
 
     header .logo,
-    header .ad-card,
     header .date-time {
         justify-self: center;
         margin: 0 auto;
     }
 
-    /* Logo: responsive */
+    /* Скриваме ад-картата на мобилни */
+    header .ad-card {
+        display: none;
+    }
+
+    /* Logo: responsive size */
     header .logo img {
         max-height: 40px;
     }
@@ -521,12 +527,6 @@ header .date-time {
     }
 }
 
-
-@media (max-width: 768px) {
-    header .ad-card {
-        display: none; /* скрива логото/ад-картата на мобилни */
-    }
-}
 
 
 
