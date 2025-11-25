@@ -407,6 +407,7 @@ header .date-time {
    MOBILE OPTIMIZATION
    ========================= */
 @media (max-width: 768px) {
+
     /* Main layout: stacked columns */
     main {
         display: block;
@@ -417,6 +418,22 @@ header .date-time {
     .menu, .prediction {
         width: 100%;
         margin-bottom: 16px;
+    }
+
+    /* Menu: вертикално подредено, по-удобно за touch */
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+        overflow: visible;
+        padding: 0;
+    }
+
+    .menu li {
+        flex: none;
+        margin: 6px 0;
+        font-size: 16px;
+        padding: 10px 16px;
     }
 
     /* Content: по-малко padding */
@@ -437,7 +454,13 @@ header .date-time {
         overflow-x: auto;
     }
 
-    /* Header: центриране */
+    /* Prediction table: по-малки клетки */
+    .prediction-card table td {
+        padding: 6px 2px;
+        font-size: 12px;
+    }
+
+    /* Header: stacked и центриране */
     header {
         grid-template-columns: 1fr;
         gap: 10px;
@@ -451,33 +474,16 @@ header .date-time {
         margin: 0 auto;
     }
 
-    /* Лого и изображения: responsive */
-    img {
-        max-width: 100%;
-        height: auto;
+    /* Logo: responsive */
+    header .logo img {
+        max-height: 40px;
     }
 
-    /* Menu: вертикално подредено */
-    .menu ul {
-        display: block;
-    }
-
-    .menu li {
-        margin: 8px 0;
-        font-size: 14px;
-        padding: 10px;
-    }
-
-    /* Prediction table: по-малки клетки */
-    .prediction-card table td {
-        padding: 6px 2px;
-        font-size: 12px;
-    }
-
-    /* Welcome card: по-малък размер на текста и padding */
+    /* Welcome card: по-малък текст и padding */
     .welcome-card {
         font-size: 24px;
         padding: 20px 15px;
+        margin: 20px auto;
     }
 
     /* Discord card: full width и по-компактно */
@@ -490,7 +496,16 @@ header .date-time {
     .discord-text h3 {
         font-size: 16px;
     }
+
     .discord-text p {
         font-size: 12px;
     }
+
+    /* Images: responsive */
+    img {
+        max-width: 100%;
+        height: auto;
+    }
 }
+
+
