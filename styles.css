@@ -475,27 +475,43 @@ header .date-time {
         font-size: 12px;
     }
 
-    /* Header: stacked и центриране */
+    /* Header: лого отляво, часовник до него */
     header {
-        grid-template-columns: 1fr;
-        gap: 10px;
-        text-align: center;
+        display: flex;
+        justify-content: flex-start; /* логото отляво */
+        align-items: center;         /* вертикално центриране */
+        gap: 12px;                   /* разстояние между логото и часовника */
+        padding: 10px 16px;
     }
 
-    header .logo,
+    header .logo {
+        justify-self: auto;
+        margin: 0;
+        padding: 6px 10px;
+        border-radius: 10px;
+        box-shadow: 0 3px 8px rgba(0,0,0,0.4);
+    }
+
+    header .logo img {
+        max-height: 36px;
+    }
+
     header .date-time {
-        justify-self: center;
-        margin: 0 auto;
+        justify-self: auto;
+        margin: 0;
+        padding: 6px 10px;
+        font-size: 14px;
+        border-radius: 8px;
+    }
+
+    header .date-time:hover {
+        transform: translateY(-1px);
+        box-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
 
     /* Скриваме ад-картата на мобилни */
     header .ad-card {
         display: none;
-    }
-
-    /* Logo: responsive size */
-    header .logo img {
-        max-height: 40px;
     }
 
     /* Welcome card: по-малък текст и padding */
@@ -526,7 +542,3 @@ header .date-time {
         height: auto;
     }
 }
-
-
-
-
