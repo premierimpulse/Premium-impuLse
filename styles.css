@@ -525,7 +525,40 @@ header .date-time {
     }
 }
 
+/* 📱 Mobile Fix за секцията "Фишове" */
+@media (max-width: 768px) {
 
+    .fiche-card {
+        padding: 12px;
+    }
+
+    .fiche-table {
+        width: 100%;
+        min-width: 600px; /* предотвратява смазване на колоните */
+        font-size: 12px; /* по-компактни надписи */
+    }
+
+    /* хоризонтален скрол като при другите таблици */
+    .fiche-card {
+        overflow-x: auto;
+    }
+
+    .fiche-table th,
+    .fiche-table td {
+        padding: 8px 4px;
+        white-space: nowrap; /* без пренасяне */
+    }
+
+    /* Заглавие и total по-малки и центрирани */
+    .fiche-card h3 {
+        font-size: 18px;
+    }
+
+    .fiche-total {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+}
 
 /* ...цялата ти останала стилизация... */
 
@@ -682,3 +715,4 @@ header .logo img {
 
     display: inline-block;
 }
+
