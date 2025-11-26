@@ -559,10 +559,18 @@ async function loadData() {
 }
 
 loadData();
+  
+  // Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('aside.menu');
+
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
+});
+
 </script>
 
 
 
 </body>
 </html>
-
