@@ -397,33 +397,37 @@ header .date-time {
    ========================= */
 @media (max-width: 768px) {
 
-    /* Main layout: stacked columns */
+    /* ЛЕЙАУТ */
     main {
-        display: block;
-        padding: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 12px;
     }
-
-    /* Menu и prediction aside: full width */
-    .menu, .prediction {
+    .menu, .prediction, .content {
         width: 100%;
-        margin-bottom: 16px;
     }
 
-    /* Menu: horizontal scroll */
+    /* Редът на блоковете */
+    .menu { order: 1; }
+    .prediction { order: 2; }
+    .content { order: 3; }
+
+    /* МЕНЮ */
+    .menu h2 { display: none; }
     .menu ul {
-        display: flex;          /* хоризонтално */
-        overflow-x: auto;       /* scroll при нужда */
+        display: flex;
+        overflow-x: auto;
         gap: 8px;
-        padding: 0 4px;
-        list-style: none;
+        padding: 4px;
         margin: 0;
+        list-style: none;
     }
-
     .menu li {
-        flex: 0 0 auto;         /* фиксиран размер, не се разтегля */
+        flex: 0 0 auto;
+        white-space: nowrap;
+        margin: 0;
         padding: 10px 16px;
-        font-size: 16px;
-        white-space: nowrap;    /* за да не се пренасят думи на нов ред */
         border-radius: var(--card-radius);
         border: 2px solid var(--border);
         background: var(--panel);
@@ -432,133 +436,98 @@ header .date-time {
         text-align: center;
         box-shadow: var(--shadow);
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: 0.3s ease;
     }
-
     .menu li:hover {
         transform: translateY(-2px);
         box-shadow: 0 6px 14px rgba(0,0,0,0.6);
     }
 
-    /* Скриваме заглавието на менюто и часовника */
-    .menu h2,
-    header .date-time {
-        display: none;
-    }
-
-    /* Content: по-малко padding */
-    .content {
-        padding: 10px;
-        min-height: auto;
-    }
-
-    /* Tables: responsive и по-малък шрифт */
-    .match-table, .ranking-table, .prognosis-table {
-        min-width: 100%;
-        font-size: 12px;
-    }
-
-    .match-list-container,
-    .ranking-list-container,
-    .prognosis-list-container {
-        overflow-x: auto;
-    }
-
-    /* Prediction table: по-малки клетки */
-    .prediction-card table td {
-        padding: 6px 2px;
-        font-size: 12px;
-    }
-
-    /* Header: лого отляво, ад-карта скрита */
+    /* HEADER */
     header {
         display: flex;
-        justify-content: flex-start; /* логото отляво */
-        align-items: center;         /* вертикално центриране */
-        gap: 12px;                   /* разстояние между логото и евентуален елемент */
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
         padding: 10px 16px;
+        border-bottom: 2px solid #444;
     }
-
     header .logo {
-        justify-self: auto;
         margin: 0;
         padding: 6px 10px;
         border-radius: 10px;
         box-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
-
     header .logo img {
         max-height: 36px;
+        display: block;
     }
-
-    /* Скриваме ад-картата на мобилни */
-    header .ad-card {
+    header .ad-card,
+    header .date-time {
         display: none;
     }
 
-    /* Welcome card: по-малък текст и padding */
-    .welcome-card {
-        font-size: 24px;
-        padding: 20px 15px;
-        margin: 20px auto;
+    /* CONTENT */
+    .content {
+        padding: 12px;
+        min-height: auto;
     }
 
-    /* Discord card: full width и по-компактно */
+    /* ТАБЛИЦИ - всички с хориз. скрол */
+    .match-list-container,
+    .ranking-list-container,
+    .prognosis-list-container,
+    .fiche-card {
+        overflow-x: auto;
+    }
+
+    .match-table,
+    .ranking-table,
+    .prognosis-table,
+    .fiche-table {
+        min-width: 600px;
+        font-size: 12px;
+    }
+
+    .fiche-table th,
+    .fiche-table td {
+        padding: 6px 4px;
+        white-space: nowrap;
+    }
+
+    /* Prediction */
+    .prediction-card table td {
+        padding: 6px 3px;
+        font-size: 12px;
+    }
+
+    /* Welcome Card */
+    .welcome-card {
+        font-size: 24px;
+        padding: 18px;
+        margin: 18px auto;
+    }
+
+    /* Discord */
     .discord-card {
         width: 100%;
         max-width: 100%;
         padding: 12px;
     }
-
     .discord-text h3 {
         font-size: 16px;
     }
-
     .discord-text p {
         font-size: 12px;
     }
 
-    /* Images: responsive */
+    /* Images */
     img {
         max-width: 100%;
         height: auto;
     }
 }
 
-/* 📱 Mobile Fix за секцията "Фишове" */
-@media (max-width: 768px) {
-
-    .fiche-card {
-        padding: 12px;
-    }
-
-    .fiche-table {
-        width: 100%;
-        min-width: 600px; /* предотвратява смазване на колоните */
-        font-size: 12px; /* по-компактни надписи */
-    }
-
-    /* хоризонтален скрол като при другите таблици */
-    .fiche-card {
-        overflow-x: auto;
-    }
-
-    .fiche-table th,
-    .fiche-table td {
-        padding: 8px 4px;
-        white-space: nowrap; /* без пренасяне */
-    }
-
-    /* Заглавие и total по-малки и центрирани */
-    .fiche-card h3 {
-        font-size: 18px;
-    }
-
-    .fiche-total {
-        font-size: 16px;
-        white-space: nowrap;
-    }
-}
 
 /* ...цялата ти останала стилизация... */
 
@@ -715,4 +684,3 @@ header .logo img {
 
     display: inline-block;
 }
-
