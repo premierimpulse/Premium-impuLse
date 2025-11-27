@@ -677,12 +677,18 @@ header .logo img {
 
 /* ===== Header мобилна версия ===== */
 @media (max-width: 768px) {
+    /* Скриваме часовника */
+    .date-time {
+        display: none;
+    }
+
+    /* Header grid за мобилни */
     header {
         display: grid;
-        grid-template-columns: auto 1fr auto;
+        grid-template-columns: auto 1fr auto; /* Лого | Ад-карта | Меню */
         align-items: center;
         padding: 10px 16px;
-        gap: 8px;
+        gap: 12px;
     }
 
     /* Лого вляво */
@@ -694,27 +700,16 @@ header .logo img {
         padding: 0;
     }
 
-    header .logo img {
-        max-height: 60px;
-        display: block;
-    }
-
-    /* Ad-card в центъра */
+    /* Ад-карта в центъра */
     header .ad-card {
         justify-self: center;
         font-size: 24px;
+        margin: 0;
     }
 
-    /* Часовник се скрива */
-    header .date-time {
-        display: none;
-    }
-
-    /* Menu toggle - на мястото на часовника */
+    /* Меню бутон вдясно на ад-картата */
     .menu-toggle {
-        position: fixed; /* фиксиран спрямо екрана */
-        top: 15px;       /* разстояние от горната част */
-        right: 16px;     /* на мястото на часовника */
+        justify-self: start; /* започва в клетката вдясно */
         width: 40px;
         height: 40px;
         background: var(--accent);
@@ -724,9 +719,7 @@ header .logo img {
         justify-content: center;
         align-items: center;
         cursor: pointer;
-        z-index: 1100;
         box-shadow: var(--shadow);
-        transition: all 0.3s ease;
     }
 
     .menu-toggle span {
@@ -738,7 +731,6 @@ header .logo img {
         transition: all 0.3s ease;
     }
 
-    /* Анимация за отворено меню */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
