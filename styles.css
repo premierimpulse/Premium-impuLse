@@ -553,43 +553,16 @@ header .logo img {
    Header за мобилни устройства
    ========================= */
 @media (max-width: 768px) {
-
     /* Скриваме часовника */
     .date-time {
         display: none;
     }
 
-    /* Header grid настройка за мобилни */
-    header {
-        display: grid;
-        grid-template-columns: 1fr auto 1fr; /* лев, център, дясно */
-        align-items: center;
-        padding: 10px 16px;
-        position: relative;
-    }
-
-    /* Лого вляво */
-    header .logo {
-        justify-self: start;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-    }
-
-    /* Ад-карта в центъра */
-    header .ad-card {
-        justify-self: center;
-        font-size: 24px;
-        margin: 0;
-    }
-
-    /* Бутон за меню в дясно */
+    /* Бутон за менюто */
     .menu-toggle {
-        position: absolute; /* фиксираме спрямо header-а */
-        top: 50%;
-        right: 0;           /* точно в дясно на header-а */
-        transform: translateY(-50%);
+        position: fixed; /* за да не зависи от grid-а */
+        top: 15px;       /* на нивото на логото */
+        right: 16px;     /* където беше часовникът */
         width: 40px;
         height: 40px;
         background: var(--accent);
@@ -612,7 +585,6 @@ header .logo img {
         transition: all 0.3s ease;
     }
 
-    /* Анимация за активното меню */
     .menu-toggle.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
@@ -623,4 +595,3 @@ header .logo img {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 }
-
