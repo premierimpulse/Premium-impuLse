@@ -564,39 +564,51 @@ loadData();
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
-// Нов елемент за overlay, който трябва да бъде добавен в HTML, ако искаш да работи
-// const mobileOverlay = document.querySelector('.mobile-overlay');
 
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active'); // показване/скриване на мобилното меню
-    menuToggle.classList.toggle('active'); // анимация на бутона
-    // Ако използваш overlay, разкоментирай долния ред
-    // mobileOverlay.classList.toggle('active');
-});
+// Създаваме overlay динамично (не е нужно да го добавяш в HTML)
+const mobileOverlay = document.createElement('div');
+mobileOverlay.classList.add('mobile-overlay');
+document.body.appendChild(mobileOverlay);
 
-// Превключване на съдържанието при мобилното меню И ЗАТВАРЯНЕ
+// Функция за отваряне/затваряне на менюто
+function toggleMenu() {
+    mobileMenu.classList.toggle('active');
+    menuToggle.classList.toggle('active');
+    mobileOverlay.classList.toggle('active');
+    document.body.classList.toggle('menu-open'); // блокира скрол
+}
+
+// Клик върху бутон
+menuToggle.addEventListener('click', toggleMenu);
+
+// Клик върху overlay затваря менюто
+mobileOverlay.addEventListener('click', toggleMenu);
+
+// Превключване на съдържанието при избор от менюто и затваряне
 const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
 mobileMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        // Скриване на менюто и деактивиране на бутона след избор
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-        // Ако използваш overlay, разкоментирай долния ред
-        // mobileOverlay.classList.remove('active');
+    item.addEventListener('click', () => {
+        // Скриване на менюто
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        mobileOverlay.classList.remove('active');
+        document.body.classList.remove('menu-open');
 
-        document.querySelectorAll('.content-block').forEach(block => {
-            block.classList.remove('active-content');
-            block.classList.add('hidden-content');
-        });
+        // Превключване на съдържанието
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.classList.remove('active-content');
+            block.classList.add('hidden-content');
+        });
 
-        const targetId = item.getAttribute('data-target');
-        const targetBlock = document.getElementById(targetId);
-        if(targetBlock){
-            targetBlock.classList.add('active-content');
-            targetBlock.classList.remove('hidden-content');
-        }
-    });
+        const targetId = item.getAttribute('data-target');
+        const targetBlock = document.getElementById(targetId);
+        if (targetBlock) {
+            targetBlock.classList.add('active-content');
+            targetBlock.classList.remove('hidden-content');
+        }
+    });
 });
+
   
 </script>
 
@@ -604,6 +616,7 @@ mobileMenuItems.forEach(item => {
 
 </body>
 </html>
+
 
 
 
