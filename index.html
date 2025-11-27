@@ -573,10 +573,8 @@ loadData();
 
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
-const desktopMenu = document.querySelector('aside.menu');
 const mobileMenu = document.querySelector('.mobile-menu');
 
-// Toggle mobile menu
 menuToggle.addEventListener('click', () => {
     mobileMenu.classList.toggle('active'); // показване/скриване на мобилното меню
     menuToggle.classList.toggle('active'); // анимация на бутона
@@ -586,10 +584,8 @@ menuToggle.addEventListener('click', () => {
 const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
 mobileMenuItems.forEach(item => {
     item.addEventListener('click', () => {
-        // Затваряне на менюто след избор
         mobileMenu.classList.remove('active');
 
-        // Активиране на съответното съдържание
         document.querySelectorAll('.content-block').forEach(block => {
             block.classList.remove('active-content');
             block.classList.add('hidden-content');
@@ -603,6 +599,7 @@ mobileMenuItems.forEach(item => {
         }
     });
 });
+
   
 </script>
 
@@ -610,3 +607,4 @@ mobileMenuItems.forEach(item => {
 
 </body>
 </html>
+
