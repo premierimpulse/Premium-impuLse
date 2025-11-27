@@ -550,81 +550,122 @@ header .logo img {
 
 
 /* =========================
-   Header за мобилни устройства
-   ========================= */
+   Header за мобилни устройства
+   ========================= */
+
+/* Дефиниране на CSS променлива за широчината на мобилното меню */
+:root {
+   --mobile-menu-width: 250px;
+}
+
 /* Скриване на мобилното меню по подразбиране */
 .mobile-menu {
-    display: none;
+    display: none;
 }
 
 /* Часовник по подразбиране */
 .date-time {
-    display: block;
+    display: block;
 }
 
 /* Мобилни устройства */
 @media (max-width: 768px) {
-    /* Скриваме десктоп часовника и десктоп менюто */
-    .date-time,
-    aside.menu {
-        display: none;
-    }
+    /* Скриваме десктоп часовника и десктоп менюто */
+    .date-time,
+    aside.menu {
+        display: none;
+    }
 
-    /* Показваме бутон за мобилно меню */
-    .menu-toggle {
-        position: fixed;
-        top: 15px;
-        right: 16px;
-        width: 40px;
-        height: 40px;
-        background: var(--accent);
-        border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 1100;
-        box-shadow: var(--shadow);
-    }
+    /* Показваме бутон за мобилно меню */
+    .menu-toggle {
+        position: fixed;
+        top: 15px;
+        right: 16px;
+        width: 40px;
+        height: 40px;
+        background: var(--accent);
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        z-index: 1100;
+        box-shadow: var(--shadow);
+        /* Добавено: Преход за плавност при промяна на стила */
+        transition: background 0.3s ease;
+    }
 
-    .menu-toggle span {
-        width: 25px;
-        height: 3px;
-        background: #fff;
-        margin: 3px 0;
-        display: block;
-        border-radius: 2px;
-        transition: all 0.3s ease;
-    }
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin: 3px 0;
+        display: block;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
 
-    /* Мобилно меню */
-    .mobile-menu {
-        display: block;
-        position: fixed;
-        top: 0;
-        right: -260px; /* скрито извън екрана */
-        width: 250px;
-        height: 100%;
-        background: #fff;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-        transition: right 0.3s ease;
-        z-index: 1200;
-        padding-top: 60px;
-    }
+    /* Добавено: Анимация на бутона (превръщане в "X" при активно меню) */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+    }
 
-    .mobile-menu.active {
-        right: 0;
-    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0; /* Скриване на средната черта */
+    }
 
-    .mobile-menu ul {
-        list-style: none;
-        padding: 0 20px;
-    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(8px, -8px);
+    }
 
-    .mobile-menu li {
-        padding: 15px 0;
-        cursor: pointer;
-        border-bottom: 1px solid #ddd;
-    }
+    /* Мобилно меню */
+    .mobile-menu {
+        display: block;
+        position: fixed;
+        top: 0;
+        /* Променено: Използване на променливата за по-лесна поддръжка */
+        right: calc(0px - var(--mobile-menu-width) - 10px); /* скриване извън екрана (+10px за сигурност) */
+        width: var(--mobile-menu-width); /* Използване на променливата */
+        height: 100%;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transition: right 0.3s ease;
+        z-index: 1200;
+        padding-top: 60px;
+    }
+
+    .mobile-menu.active {
+        right: 0; /* Показване на менюто */
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0 20px;
+    }
+
+    .mobile-menu li {
+        padding: 15px 0;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
+    }
+
+    /* Добавено: Полупрозрачен фон (Overlay) за фокус */
+    .mobile-overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5); /* Полупрозрачен черен фон */
+        z-index: 1150; /* Между бутона (1100) и менюто (1200) */
+        transition: opacity 0.3s ease;
+        opacity: 0;
+    }
+
+    .mobile-overlay.active {
+        display: block;
+        opacity: 1;
+    }
 }
