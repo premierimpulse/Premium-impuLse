@@ -676,17 +676,14 @@ header .logo img {
 
 
 @media (max-width: 768px) {
-    /* Скриваме часовника */
     .date-time {
         display: none;
     }
 
-    /* Hamburger меню на мястото на часовника */
     .menu-toggle {
-        position: absolute;
-        top: 50%;
+        position: fixed; /* вместо absolute */
+        top: 15px; /* отгоре на екрана */
         right: 16px; /* където беше часовникът */
-        transform: translateY(-50%);
         width: 40px;
         height: 40px;
         background: var(--accent);
@@ -699,14 +696,4 @@ header .logo img {
         z-index: 1100;
         box-shadow: var(--shadow);
     }
-
-    .menu-toggle span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        background: #fff;
-        margin: 3px 0;
-        transition: all 0.3s ease;
-    }
 }
-
