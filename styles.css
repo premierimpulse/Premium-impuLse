@@ -552,71 +552,79 @@ header .logo img {
 /* =========================
    Header за мобилни устройства
    ========================= */
+/* Скриване на мобилното меню по подразбиране */
+.mobile-menu {
+    display: none;
+}
+
+/* Часовник по подразбиране */
+.date-time {
+    display: block;
+}
+
+/* Мобилни устройства */
 @media (max-width: 768px) {
-    /* Скриваме основното меню за мобилни */
+    /* Скриваме десктоп часовника и десктоп менюто */
+    .date-time,
     aside.menu {
-        display: none; /* скрива се стандартното menu */
+        display: none;
     }
 
-    /* Header grid */
-    header {
-        display: grid;
-        grid-template-columns: auto 1fr auto; /* лого | ад-карта | меню бутон */
-        align-items: center;
-        gap: 12px;
-        padding: 10px 16px;
-        position: relative;
-    }
-
-    /* Лого */
-    header .logo {
-        justify-self: start;
-        background: transparent;
-        border: none;
-        box-shadow: none;
-        padding: 0;
-        margin: 0;
-    }
-
-    /* Ад-карта */
-    header .ad-card {
-        justify-self: center;
-        font-size: 24px;
-        margin: 0;
-    }
-
-    /* Меню бутон */
+    /* Показваме бутон за мобилно меню */
     .menu-toggle {
-        justify-self: end; /* дясната клетка */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
+        position: fixed;
+        top: 15px;
+        right: 16px;
         width: 40px;
         height: 40px;
         background: var(--accent);
         border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
         cursor: pointer;
         z-index: 1100;
         box-shadow: var(--shadow);
     }
 
-    /* Мобилното меню panel */
+    .menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: #fff;
+        margin: 3px 0;
+        display: block;
+        border-radius: 2px;
+        transition: all 0.3s ease;
+    }
+
+    /* Мобилно меню */
     .mobile-menu {
-        position: absolute;
-        top: 60px; /* точно под header */
-        right: 16px;
+        display: block;
+        position: fixed;
+        top: 0;
+        right: -260px; /* скрито извън екрана */
         width: 250px;
-        background: var(--panel);
-        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        border-radius: var(--card-radius);
-        transform: translateX(100%); /* скрито */
-        transition: transform 0.3s ease;
-        z-index: 1000;
-        padding: 16px;
+        height: 100%;
+        background: #fff;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transition: right 0.3s ease;
+        z-index: 1200;
+        padding-top: 60px;
     }
 
     .mobile-menu.active {
-        transform: translateX(0); /* показва менюто */
+        right: 0;
+    }
+
+    .mobile-menu ul {
+        list-style: none;
+        padding: 0 20px;
+    }
+
+    .mobile-menu li {
+        padding: 15px 0;
+        cursor: pointer;
+        border-bottom: 1px solid #ddd;
     }
 }
