@@ -709,7 +709,7 @@ header .logo img {
 
     /* Меню бутон вдясно на ад-картата */
     .menu-toggle {
-        justify-self: start; /* започва в клетката вдясно */
+        justify-self: end; /* започва в клетката вдясно */
         width: 40px;
         height: 40px;
         background: var(--accent);
@@ -741,3 +741,4 @@ header .logo img {
         transform: rotate(-45deg) translate(5px, -5px);
     }
 }
+
