@@ -13,6 +13,17 @@
   <span></span>
   <span></span>
 </div>
+<!-- Mobile Menu -->
+<nav class="mobile-menu">
+  <ul>
+    <li data-target="welcome-content">🏠 Начало</li>
+    <li data-target="matches-table">📅 Срещи</li>
+    <li data-target="ranking-table">🥇 Класиране</li>
+    <li data-target="prognosis-content">🎯 Прогнози</li>
+    <li data-target="fiches-content">📋 Фишове</li>
+    <li data-target="news-content">📰 Новини</li>
+  </ul>
+</nav>
 
 <header>
     <div class="logo">
@@ -559,14 +570,38 @@ async function loadData() {
 }
 
 loadData();
-  
-  // Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const menu = document.querySelector('aside.menu');
 
+// Mobile menu toggle
+const menuToggle = document.querySelector('.menu-toggle');
+const desktopMenu = document.querySelector('aside.menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+
+// Toggle mobile menu
 menuToggle.addEventListener('click', () => {
-    menu.classList.toggle('active');
-  menuToggle.classList.toggle('active');
+    mobileMenu.classList.toggle('active'); // показване/скриване на мобилното меню
+    menuToggle.classList.toggle('active'); // анимация на бутона
+});
+
+// Превключване на съдържанието при мобилното меню
+const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
+mobileMenuItems.forEach(item => {
+    item.addEventListener('click', () => {
+        // Затваряне на менюто след избор
+        mobileMenu.classList.remove('active');
+
+        // Активиране на съответното съдържание
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.classList.remove('active-content');
+            block.classList.add('hidden-content');
+        });
+
+        const targetId = item.getAttribute('data-target');
+        const targetBlock = document.getElementById(targetId);
+        if(targetBlock){
+            targetBlock.classList.add('active-content');
+            targetBlock.classList.remove('hidden-content');
+        }
+    });
 });
   
 </script>
@@ -575,6 +610,3 @@ menuToggle.addEventListener('click', () => {
 
 </body>
 </html>
-
-
-
