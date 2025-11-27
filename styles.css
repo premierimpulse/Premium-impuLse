@@ -553,45 +553,70 @@ header .logo img {
    Header за мобилни устройства
    ========================= */
 @media (max-width: 768px) {
-    /* Скриваме часовника */
-    .date-time {
-        display: none;
+    /* Скриваме основното меню за мобилни */
+    aside.menu {
+        display: none; /* скрива се стандартното menu */
     }
 
-    /* Бутон за менюто */
+    /* Header grid */
+    header {
+        display: grid;
+        grid-template-columns: auto 1fr auto; /* лого | ад-карта | меню бутон */
+        align-items: center;
+        gap: 12px;
+        padding: 10px 16px;
+        position: relative;
+    }
+
+    /* Лого */
+    header .logo {
+        justify-self: start;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    /* Ад-карта */
+    header .ad-card {
+        justify-self: center;
+        font-size: 24px;
+        margin: 0;
+    }
+
+    /* Меню бутон */
     .menu-toggle {
-        position: fixed; /* за да не зависи от grid-а */
-        top: 15px;       /* на нивото на логото */
-        right: 16px;     /* където беше часовникът */
+        justify-self: end; /* дясната клетка */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         width: 40px;
         height: 40px;
         background: var(--accent);
         border-radius: 50%;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
         cursor: pointer;
         z-index: 1100;
         box-shadow: var(--shadow);
     }
 
-    .menu-toggle span {
-        display: block;
-        width: 20px;
-        height: 2px;
-        background: #fff;
-        margin: 3px 0;
-        transition: all 0.3s ease;
+    /* Мобилното меню panel */
+    .mobile-menu {
+        position: absolute;
+        top: 60px; /* точно под header */
+        right: 16px;
+        width: 250px;
+        background: var(--panel);
+        box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        border-radius: var(--card-radius);
+        transform: translateX(100%); /* скрито */
+        transition: transform 0.3s ease;
+        z-index: 1000;
+        padding: 16px;
     }
 
-    .menu-toggle.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px, 5px);
-    }
-    .menu-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    .menu-toggle.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(5px, -5px);
+    .mobile-menu.active {
+        transform: translateX(0); /* показва менюто */
     }
 }
