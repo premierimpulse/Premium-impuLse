@@ -574,32 +574,39 @@ loadData();
 // Mobile menu toggle
 const menuToggle = document.querySelector('.menu-toggle');
 const mobileMenu = document.querySelector('.mobile-menu');
+// Нов елемент за overlay, който трябва да бъде добавен в HTML, ако искаш да работи
+// const mobileOverlay = document.querySelector('.mobile-overlay');
 
 menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('active'); // показване/скриване на мобилното меню
-    menuToggle.classList.toggle('active'); // анимация на бутона
+    mobileMenu.classList.toggle('active'); // показване/скриване на мобилното меню
+    menuToggle.classList.toggle('active'); // анимация на бутона
+    // Ако използваш overlay, разкоментирай долния ред
+    // mobileOverlay.classList.toggle('active');
 });
 
-// Превключване на съдържанието при мобилното меню
+// Превключване на съдържанието при мобилното меню И ЗАТВАРЯНЕ
 const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
 mobileMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        mobileMenu.classList.remove('active');
+    item.addEventListener('click', () => {
+        // Скриване на менюто и деактивиране на бутона след избор
+        mobileMenu.classList.remove('active');
+        menuToggle.classList.remove('active');
+        // Ако използваш overlay, разкоментирай долния ред
+        // mobileOverlay.classList.remove('active');
 
-        document.querySelectorAll('.content-block').forEach(block => {
-            block.classList.remove('active-content');
-            block.classList.add('hidden-content');
-        });
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.classList.remove('active-content');
+            block.classList.add('hidden-content');
+        });
 
-        const targetId = item.getAttribute('data-target');
-        const targetBlock = document.getElementById(targetId);
-        if(targetBlock){
-            targetBlock.classList.add('active-content');
-            targetBlock.classList.remove('hidden-content');
-        }
-    });
+        const targetId = item.getAttribute('data-target');
+        const targetBlock = document.getElementById(targetId);
+        if(targetBlock){
+            targetBlock.classList.add('active-content');
+            targetBlock.classList.remove('hidden-content');
+        }
+    });
 });
-
   
 </script>
 
@@ -607,4 +614,5 @@ mobileMenuItems.forEach(item => {
 
 </body>
 </html>
+
 
