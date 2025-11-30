@@ -5,15 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Premier ImpuLse</title>
 <link rel="stylesheet" href="styles.css">
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  
-<!-- Mobile Menu Toggle -->
-<div class="menu-toggle">
-  <span></span>
-  <span></span>
-  <span></span>
-</div>
   
 <header>
     <div class="logo">
@@ -22,250 +17,54 @@
     <div class="ad-card">Premier impuLse</div>
     <div class="date-time" id="dateTime"></div>
 </header>
-<!-- Mobile Menu -->
 <div class="mobile-menu">
   <ul>
-    <li data-target="welcome-content">🏠 Начало</li>
-    <li data-target="matches-table">📅 Срещи</li>
-    <li data-target="ranking-table">🥇 Класиране</li>
-    <li data-target="prognosis-content">🎯 Прогнози</li>
-    <li data-target="fiches-content">📋 Фишове</li>
-    <li data-target="news-content">📰 Новини</li>
-  </ul>
+    <li data-target="welcome-content"><i class="fas fa-home"></i> Начало</li>
+    <li data-target="fiches-content"><i class="fas fa-clipboard-list"></i> Фишове</li>
+    <li data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
+    <li data-target="vip-prognosis-content">Прогнози<span class="green-text-vip">VIP</span></li>
+    <li data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
+    <li data-target="payment-content"><i class="fas fa-credit-card"></i> Плащане</li>
+    </ul>
 </div>
 <main>
-    <!-- Меню -->
     <aside class="menu">
-        <h2><span style="color: #7289da;">Меню</span></h2>
-<!-- Разделител -->
+        <h2><span style="color: #7289da;"><i class="fas fa-bars"></i> Меню</span></h2>
 <hr class="section-divider">
         <ul>
-            <li id="menu-home" data-target="welcome-content" class="active">🏠 Начало</li>
-            <li id="menu-matches" data-target="matches-table">📅 Срещи</li>
-            <li id="menu-ranking" data-target="ranking-table">🥇 Класиране</li>
-            <li id="menu-prognosis" data-target="prognosis-content">🎯 Прогнози</li>
-            <li id="menu-fiches" data-target="fiches-content">📋 Фишове</li>
-            <li id="menu-news" data-target="news-content">📰 Новини</li>
-        </ul>
-<!-- Разделител -->
+            <li id="menu-home" data-target="welcome-content" class="active"><i class="fas fa-home"></i> Начало</li>
+            <li id="menu-fiches" data-target="fiches-content"><i class="fas fa-clipboard-list"></i> Фишове</li>
+            <li id="menu-prognosis" data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
+            <li id="menu-vip-prognosis" data-target="vip-prognosis-content"><i class="fas fa-crown neon-flash"></i> Прогнози <span class="green-text-vip">VIP</span></li>
+            <li id="menu-statistics" data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
+            <li id="menu-payment" data-target="payment-content"><i class="fas fa-credit-card"></i> Плащане</li>
+            </ul>
+
 <hr class="section-divider">
+
+        <div class="info-card responsible-info-card">
+            <i class="fas fa-hand-holding-usd"></i>
+            <h4>Залагай Отговорно</h4>
+            <p>Не залагайте повече, отколкото можете да си позволите да загубите.</p>
+        </div>
+
+<hr class="section-divider">
+
     </aside>
 
-    <!-- Основно съдържание -->
     <section class="content">
-        <!-- Начало -->
         <div id="welcome-content" class="content-block active-content">
             <div class="welcome-card">
                 Добре дошли в Premier impuLse!
             </div>
         </div>
 
-<!-- Срещи -->
-<div id="matches-table" class="content-block hidden-content">
-    <h2 class="content-title">Висша лига - Предстоящи Срещи</h2>
-    <!-- Разделител -->
-    <hr class="section-divider">
-<!-- Разделител -->
-<hr class="section-divider">
-<!-- Събота -->
-    <h3><center>Събота</center></h3>
-<!-- Разделител -->
-<hr class="section-divider">
-    <div class="match-list-container card">
-        <table class="match-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Мач</th>
-                    <th>Дата</th>
-                    <th>Час</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>1</td><td>Съндърланд - Борнемут</td><td>29.11.2025г.</td><td>17:00</td></tr>
-                <tr><td>2</td><td>Манчестър Сити - Лийдс</td><td>29.11.2025г.</td><td>17:00</td></tr>
-                <tr><td>3</td><td>Брентфорд - Бърнли</td><td>29.11.2025г.</td><td>17:00</td></tr>
-                <tr><td>4</td><td>Евертън - Нюкасъл</td><td>29.11.2025г.</td><td>19:30</td></tr>
-                <tr><td>5</td><td>Тотнъм - Фулъм</td><td>29.11.2025г.</td><td>22:00</td></tr>
-            </tbody>
-        </table>
-    </div>
-<!-- Разделител -->
-<hr class="section-divider">
-    <!-- Неделя -->
-    <h3><center>Неделя</center></h3>
-<!-- Разделител -->
-<hr class="section-divider">
-<div class="match-list-container card">
-    <table class="match-table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Мач</th>
-                <th>Дата</th>
-                <th>Час</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>6</td>
-                <td>Кристъл Палас - Манчестър Юнайтед</td>
-                <td>30.11.2025г.</td>
-                <td>14:00</td>
-            </tr>
-            <tr>
-                <td>7</td>
-                <td>Нотингам Форест - Брайтън</td>
-                <td>30.11.2025г.</td>
-                <td>16:05</td>
-            </tr>
-            <tr>
-                <td>8</td>
-                <td>Астън Вила - Уулвърхямптън</td>
-                <td>30.11.2025г.</td>
-                <td>16:05</td>
-            </tr>
-            <tr>
-                <td>9</td>
-                <td>Уест Хям - Ливърпул</td>
-                <td>30.11.2025г.</td>
-                <td>16:05</td>
-            </tr>
-<tr>
-    <td>10</td>
-    <td>
-        Челси - Арсенал 
-        <span class="derby-inline">Derby</span>
-    </td>
-    <td>30.11.2025г.</td>
-    <td>18:30</td>
-</tr>
-
-        </tbody>
-    </table>
-</div>
-<!-- Разделител -->
-<hr class="section-divider">
-    <!-- Понеделник -->
-    <h3><center>Понеделник</center></h3>
-<!-- Разделител -->
-<hr class="section-divider">
-    <div class="match-list-container card">
-        <table class="match-table">
-            <thead>
-                <tr>
-                    <th>#</th>
-                    <th>Мач</th>
-                    <th>Дата</th>
-                    <th>Час</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr><td>-</td><td>-</td><td>-</td><td>-</td></tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<!-- Разделител -->
-<hr class="section-divider">
-        </div>
-
-        <!-- Класиране -->
-        <div id="ranking-table" class="content-block hidden-content">
-            <h2 class="content-title">Висша лига - Класиране</h2>
-<!-- Разделител -->
-<hr class="section-divider">
-<div class="ranking-list-container card">
-    <table class="ranking-table">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Отбор</th>
-                <th>М</th>
-                <th>П</th>
-                <th>Р</th>
-                <th>З</th>
-                <th>ВГ</th>
-                <th>ДГ</th>
-                <th>ГР</th>
-                <th>Точки</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr><td>1</td><td>Арсенал</td><td>12</td><td>9</td><td>2</td><td>1</td><td>24</td><td>6</td><td>18</td><td>29</td></tr>
-            <tr><td>2</td><td>Челси</td><td>12</td><td>7</td><td>2</td><td>3</td><td>23</td><td>11</td><td>12</td><td>23</td></tr>
-            <tr><td>3</td><td>Манчестър Сити</td><td>12</td><td>7</td><td>1</td><td>4</td><td>24</td><td>10</td><td>14</td><td>22</td></tr>
-            <tr><td>4</td><td>Астън Вила</td><td>12</td><td>6</td><td>3</td><td>3</td><td>15</td><td>11</td><td>4</td><td>21</td></tr>
-            <tr><td>5</td><td>Кристъл Палас</td><td>12</td><td>5</td><td>5</td><td>2</td><td>16</td><td>9</td><td>7</td><td>20</td></tr>
-            <tr><td>6</td><td>Брайтън</td><td>12</td><td>5</td><td>4</td><td>3</td><td>19</td><td>16</td><td>3</td><td>19</td></tr>
-            <tr><td>7</td><td>Съндърланд</td><td>12</td><td>5</td><td>4</td><td>3</td><td>14</td><td>11</td><td>3</td><td>19</td></tr>
-            <tr><td>8</td><td>Борнемут</td><td>12</td><td>5</td><td>4</td><td>3</td><td>19</td><td>20</td><td>-1</td><td>19</td></tr>
-            <tr><td>9</td><td>Тотнъм</td><td>12</td><td>5</td><td>3</td><td>4</td><td>20</td><td>14</td><td>6</td><td>18</td></tr>
-            <tr><td>10</td><td>Манчестър Юнайтед</td><td>12</td><td>5</td><td>3</td><td>4</td><td>19</td><td>19</td><td>0</td><td>18</td></tr>
-            <tr><td>11</td><td>Евертън</td><td>12</td><td>5</td><td>3</td><td>4</td><td>13</td><td>13</td><td>0</td><td>18</td></tr>
-            <tr><td>12</td><td>Ливърпул</td><td>12</td><td>6</td><td>0</td><td>6</td><td>18</td><td>20</td><td>-2</td><td>18</td></tr>
-            <tr><td>13</td><td>Брентфорд</td><td>12</td><td>5</td><td>1</td><td>6</td><td>18</td><td>19</td><td>-1</td><td>16</td></tr>
-            <tr><td>14</td><td>Нюкасъл</td><td>12</td><td>4</td><td>3</td><td>5</td><td>13</td><td>15</td><td>-2</td><td>15</td></tr>
-            <tr><td>15</td><td>Фулъм</td><td>12</td><td>4</td><td>2</td><td>6</td><td>13</td><td>16</td><td>-3</td><td>14</td></tr>
-            <tr><td>16</td><td>Нотингам Форест</td><td>12</td><td>3</td><td>3</td><td>6</td><td>13</td><td>20</td><td>-7</td><td>12</td></tr>
-            <tr><td>17</td><td>Уест Хям</td><td>12</td><td>3</td><td>2</td><td>7</td><td>15</td><td>25</td><td>-10</td><td>11</td></tr>
-            <tr><td>18</td><td>Лийдс</td><td>12</td><td>3</td><td>2</td><td>7</td><td>11</td><td>22</td><td>-11</td><td>11</td></tr>
-            <tr><td>19</td><td>Бърнли</td><td>12</td><td>3</td><td>1</td><td>8</td><td>14</td><td>24</td><td>-10</td><td>10</td></tr>
-            <tr><td>20</td><td>Уулвърхямптън</td><td>12</td><td>0</td><td>2</td><td>10</td><td>7</td><td>27</td><td>-20</td><td>2</td></tr>
-        </tbody>
-    </table>
-</div>
-
-<!-- Разделител -->
-<hr class="section-divider">
-<div class="ranking-legend">
-    <span class="legend champions">🏆 Шампионска лига</span>
-    <span class="legend europa">🌍 Лига Европа</span>
-    <span class="legend relegation">🔻 Понижение</span>
-</div>
-<!-- Разделител -->
-<hr class="section-divider">
-        </div>
-
-        <!-- Прогнози -->
-        <div id="prognosis-content" class="content-block hidden-content">
-            <h2 class="content-title">Прогнози</h2>
-<!-- Разделител -->
-<hr class="section-divider">
-            <div class="prognosis-list-container card">
-                <table class="prognosis-table">
-                    <thead>
-                        <tr>
-                            <th>Дата/Час</th>
-                            <th>Среща</th>
-                            <th>Прогноза</th>
-                            <th>Коефициент</th>
-                            <th>Резултат</th>
-                            <th>Статус</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text">⏳</span></td><td>⏳</td></tr>
-                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text">⏳</span></td><td>⏳</td></tr>
-                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text">⏳</span></td><td>⏳</td></tr>
-                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text">⏳</span></td><td>⏳</td></tr>
-                    </tbody>
-                </table>
-            </div>
-<!-- Разделител -->
-<hr class="section-divider">
-        </div>
-<!-- Фишове -->
 <div id="fiches-content" class="content-block hidden-content">
     <h2 class="content-title">Фишове</h2>
     <hr class="section-divider">
 
-    <!-- Фиш №1 -->
     <div class="fiche-card card">
-        <h3>Фиш №1</h3>
+        <h3>Фиш №1 ( VIP )</h3>
         <table class="fiche-table">
             <thead>
                 <tr>
@@ -279,41 +78,38 @@
             </thead>
 <tbody>
     <tr>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>⏳</td>
+        <td>29.11</td>
+        <td>19:30</td>
+        <td>Евертън - Нюкасъл</td>
+        <td>2.65</td>
+        <td>2</td>
+        <td><i class="fas fa-check-circle green-text"></i></td>
     </tr>
     <tr>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>⏳</td>
+        <td>29.11</td>
+        <td>19:30</td>
+        <td>Байер Леверкузен - Борусия Дортмунд</td>
+        <td>2.71</td>
+        <td>2</td>
+        <td><i class="fas fa-check-circle green-text"></i></td>
     </tr>
     <tr>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>-</td>
-        <td>⏳</td>
+        <td>29.11</td>
+        <td>17:00</td>
+        <td>Съндърланд - Борнемут</td>
+        <td>2.35</td>
+        <td>2</td>
+        <td><i class="fas fa-check-circle green-text"></i></td>
     </tr>
 </tbody>
         </table>
-<!-- Разделител -->
 <hr class="section-divider">
-        <p><span class="fiche-total">Общ Коефициент: 0</span></p>
+        <p><span class="fiche-total">Общ Коефициент: 16.88</span></p>
                  
                 <p class="disclaimer"><center><span style="color: red;">*Прогнозите са само експертно мнение и не гарантират печалба.</span></center></p>
-<!-- Разделител -->
 <hr class="section-divider">
             </div>
     <hr class="section-divider">
-    <!-- Фиш №2 -->
     <div class="fiche-card card">
         <h3>Фиш №2</h3>
         <table class="fiche-table">
@@ -334,34 +130,31 @@
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
 </tbody>
         </table>
-<!-- Разделител -->
 <hr class="section-divider">
         <p><span class="fiche-total">Общ Коефициент: 0</span></p>
                  
                 <p class="disclaimer"><center><span style="color: red;">*Прогнозите са само експертно мнение и не гарантират печалба.</span></center></p>
-<!-- Разделител -->
 <hr class="section-divider">
             </div>
     <hr class="section-divider">
-    <!-- Фиш №3 -->
     <div class="fiche-card card">
         <h3>Фиш №3</h3>
         <table class="fiche-table">
@@ -382,92 +175,274 @@
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
         <td>-</td>
-        <td>⏳</td>
+        <td><i class="fas fa-hourglass-half"></i></td>
     </tr>
 </tbody>
         </table>
-<!-- Разделител -->
 <hr class="section-divider">
         <p><span class="fiche-total">Общ Коефициент: 0</span></p>
                  
                 <p class="disclaimer"><center><span style="color: red;">*Прогнозите са само експертно мнение и не гарантират печалба.</span></center></p>
-<!-- Разделител -->
 <hr class="section-divider">
             </div>
-<!-- Разделител -->
 <hr class="section-divider">
 </div>
-
-        <!-- Новини -->
-        <div id="news-content" class="content-block hidden-content">
-            <h2 class="content-title">Висша лига - Новини</h2>
-<!-- Разделител -->
+        <div id="prognosis-content" class="content-block hidden-content">
+            <h2 class="content-title">Прогнози</h2>
 <hr class="section-divider">
-            <div class="news-card card">
-                <p><center>Очаквайте скоро най-вълнуващите новини от Висшата лига!</center></p>
-                <p><center>Бъдете на линия за всички ключови моменти от света на футбола!</center></p>
+            <div class="prognosis-list-container card">
+                <table class="prognosis-table">
+                    <thead>
+                        <tr>
+                            <th>Дата/Час</th>
+                            <th>Среща</th>
+                            <th>Прогноза</th>
+                            <th>Коефициент</th>
+                            <th>Резултат</th>
+                            <th>Статус</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text"><i class="fas fa-hourglass-half"></i></span></td><td><i class="fas fa-hourglass-half"></i></td></tr>
+                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text"><i class="fas fa-hourglass-half"></i></span></td><td><i class="fas fa-hourglass-half"></i></td></tr>
+                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text"><i class="fas fa-hourglass-half"></i></span></td><td><i class="fas fa-hourglass-half"></i></td></tr>
+                        <tr><td>-</td><td>-</td><td>-</td><td>-</td><td><span class="green-text"><i class="fas fa-hourglass-half"></i></span></td><td><i class="fas fa-hourglass-half"></i></td></tr>
+                    </tbody>
+                </table>
             </div>
-<!-- Разделител -->
 <hr class="section-divider">
         </div>
-    </section>
 
-    <!-- Прогноза за деня -->
-    <aside class="prediction">
-        <h3><span style="color: #7289da;">Прогноза за деня</span></h3>
-<!-- Разделител -->
-<hr class="section-divider">
-        <div class="prediction-card">
-            <table>
-                <tr>
-                    <td colspan="2" class="match-header">
-                        <img src="" alt="" class="team-logo">
-                        <span class="">⏳</span>
-                        <span class="vs">–</span>
-                        <span class="">⏳</span>
-                        <img src="" alt="" class="team-logo">
-                    </td>
-                </tr>
-                <tr><td>🗓️ Дата:</td><td><span class="green-text">-</span></td></tr>
-                <tr><td>⏱️ Час:</td><td><span class="green-text">-</span></td></tr>
-                <tr><td>📈 Коефициент:</td><td><span class="green-text">-</span></td></tr>
-                <tr><td>🎯 Прогноза:</td><td><span class="green-text">-</span></td></tr>
-                <tr><td>⚽ Резултат:</td><td><span class="green-text">⏳</span></td></tr>
-                <tr><td>🔘 Статус:</td><td>⏳</td></tr>
+<div id="vip-prognosis-content" class="content-block hidden-content">
+    <h2 class="content-title"><i class="fas fa-crown neon-flash"></i> Прогнози<span class="green-text-vip">VIP</span></h2>
+    <hr class="section-divider">
+    <div class="card vip-card-container">
+        <h3>Ексклузивни Прогнози с Висок Процент на Успеваемост</h3>
+        <p>
+            <center>Достъп до нашите **най-добри анализи** и **селекции**! VIP прогнозите са специално подбрани и предлагат най-високо съотношение риск/печалба.</center>
+        </p>
+
+        <div style="text-align: center; margin-bottom: 25px;">
+            <button id="vip-access-button" class="action-button" data-target="payment-content">
+                <i class="fas fa-lock-open"></i> Вземи VIP Достъп Сега!
+            </button>
+        </div>
+
+        <h4>Следващи VIP Срещи (Само за абонати)</h4>
+        
+        <div class="prognosis-list-container card" style="background: var(--bg); padding: 10px;">
+            <table class="prognosis-table">
+                <thead>
+                    <tr>
+                        <th>Дата/Час</th>
+                        <th>Среща</th>
+                        <th>Прогноза</th>
+                        <th>Коефициент</th>
+                        <th>Статус</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>29.11 / 19:30</td>
+                        <td class="blurred-text">Евертън - Нюкасъл</td>
+                        <td class="blurred-text">2</td>
+                        <td class="blurred-text">2.65</td>
+                        <td><i class="fas fa-hourglass-half"></i></td>
+                    </tr>
+                    <tr>
+                        <td>29.11 / 19:30</td>
+                        <td class="blurred-text">Байер Леверкузен - Борусия Дортмунд</td>
+                        <td class="blurred-text">2</td>
+                        <td class="blurred-text">2.71</td>
+                        <td><i class="fas fa-hourglass-half"></i></td>
+                    </tr>
+                    <tr>
+                        <td>29.11 / 17:00</td>
+                        <td class="blurred-text">Съндърланд - Борнемут</td>
+                        <td class="blurred-text">2</td>
+                        <td class="blurred-text">2.35</td>
+                        <td><i class="fas fa-hourglass-half"></i></td>
+                    </tr>
+                </tbody>
             </table>
         </div>
+    </div>
+    <hr class="section-divider">
+</div>
 
-<!-- Разделител -->
+<div id="statistics-content" class="content-block hidden-content">
+    <h2 class="content-title">Обща Статистика и Ефективност</h2>
+    <hr class="section-divider">
+    
+    <div class="stats-grid">
+        
+        <div class="stat-card">
+            <div class="value stat-value-default" id="total-prognoses">1</div>
+            <div class="label">Общ Брой Прогнози</div>
+        </div>
+        
+        <div class="stat-card">
+            <div class="value stat-value-info" id="total-success-rate"><span class="green-text">100%</span></div>
+            <div class="label">Обща Успеваемост</div>
+        </div>
+
+        <div class="stat-card">
+            <div class="value stat-value-neutral" id="avg-odd"><span class="green-text">16.88</span></div>
+            <div class="label">Среден Коефициент</div>
+        </div>
+    </div>
+    <hr class="section-divider">
+
+    <h3 class="content-title" style="color: var(--muted); margin-bottom: 20px;">Месечен Отчет</h3>
+    
+    <div class="card" style="background: var(--panel); padding: 10px;">
+        <div style="overflow-x: auto;">
+            <table class="stats-table" id="monthly-stats-table">
+                <thead>
+                    <tr>
+                        <th>Месец</th>
+                        <th>Печеливши</th>
+                        <th>Губещи</th>
+                        <th>Отложени</th>
+                        <th>Успеваемост</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-month="12.2025"><td>Декември</td><td><span class="green-text">1</span></td><td><span class="red-text">0</span></td><td><span class="stat-value-neutral">0</span></td><td><span class="success-rate"><span class="green-text">100%</span></span></td></tr>
+                    <tr data-month="01.2026"><td>Януари</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
+                    <tr data-month="02.2026"><td>Февруари</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
+                    <tr data-month="03.2026"><td>Март</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
+                    <tr data-month="04.2026"><td>Април</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <hr class="section-divider">
+</div>
+
+<div id="payment-content" class="content-block hidden-content">
+    <h2 class="content-title">VIP Достъп и Абонамент</h2>
+    <hr class="section-divider">
+    
+    <p class="section-description">
+        Изберете най-подходящия абонаментен план, за да получите достъп до всички VIP прогнози, анализи и фишове.
+    </p>
+
+    <div class="pricing-grid">
+        
+        <div class="pricing-card">
+            <div class="title">1 Месец VIP</div>
+            <div class="price">60лв.</div>
+            <div class="period">Еднократно плащане</div>
+            <ul class="features">
+                <li><i class="fas fa-check green-text"></i> Достъп до всички VIP прогнози</li>
+                <li class="disabled"><i class="fas fa-times red-text"></i> Ежедневни VIP фишове</li>
+                <li class="disabled"><i class="fas fa-times red-text"></i> Експертен анализ</li>
+                <li class="disabled"><i class="fas fa-times red-text"></i> 24/7 Приоритетна поддръжка</li>
+            </ul>
+            <a href="#" class="btn btn-purchase">Абонирай се</a>
+        </div>
+        
+        <div class="pricing-card popular">
+            <div class="title">3 Месеца VIP</div>
+            <div class="price">150.00лв.</div>
+            <div class="period">Спестяваш 30.00лв.</div>
+            <ul class="features">
+                <li><i class="fas fa-check green-text"></i> Достъп до всички VIP прогнози</li>
+                <li><i class="fas fa-check green-text"></i> Ежедневни VIP фишове</li>
+                <li><i class="fas fa-check green-text"></i> Експертен анализ</li>
+                <li><i class="fas fa-check green-text"></i> 24/7 Приоритетна поддръжка</li>
+            </ul>
+            <a href="#" class="btn btn-purchase popular">Абонирай се</a>
+        </div>
+    </div>
+    
+    <hr class="section-divider">
+
+    <h3 class="content-title" style="color: var(--muted);">Методи за плащане</h3>
+    <div class="payment-methods">
+        <span class="payment-icon">Банков превод</span>
+        <span class="payment-icon">PayPal</span>
+        <span class="payment-icon">Revolut</span>
+    </div>
+    <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #aaa;">За въпроси или други методи за плащане, моля, свържете се с нас.</p>
+
+</div>
+
+        </section>
+
+<aside class="analysis">
+        <h3 style="color: #7289da; text-align: center; margin-top: 0px;">Табло</h3>
 <hr class="section-divider">
 
-<!-- Discord картичка -->
-<div class="discord-card">
-  <a href="" target="_blank" class="discord-link">
-    <div class="discord-card-content">
-      <img src="discord.png" alt="" class="discord-icon">
-      <div class="discord-text">
-        <h3>Premier impuLse</h3>
-        <p><center>Discord сървър!</center></p>
-        <p><center>Очаквайте скоро!</center></p>
-      </div>
-    </div>
-  </a>
+<div class="info-card free-info-card" style="cursor: default;">
+    <h4 style="margin-bottom: 0;">DAILY CHALLENGE</h4>
+<hr class="section-divider">
+    <p style="margin-top: 5px;">Дата/Час: 30.11.2025г.</p>
+    <p style="margin-top: 5px;">Среща: Жирона - Реал Мадрид</p>
+    <p style="margin-top: 5px;">Прогноза: 2</p>
+<hr class="section-divider">
+    <div class="stat-large green-text" style="font-size: 24px; font-weight: 900; margin: 5px 0;">Коефициент: 1.48</div>
+    <p style="margin-bottom: 5px; font-size: 13px;">Единична прогноза за по-умерен риск.</p>
 </div>
-<!-- Разделител -->
+<hr class="section-divider">
+
+<div class="info-card vip-info-card">
+    <i class="fas fa-crown"></i>
+    <h4>Последна VIP Прогноза</h4>
+<hr class="section-divider">
+    <p>Дата:29.11.2025г.</p>
+<hr class="section-divider">
+    <p>Евертън - Нюкасъл - 2</p>
+    <p>Байер Леверкузен - Борусия Дортмунд - 2</p>
+    <p>Съндърланд - Борнемут - 2</p>
+<hr class="section-divider">
+    <p><div class="stat-large green-text" style="font-size: 18px; font-weight: 900; margin: 5px 0;">Общ Коеф.: 16.88</div></p>
+<hr class="section-divider">
+    <p>Статус: <span class="green-text-vip">ПЕЧЕЛИВШ!</span></p>
+</div>
+<hr class="section-divider">
+
+<div class="info-card stats-info-card" style="cursor: default;">
+    <i class="fas fa-trophy"></i>
+    <h4>ТОП ПОСТИЖЕНИЯ</h4>
+<hr class="section-divider">
+    <p>Най-голям Коеф.: <span class="stat-value-positive">16.88</span></p>
+<hr class="section-divider">
+    <p>Най-дълга Серия: <span class="stat-value-positive">1 ден</span></p>
+<hr class="section-divider">
+</div>
+<hr class="section-divider">
+
+<div class="info-card stats-info-card" data-target="statistics-content">
+    <i class="fas fa-chart-line"></i>
+    <h4>УСПЕВАЕМОСТ</h4>
+    <div class="stat-large">100%</div>
+    <p>Последни 30 дни</p>
+</div>
+
+<hr class="section-divider">
+
+<div class="info-card vip-info-card" data-target="payment-content">
+    <i class="fas fa-hand-holding-usd"></i>
+    <h4>VIP АБОНАМЕНТ</h4>
+    <p>Премини към следващото ниво на печалба!</p>
+</div>
 <hr class="section-divider">
 </aside>
 </main>
@@ -487,154 +462,184 @@
     setInterval(updateDateTime, 1000);
     updateDateTime();
 
-    // Превключване на съдържание
+    // Функция за превключване на съдържанието
+    function switchContent(targetId) {
+        // За десктоп менюто
+        document.querySelectorAll('.menu li').forEach(i => i.classList.remove('active'));
+        document.querySelectorAll(`.menu li[data-target="${targetId}"]`).forEach(i => i.classList.add('active'));
+        
+        // За съдържанието
+        document.querySelectorAll('.content-block').forEach(block => {
+            block.classList.remove('active-content');
+            block.classList.add('hidden-content');
+        });
+        
+        const targetBlock = document.getElementById(targetId);
+        if(targetBlock){
+            targetBlock.classList.add('active-content');
+            targetBlock.classList.remove('hidden-content');
+        }
+    }
+
+    // Превключване на съдържание (За десктоп менюто)
     const menuItems = document.querySelectorAll('.menu li');
     menuItems.forEach(item => {
         item.addEventListener('click', () => {
-            menuItems.forEach(i => i.classList.remove('active'));
-            item.classList.add('active');
+            const targetId = item.getAttribute('data-target');
+            switchContent(targetId);
+        });
+    });
+
+    // === JAVASCRIPT: Бутон за VIP достъп ===
+    // Тъй като бутонът не е дефиниран в този код, тази логика може да гърми, ако бутонът не е в HTML.
+    // Добавям проверка за съществуване.
+    const vipButton = document.getElementById('vip-access-button');
+    if (vipButton) {
+        vipButton.addEventListener('click', (event) => {
+            event.preventDefault(); // Предотвратява default поведение
+            const targetId = event.currentTarget.getAttribute('data-target');
+            
+            // Превключва към страницата "Плащане"
+            switchContent(targetId);
+
+            // Допълнителна логика: Скриване на мобилното меню, ако е отворено
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+        });
+    }
+    // ===========================================
+
+    /* === JAVASCRIPT: Зареждане на данни от data.json === */
+    async function loadData() {
+        // Взимам само data.json
+        const response = await fetch('data.json');
+        const data = await response.json();
+
+        // Зареждане на прогнози (Остава)
+        const prognosisTbody = document.querySelector('.prognosis-table tbody');
+        if (prognosisTbody && data.prognosis) {
+            // ... Логика за зареждане на стандартни прогнози
+        }
+
+
+        // Прогноза за деня (премахната логика)
+        // const pod = data.predictionOfTheDay;
+        // const podTable = document.querySelector('.prediction-card table');
+        // if (pod && podTable) {
+            // ...
+        // }
+        
+        // Премахната е логиката за Matches, Ranking, News
+    }
+
+    loadData(); // Извикваме функцията за зареждане на данни
+
+    /* === JAVASCRIPT: Логика за мобилно меню === */
+    // Mobile menu toggle (Остава непроменена)
+    const menuToggle = document.querySelector('.menu-toggle');
+    const mobileMenu = document.querySelector('.mobile-menu');
+
+    // Създаваме overlay динамично (Остава)
+    const mobileOverlay = document.createElement('div');
+    mobileOverlay.classList.add('mobile-overlay');
+    document.body.appendChild(mobileOverlay);
+
+    // Функция за отваряне/затваряне на менюто (Остава)
+    function toggleMenu() {
+        mobileMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        mobileOverlay.classList.toggle('active');
+        document.body.classList.toggle('menu-open'); // блокира скрол
+    }
+
+    // Клик върху бутон (Остава)
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Клик върху overlay затваря менюто (Остава)
+    mobileOverlay.addEventListener('click', toggleMenu);
+
+    // Превключване на съдържанието при избор от менюто и затваряне (Остава)
+    const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
+    mobileMenuItems.forEach(item => {
+        item.addEventListener('click', () => {
+            // Скриване на менюто
+            mobileMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            mobileOverlay.classList.remove('active');
+            document.body.classList.remove('menu-open');
+
+            // Превключване на съдържанието
             document.querySelectorAll('.content-block').forEach(block => {
                 block.classList.remove('active-content');
                 block.classList.add('hidden-content');
             });
+
             const targetId = item.getAttribute('data-target');
             const targetBlock = document.getElementById(targetId);
-            if(targetBlock){
+            if (targetBlock) {
                 targetBlock.classList.add('active-content');
                 targetBlock.classList.remove('hidden-content');
             }
         });
     });
-</script>
-<script>
-async function loadData() {
-    const response = await fetch('data.json');
-    const data = await response.json();
 
-    // Зареждане на мачове
-    const matchSections = document.querySelectorAll('.match-list-container');
-    matchSections.forEach(section => {
-        const dayHeader = section.previousElementSibling.textContent.trim();
-        const dayMatches = data.matches[dayHeader] || [];
-        const tbody = section.querySelector('tbody');
-        tbody.innerHTML = '';
-        dayMatches.forEach(match => {
-            const tr = document.createElement('tr');
-            tr.innerHTML = `<td>${match.id}</td><td>${match.teams}</td><td>${match.date}г.</td><td>${match.time}</td>`;
-            tbody.appendChild(tr);
-        });
-    });
+    /* === JAVASCRIPT: Логика за цветове на статистики === */
+    function updateStatsColors() {
+        // 1. Оцветяване на месечния отчет
+        const statRows = document.querySelectorAll('#monthly-stats-table tbody tr');
+        statRows.forEach(row => {
+            const successRateCell = row.querySelector('.success-rate');
+            
+            // Взимаме числовата стойност на успеваемостта
+            let rateText = successRateCell.textContent.replace('%', '');
+            let rateValue = parseFloat(rateText);
 
-    // Зареждане на класиране
-    const rankingTbody = document.querySelector('.ranking-table tbody');
-    rankingTbody.innerHTML = '';
-    data.ranking.forEach(team => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${team.position}</td><td>${team.team}</td><td>${team.matches}</td><td>${team.points}</td>`;
-        rankingTbody.appendChild(tr);
-    });
+            // Функция за прилагане на цвят
+            function applyRateColor(element, value) {
+                element.classList.remove('green-text', 'red-text', 'blue-text');
+                if (value >= 60) {
+                    element.classList.add('green-text'); // Висока успеваемост
+                } else if (value > 0) {
+                    element.style.color = '#ffcc00'; // Средна (Жълто)
+                } else if (value === 0 && rateText.trim() !== "") {
+                    element.style.color = '#fff'; // Бяло
+                }
+                // Форматиране на текст
+                element.textContent = value.toFixed(0) + '%';
+            }
 
-    // Зареждане на прогнози
-    const prognosisTbody = document.querySelector('.prognosis-table tbody');
-    prognosisTbody.innerHTML = '';
-    data.prognosis.forEach(p => {
-        const tr = document.createElement('tr');
-        tr.innerHTML = `<td>${p.datetime}</td><td>${p.match}</td><td>${p.prediction}</td><td>${p.odds}</td><td><span class="green-text">${p.result}</span></td><td>${p.status}</td>`;
-        prognosisTbody.appendChild(tr);
-    });
-
-    // Прогноза за деня
-    const pod = data.predictionOfTheDay;
-    const podTable = document.querySelector('.prediction-card table');
-    podTable.rows[0].cells[0].innerHTML = `
-        <img src="${pod.homeLogo}" class="team-logo"><span class="red-text">${pod.homeTeam}</span>
-        <span class="vs">–</span>
-        <span class="blue-text">${pod.awayTeam}</span>
-        <img src="${pod.awayLogo}" class="team-logo">
-    `;
-    podTable.rows[1].cells[1].textContent = pod.date;
-    podTable.rows[2].cells[1].textContent = pod.time;
-    podTable.rows[3].cells[1].textContent = pod.odds;
-    podTable.rows[4].cells[1].textContent = pod.prediction;
-    podTable.rows[5].cells[1].textContent = pod.result;
-    podTable.rows[6].cells[1].textContent = pod.status;
-
-    // Зареждане на новини
-    const newsContainer = document.querySelector('.news-card');
-    newsContainer.innerHTML = '';
-    data.news.forEach(news => {
-        const div = document.createElement('div');
-        div.innerHTML = `<p><center>${news.title}</center></p><p><center>${news.content}</center></p>`;
-        newsContainer.appendChild(div);
-    });
-}
-
-loadData();
-
-// Mobile menu toggle
-const menuToggle = document.querySelector('.menu-toggle');
-const mobileMenu = document.querySelector('.mobile-menu');
-
-// Създаваме overlay динамично (не е нужно да го добавяш в HTML)
-const mobileOverlay = document.createElement('div');
-mobileOverlay.classList.add('mobile-overlay');
-document.body.appendChild(mobileOverlay);
-
-// Функция за отваряне/затваряне на менюто
-function toggleMenu() {
-    mobileMenu.classList.toggle('active');
-    menuToggle.classList.toggle('active');
-    mobileOverlay.classList.toggle('active');
-    document.body.classList.toggle('menu-open'); // блокира скрол
-}
-
-// Клик върху бутон
-menuToggle.addEventListener('click', toggleMenu);
-
-// Клик върху overlay затваря менюто
-mobileOverlay.addEventListener('click', toggleMenu);
-
-// Превключване на съдържанието при избор от менюто и затваряне
-const mobileMenuItems = document.querySelectorAll('.mobile-menu li');
-mobileMenuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        // Скриване на менюто
-        mobileMenu.classList.remove('active');
-        menuToggle.classList.remove('active');
-        mobileOverlay.classList.remove('active');
-        document.body.classList.remove('menu-open');
-
-        // Превключване на съдържанието
-        document.querySelectorAll('.content-block').forEach(block => {
-            block.classList.remove('active-content');
-            block.classList.add('hidden-content');
+            // Прилагане на цвят
+            if (!isNaN(rateValue)) {
+                applyRateColor(successRateCell, rateValue);
+            } else {
+                // Ако няма стойност, оставяме да е 0% и неутрален цвят
+                 successRateCell.textContent = '0%';
+                 successRateCell.style.color = '#fff';
+            }
         });
 
-        const targetId = item.getAttribute('data-target');
-        const targetBlock = document.getElementById(targetId);
-        if (targetBlock) {
-            targetBlock.classList.add('active-content');
-            targetBlock.classList.remove('hidden-content');
+        // 2. Оцветяване на общия баланс и успеваемост в картичките (само за пример, ако ги попълваш автоматично)
+        const totalBalance = document.getElementById('total-balance');
+        const totalSuccessRate = document.getElementById('total-success-rate');
+        
+        // Примерна логика за баланса (ако е 0, да е неутрален)
+        if (totalBalance.textContent.includes('0.00')) {
+            totalBalance.classList.remove('stat-value-positive', 'red-text');
+            totalBalance.classList.add('stat-value-neutral');
         }
-    });
-});
+        
+        // Примерна логика за успеваемостта
+        if (totalSuccessRate.textContent.includes('0%')) {
+            totalSuccessRate.classList.remove('stat-value-positive', 'red-text');
+            totalSuccessRate.classList.add('stat-value-info');
+        }
+    }
 
-  
+    // Извикваме функцията при зареждане на страницата
+    updateStatsColors();
 </script>
-
-
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
