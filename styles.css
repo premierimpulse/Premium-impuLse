@@ -32,21 +32,16 @@ header {
     border-bottom: 2px solid #444;
 }
 header .logo {
-    background: #ffffff;
-    border-radius: var(--card-radius);
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: var(--shadow);
-    border: 2px solid var(--border);
-    transition: all 0.3s ease;
-}
-header .logo:hover {
-    transform: scale(1.05);
+    justify-self: start;
+    margin: 0;
+    padding: 0; /* премахваме padding, ако искаш чисто изображение */
+    background: transparent; /* напълно прозрачен фон */
+    border: none; /* махаме граница, ако има */
+    box-shadow: none; /* махаме сенки */
 }
 header .logo img {
-    max-height: 48px;
+    max-height: 60px; /* можеш да увеличиш според нуждите */
+    display: block;
 }
 header .ad-card {
     justify-self: center;
@@ -70,12 +65,14 @@ header .date-time {
     text-align: center;
     font-weight: 700;
     color: #fff;
+    justify-self: end; /* премества часовника вдясно */
+    margin: 0; 
 }
 
-/* Main grid */
+/* Main grid - ПРОМЕНЕНО: Добавяне на трета колона за анализ */
 main {
     display: grid;
-    grid-template-columns: 260px 1fr 320px;
+    grid-template-columns: 260px 1fr 280px; 
     gap: 16px;
     padding: 16px;
 }
@@ -113,6 +110,17 @@ main {
     border-color: var(--accent);
 }
 
+/* Analysis - НОВ БЛОК СТИЛОВЕ (подобни на menu) */
+.analysis {
+    /* Анализът използва info-card стиловете */
+    padding: 0;
+}
+/* Промяна на top margin на заглавието на анализа, защото вече не е под менюто */
+.analysis h3 {
+    margin-top: 0 !important; 
+}
+
+
 /* Content */
 .content {
     background: rgba(255,255,255,0.02);
@@ -135,7 +143,7 @@ main {
     border: 2px solid var(--border);
     box-shadow: 0 8px 20px rgba(0,0,0,0.6);
     text-align: center;
-    font-size: 36px;
+    font-size: 28px; /* Променено */
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
@@ -144,44 +152,6 @@ main {
 .welcome-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 12px 30px rgba(0,0,0,0.8);
-}
-
-/* Prediction aside */
-.prediction h3 {
-    font-size: 28px;
-    margin-bottom: 12px;
-    color: #fff;
-    text-align: center;
-}
-.prediction-card {
-    background: var(--panel);
-    border-radius: var(--card-radius);
-    padding: 14px;
-    border: 2px solid var(--border);
-    box-shadow: var(--shadow);
-    margin-bottom: 16px;
-    transition: all 0.3s ease;
-}
-.prediction-card:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 14px rgba(0,0,0,0.6);
-}
-.prediction-card table {
-    width: 100%;
-    border-collapse: collapse;
-    font-weight: 700;
-    color: #fff;
-    text-align: center;
-}
-.prediction-card table td {
-    padding: 8px 4px;
-    border-bottom: 1px solid var(--border);
-}
-.prediction-card table tr:first-child td {
-    font-size: 18px;
-    font-weight: 800;
-    border-bottom: 2px solid var(--accent);
-    padding-bottom: 10px;
 }
 
 /* Tables */
@@ -219,19 +189,107 @@ main {
     vertical-align: middle;
     margin: 0 8px;
 }
-.match-header {
-    text-align: center;
-    font-weight: 600;
-}
-.vs {
-    margin: 0 6px;
-    color: #555;
-}
 
 /* Colored text classes */
 .green-text { color: #00ff00; }
 .red-text { color: #ff4c4c; }
 .blue-text { color: #4c8cff; }
+
+/* === СТИЛОВЕ ЗА VIP ПРОГНОЗИ === */
+@keyframes flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+
+.green-text-vip {
+    color: #00ff00; /* Ярко зелено */
+    animation: flash 1.5s ease-in-out infinite;
+    display: inline-block;
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+    transition: all 0.3s ease;
+}
+
+/* Добавяме и ефект при задържане на мишката за десктоп */
+.menu li:has(.green-text-vip):hover {
+    box-shadow: 0 6px 20px rgba(0, 255, 0, 0.4);
+    border-color: #00ff00;
+}
+
+/* Клас за целия VIP блок */
+.vip-card-container {
+    background: linear-gradient(135deg, #1a1a2e, #0a012e); 
+    padding: 30px; 
+    border: 2px solid #00ff00;
+}
+
+.vip-card-container h3 {
+    color: #00ff00; 
+    text-align: center; 
+    margin-bottom: 20px; 
+    font-size: 24px;
+}
+
+.vip-card-container p {
+    text-align: center; 
+    font-size: 16px; 
+    margin-bottom: 25px;
+}
+
+.vip-card-container h4 {
+    color: #7289da; 
+    text-align: center; 
+    margin-top: 30px; 
+    border-top: 1px solid var(--border); 
+    padding-top: 15px;
+}
+
+/* Клас за бутона */
+.action-button {
+    background: linear-gradient(90deg, #00ff00 0%, #10a300 100%);
+    color: var(--bg); /* Тъмен текст */
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: 900;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(0, 255, 0, 0.4);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    display: inline-block; /* За центриране на бутона */
+}
+
+.action-button:hover {
+    background: linear-gradient(90deg, #10a300 0%, #00ff00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 255, 0, 0.6);
+}
+
+/* Клас за "цензуриран/размазан" текст */
+.blurred-text {
+    /* Основен размазващ ефект */
+    filter: blur(5px); /* Добавяме силно размазване */
+    pointer-events: none; /* Предотвратява маркиране с мишката */
+    user-select: none; /* Предотвратява маркиране на текст в повечето браузъри */
+    color: transparent !important; /* Прави текста невидим */
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important; /* Добавя размазан бял "шум" */
+    font-weight: 700;
+    cursor: default; 
+    transition: filter 0.3s ease; /* Добавяме плавен преход при евентуални промени */
+}
+
+/* Принуждаваме да няма цвят на селекция, ако все пак браузърът позволи селекция */
+.blurred-text::selection {
+    background: transparent;
+    color: transparent;
+}
+.blurred-text::-moz-selection {
+    background: transparent;
+    color: transparent;
+}
+/* ================================== */
+
 
 /* Footer */
 footer {
@@ -245,14 +303,16 @@ footer {
 
 /* Responsive */
 @media (max-width:1000px) {
+    /* На малки екрани всичко се подрежда в една колона (Меню, Съдържание, Анализ) */
     main { grid-template-columns: 1fr; }
-    .menu, .prediction { margin-bottom: 16px; }
+    .menu { margin-bottom: 16px; }
+    /* Десктоп менюто става хоризонтално превъртащо се */
     .menu ul { display: flex; overflow-x: auto; gap: 8px; }
     .menu li { flex: 0 0 auto; }
 }
 @media (max-width:768px) {
     header { grid-template-columns: 1fr; gap: 10px; text-align: center; }
-    header .logo, header .ad-card, header .date-time { margin: 0 auto; }
+    header .logo, header .ad-card { margin: 0 auto; } /* date-time е скрит от долния media query */
     .menu ul { display: block; }
     .menu li { margin: 8px 0; }
     .match-list-container,
@@ -260,26 +320,6 @@ footer {
     .prognosis-list-container { overflow-x: auto; }
     .match-table, .ranking-table, .prognosis-table { min-width: 600px; }
 }
-
-
-/* Лого вляво */
-header .logo {
-    justify-self: start; /* премества логото в ляво */
-    margin: 0; /* махаме всички ръчни отмествания */
-}
-
-/* Ad-card в центъра */
-header .ad-card {
-    justify-self: center; /* центрира ад-картата */
-    margin: 0; 
-}
-
-/* Часовник вдясно */
-header .date-time {
-    justify-self: end; /* премества часовника вдясно */
-    margin: 0; 
-}
-
 
 /* Цветове за класиране */
 .ranking-table tbody tr:nth-child(-n+4) { /* първи 4 отбора */
@@ -291,8 +331,6 @@ header .date-time {
 .ranking-table tbody tr:nth-last-child(-n+3) { /* последните 3 отбора */
     background-color: rgba(255, 0, 0, 0.2); /* светлочервено */
 }
-
-
 
 .ranking-legend {
     margin-top: 12px;
@@ -323,11 +361,6 @@ header .date-time {
     background-color: rgba(255, 0, 0, 0.3); /* червено */
     color: #c50000;
 }
-
-
-
-
-
 
 .discord-card {
   background: #7289da; /* Discord син */
@@ -372,72 +405,16 @@ header .date-time {
   opacity: 0.9;
 }
 
-
-
 .section-divider {
   border: 0;
-  height: 1px;
-  background: rgba(255,255,255,0.2); /* леко прозрачна бяла линия */
-  margin: 24px 0; /* разстояние между секциите */
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--accent-2), transparent);
+  margin: 20px 0;
 }
 
-
-/* Разделител */
-.section-divider {
-    border: 0;
-    height: 2px;
-    background: linear-gradient(to right, transparent, var(--accent-2), transparent);
-    margin: 20px 0;
-
-}
-
-/* 🟢 Добави това най-накрая: */
 body {
     font-size: 15px;
 }
-
-.welcome-card {
-    font-size: 28px;
-}
-
-
-.prediction-card {
-    background: radial-gradient(circle at top left, #2a0a52 0%, #0a012e 100%);
-    border-radius: 12px;
-    padding: 20px;
-    color: #fff;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-}
-
-.prediction-card::before {
-    content: '';
-    position: absolute;
-    top: -60px;
-    left: -60px;
-    width: 200px;
-    height: 200px;
-    background: radial-gradient(circle, rgba(100,50,200,0.3) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(40px);
-    z-index: 1;
-}
-
-.prediction-card::after {
-    content: '';
-    position: absolute;
-    bottom: -60px;
-    right: -60px;
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(50,100,250,0.4) 0%, transparent 70%);
-    border-radius: 50%;
-    filter: blur(50px);
-    z-index: 1;
-}
-
 
 .derby-inline {
     display: inline-block;
@@ -451,23 +428,6 @@ body {
     vertical-align: middle;
     text-transform: uppercase;
 }
-
-/* Лого в header – прозрачен фон */
-header .logo {
-    justify-self: start;
-    margin: 0;
-    padding: 0; /* премахваме padding, ако искаш чисто изображение */
-    background: transparent; /* напълно прозрачен фон */
-    border: none; /* махаме граница, ако има */
-    box-shadow: none; /* махаме сенки */
-}
-
-/* Изображението вътре */
-header .logo img {
-    max-height: 60px; /* можеш да увеличиш според нуждите */
-    display: block;
-}
-
 
 /* =========================
    Фишове таблици
@@ -544,6 +504,381 @@ header .logo img {
 
     display: inline-block;
 }
+
+/* Класове за оцветяване на стойности (премахване на инлайн стиловете) */
+.stat-value-positive { color: #00ff00; } /* Ярко зелено */
+.stat-value-neutral { color: #ffcc00; } /* Жълто/Кехлибар (за 0.00 или неутрално) */
+.stat-value-info { color: #7289da; } /* Discord синьо/Лилаво */
+.stat-value-default { color: #fff; } /* Бяло */
+
+
+/* Статистика */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-card {
+    background: var(--panel);
+    padding: 20px;
+    border-radius: var(--card-radius);
+    text-align: center;
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+
+.stat-card .value {
+    font-size: 32px;
+    font-weight: 900;
+    margin: 5px 0 10px 0;
+}
+
+.stat-card .label {
+    font-size: 14px;
+    color: #aaa;
+    text-transform: uppercase;
+}
+
+/* Statistics Table (използваме сходен стил с prognosis-table) */
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.stats-table th, .stats-table td {
+    padding: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+    color: #fff;
+    font-weight: 600;
+}
+
+.stats-table th {
+    background: var(--accent);
+    font-weight: 700;
+}
+
+.stats-table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.05);
+}
+
+.stats-table tbody tr:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+/* КЛЮЧОВА КОРЕКЦИЯ: Клас за "цензуриран/размазан" текст */
+.blurred-text {
+    filter: blur(5px); 
+    color: transparent !important; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important; 
+    font-weight: 700;
+    cursor: default; 
+    transition: filter 0.3s ease; 
+    
+    /* БЛОКИРАНЕ НА СЕЛЕКЦИЯТА */
+    pointer-events: none; 
+    user-select: none; 
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+}
+
+
+
+/* Ценова страница */
+.section-description {
+    text-align: center;
+    color: #aaa;
+    margin-bottom: 40px;
+    font-size: 16px;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    align-items: stretch;
+}
+
+.pricing-card {
+    background: var(--panel);
+    border-radius: var(--card-radius);
+    padding: 30px;
+    border: 2px solid var(--border);
+    text-align: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+/* Стил за най-популярния план */
+.pricing-card.popular {
+    border-color: var(--accent);
+    background: rgba(59, 20, 100, 0.3); 
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(59, 20, 100, 0.5);
+    position: relative;
+    z-index: 10;
+}
+
+.pricing-card.popular:hover {
+    transform: scale(1.08);
+}
+
+.pricing-card .title {
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+.pricing-card.popular .title {
+    color: #00ff00; /* Ярко зелено за Popular */
+}
+
+.pricing-card .price {
+    font-size: 48px;
+    font-weight: 900;
+    margin: 10px 0;
+    color: #fff;
+}
+
+.pricing-card .period {
+    color: #aaa;
+    margin-bottom: 25px;
+    font-style: italic;
+}
+
+.pricing-card .features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 30px;
+}
+
+.pricing-card .features li {
+    padding: 8px 0;
+    border-bottom: 1px dashed rgba(255,255,255,0.1);
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+}
+
+.pricing-card .features li:last-child {
+    border-bottom: none;
+}
+
+.pricing-card .features i {
+    margin-right: 10px;
+    font-size: 14px;
+}
+
+.pricing-card .features .disabled {
+    color: #777;
+}
+
+/* Методи за плащане */
+.payment-methods {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-icon {
+    background: var(--border);
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    border: 1px solid #444;
+}
+
+
+/* Добавяне в styles.css (някъде след другите стилове за .pricing-card) */
+
+/* Анимация за пулсиране на бутона на най-популярния план */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0.5);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(0, 255, 0, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(0, 255, 0, 0);
+    }
+}
+
+.btn-purchase.popular {
+    /* Добавяне на анимацията */
+    animation: pulse 1.5s infinite;
+    /* Уверете се, че цветът на бутона е видим */
+    background: #00cc00; 
+    border-color: #00ff00;
+}
+
+/* Ако използваш стандартен стил за бутона: */
+.btn-purchase {
+    display: inline-block;
+    padding: 12px 25px;
+    background: var(--accent);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 700;
+    transition: background 0.3s ease, transform 0.1s ease;
+    border: 2px solid transparent;
+}
+
+.btn-purchase:hover {
+    background: #4a227e;
+    transform: translateY(-2px);
+}
+
+
+
+/* === НОВИ ИНФОРМАЦИОННИ КАРТИ В САЙДБАРА === */
+.info-card {
+    background: var(--panel);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 16px;
+    border: 2px solid var(--border);
+    box-shadow: var(--shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.7);
+}
+
+.info-card i {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+.info-card h4 {
+    font-size: 18px;
+    margin: 5px 0 10px 0;
+    font-weight: 800;
+    color: #fff;
+}
+
+.info-card p {
+    font-size: 14px;
+    color: #aaa;
+    margin: 0;
+}
+
+/* 1. VIP Card Styling */
+.vip-info-card {
+    border-color: #00ff00;
+    background: radial-gradient(circle at top left, rgba(0, 255, 0, 0.1) 0%, rgba(26, 26, 46, 1) 100%);
+}
+.vip-info-card i {
+    color: gold;
+    text-shadow: 0 0 5px rgba(255, 215, 0, 0.7);
+}
+
+/* 2. Stats Card Styling */
+.stats-info-card {
+    border-color: var(--accent);
+    background: radial-gradient(circle at top left, rgba(59, 20, 100, 0.2) 0%, rgba(26, 26, 46, 1) 100%);
+}
+.stats-info-card i {
+    color: #7289da;
+}
+.stats-info-card .stat-large {
+    font-size: 36px;
+    font-weight: 900;
+    color: #00ff00;
+    margin: 10px 0;
+}
+
+/* 3. Free Card Styling */
+.free-info-card {
+    border-color: #4c8cff;
+    background: radial-gradient(circle at top left, rgba(76, 140, 255, 0.1) 0%, rgba(26, 26, 46, 1) 100%);
+}
+.free-info-card i {
+    color: #4c8cff;
+}
+
+/* 4. Responsible Card Styling */
+.responsible-info-card {
+    border-color: #ff4c4c;
+    cursor: default; /* Не се клика */
+    background: var(--panel);
+}
+.responsible-info-card:hover {
+    transform: none; /* Без анимация */
+    box-shadow: var(--shadow);
+}
+.responsible-info-card i {
+    color: #ff4c4c;
+}
+
+
+/* Colored text classes */
+.green-text { color: #00ff00; }
+.red-text { color: #ff4c4c; }
+.blue-text { color: #4c8cff; }
+
+/* === СТИЛОВЕ ЗА VIP ПРОГНОЗИ === */
+@keyframes neon-flash {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+}
+.neon-flash {
+    animation: neon-flash 1.5s ease-in-out infinite;
+    display: inline-block;
+}
+.green-text-vip {
+    color: #00ff00;
+    animation: neon-flash 1.5s ease-in-out infinite;
+    display: inline-block;
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+    transition: all 0.3s ease;
+}
+.vip-card-container {
+    padding: 30px;
+    border: 3px solid #00ff00;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
+}
+.blurred-text {
+    filter: blur(4px);
+    transition: filter 0.3s;
+}
+.vip-card-container:hover .blurred-text {
+    filter: blur(0px); /* Може да се активира с JS */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
