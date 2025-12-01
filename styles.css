@@ -867,6 +867,9 @@ body {
     filter: blur(0px); /* Може да се активира с JS */
 }
 
+.white-text {
+  color: white;
+}
 
 
 
@@ -1012,3 +1015,4 @@ body {
     }
 
 }
+
