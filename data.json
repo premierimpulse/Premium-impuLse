@@ -98,44 +98,80 @@
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
+    },
+    {
+      "date": "03.12",
+      "time": "21:30",
+      "game": "Брайтън - Астън Вила",
+      "odd": 2.17,
+      "prediction": "1",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "03.12",
+      "time": "21:30",
+      "game": "Бърнли - Кристъл Палас",
+      "odd": 1.74,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "03.12",
+      "time": "22:15",
+      "game": "Лийдс - Челси",
+      "odd": 1.97,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "03.12",
+      "time": "21:30",
+      "game": "Уулвърхямптън - Нотингам Форест",
+      "odd": 2.33,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     }
   ],
   "vipPrognoses": [
     {
-      "date": "29.11",
-      "time": "19:30",
-      "game": "Евертън - Нюкасъл",
-      "odd": 2.65,
+      "date": "03.12",
+      "time": "22:15",
+      "game": "Лийдс - Челси",
+      "odd": 1.97,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
-      "result": "1:4",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
     },
     {
-      "date": "29.11",
-      "time": "19:30",
-      "game": "Б. Леверкузен - Б. Дортмунд",
-      "odd": 2.71,
+      "date": "03.12",
+      "time": "22:15",
+      "game": "Ливърпул - Съндърланд",
+      "odd": 7.25,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
-      "result": "1:2",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
-    },
-    {
-      "date": "29.11",
-      "time": "17:00",
-      "game": "Съндърланд - Борнемут",
-      "odd": 2.35,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
-      "result": "3-2",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
     }
   ],
   "monthlyStats": [
@@ -150,10 +186,10 @@
   ],
   "dashboard": {
     "dailyChallenge": {
-      "date": "02.12.2025г.",
-      "time": "22:00",
-      "game": "Барселона - Атлетико Мадрид",
-      "prediction": "1",
+      "date": "03.12.2025г.",
+      "time": "22:15",
+      "game": "Лийдс - Челси",
+      "prediction": "1.97",
       "odd": 1.83
     },
     "lastVip": {
