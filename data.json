@@ -17,7 +17,7 @@
           "game": "Евертън - Нюкасъл",
           "odd": 2.65,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle green-text"
+          "statusIcon": "fas fa-check-circle text-success-main"
         },
         {
           "date": "29.11",
@@ -25,7 +25,7 @@
           "game": "Б. Леверкузен - Б. Дортмунд",
           "odd": 2.71,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle green-text"
+          "statusIcon": "fas fa-check-circle text-success-main"
         },
         {
           "date": "29.11",
@@ -33,7 +33,31 @@
           "game": "Съндърланд - Борнемут",
           "odd": 2.35,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle green-text"
+          "statusIcon": "fas fa-check-circle text-success-main"
+        }
+      ]
+    },
+    {
+      "title": "Фиш №2",
+      "isVIP": false,
+      "totalOdd": 3.43,
+      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
+      "matches": [
+        {
+          "date": "03.12",
+          "time": "22:15",
+          "game": "Лийдс - Челси",
+          "odd": 1.97,
+          "prediction": "2",
+          "statusIcon": "fas fa-hourglass-half"
+        },
+        {
+          "date": "03.12",
+          "time": "21:30",
+          "game": "Бърнли - Кристъл Палас",
+          "odd": 1.74,
+          "prediction": "2",
+          "statusIcon": "fas fa-hourglass-half"
         }
       ]
     }
@@ -45,7 +69,7 @@
       "game": "Съндърланд - Борнемут",
       "odd": 2.35,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
+      "statusIcon": "fas fa-check-circle text-success-main",
       "result": "3:2",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
@@ -57,7 +81,7 @@
       "game": "Б. Леверкузен - Б. Дортмунд",
       "odd": 2.71,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
+      "statusIcon": "fas fa-check-circle text-success-main",
       "result": "1:2",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
@@ -69,7 +93,7 @@
       "game": "Евертън - Нюкасъл",
       "odd": 2.65,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle green-text",
+      "statusIcon": "fas fa-check-circle text-success-main",
       "result": "1:4",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
@@ -81,7 +105,7 @@
       "game": "Фенербахче - Галатасарай",
       "odd": 3.35,
       "prediction": "2",
-      "statusIcon": "fas fa-times-circle red-text",
+      "statusIcon": "fas fa-times-circle text-danger",
       "result": "1-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
@@ -93,7 +117,7 @@
       "game": "Барселона - Атлетико Мадрид",
       "odd": 1.83,
       "prediction": "1",
-      "statusIcon": "fas fa-check-circle green-text",
+      "statusIcon": "fas fa-check-circle text-success-main",
       "result": "3-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
@@ -195,8 +219,11 @@
     "lastVip": {
       "date": "29.11.2025г.",
       "game1": "Евертън - Нюкасъл - 2",
+      "odd1": 2.65,
       "game2": "Б. Леверкузен - Б. Дортмунд - 2",
+      "odd2": 2.71,
       "game3": "Съндърланд - Борнемут - 2",
+      "odd3": 2.35,
       "totalOdd": 16.88,
       "status": "ПЕЧЕЛИВШ!"
     },
