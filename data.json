@@ -1,0 +1,172 @@
+{
+  "generalStats": {
+    "totalPrognoses": 5,
+    "totalSuccessRate": "80%",
+    "avgOdd": 2.47
+  },
+  "fiches": [
+    {
+      "title": "Фиш №1 ( VIP )",
+      "isVIP": true,
+      "totalOdd": 16.88,
+      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
+      "matches": [
+        {
+          "date": "29.11",
+          "time": "19:30",
+          "game": "Евертън - Нюкасъл",
+          "odd": 2.65,
+          "prediction": "2",
+          "statusIcon": "fas fa-check-circle green-text"
+        },
+        {
+          "date": "29.11",
+          "time": "19:30",
+          "game": "Б. Леверкузен - Б. Дортмунд",
+          "odd": 2.71,
+          "prediction": "2",
+          "statusIcon": "fas fa-check-circle green-text"
+        },
+        {
+          "date": "29.11",
+          "time": "17:00",
+          "game": "Съндърланд - Борнемут",
+          "odd": 2.35,
+          "prediction": "2",
+          "statusIcon": "fas fa-check-circle green-text"
+        }
+      ]
+    }
+  ],
+  "prognoses": [
+    {
+      "date": "29.11",
+      "time": "17:00",
+      "game": "Съндърланд - Борнемут",
+      "odd": 2.35,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "3:2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "29.11",
+      "time": "19:30",
+      "game": "Б. Леверкузен - Б. Дортмунд",
+      "odd": 2.71,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "1:2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "29.11",
+      "time": "19:30",
+      "game": "Евертън - Нюкасъл",
+      "odd": 2.65,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "1:4",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "01.12",
+      "time": "19:00",
+      "game": "Фенербахче - Галатасарай",
+      "odd": 3.35,
+      "prediction": "2",
+      "statusIcon": "fas fa-times-circle red-text",
+      "result": "1-1",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "02.12",
+      "time": "22:00",
+      "game": "Барселона - Атлетико Мадрид",
+      "odd": 1.83,
+      "prediction": "1",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "3-1",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    }
+  ],
+  "vipPrognoses": [
+    {
+      "date": "29.11",
+      "time": "19:30",
+      "game": "Евертън - Нюкасъл",
+      "odd": 2.65,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "1:4",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "29.11",
+      "time": "19:30",
+      "game": "Б. Леверкузен - Б. Дортмунд",
+      "odd": 2.71,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "1:2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "29.11",
+      "time": "17:00",
+      "game": "Съндърланд - Борнемут",
+      "odd": 2.35,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle green-text",
+      "result": "3-2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    }
+  ],
+  "monthlyStats": [
+    {
+      "month": "Декември",
+      "year": "2025",
+      "wins": 4,
+      "losses": 1,
+      "postponed": 0,
+      "successRate": 80
+    }
+  ],
+  "dashboard": {
+    "dailyChallenge": {
+      "date": "02.12.2025г.",
+      "time": "22:00",
+      "game": "Барселона - Атлетико Мадрид",
+      "prediction": "1",
+      "odd": 1.83
+    },
+    "lastVip": {
+      "date": "29.11.2025г.",
+      "game1": "Евертън - Нюкасъл - 2",
+      "game2": "Б. Леверкузен - Б. Дортмунд - 2",
+      "game3": "Съндърланд - Борнемут - 2",
+      "totalOdd": 16.88,
+      "status": "ПЕЧЕЛИВШ!"
+    },
+    "topAchievements": {
+      "maxOdd": 0,
+      "longestStreak": ""
+    }
+  }
+}
