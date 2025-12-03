@@ -1,7 +1,7 @@
 {
   "generalStats": {
-    "totalPrognoses": 5,
-    "totalSuccessRate": "80%",
+    "totalPrognoses": 8,
+    "totalSuccessRate": "88%",
     "avgOdd": 2.47
   },
   "fiches": [
@@ -40,16 +40,16 @@
     {
       "title": "Фиш №2",
       "isVIP": false,
-      "totalOdd": 3.43,
+      "totalOdd": 4.05,
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
           "date": "03.12",
-          "time": "22:15",
-          "game": "Лийдс - Челси",
-          "odd": 1.97,
+          "time": "21:30",
+          "game": "Уулвърхямптън - Нотингам Форест",
+          "odd": 2.33,
           "prediction": "2",
-          "statusIcon": "fas fa-hourglass-half"
+          "statusIcon": "fas fa-check-circle text-success-main"
         },
         {
           "date": "03.12",
@@ -57,7 +57,7 @@
           "game": "Бърнли - Кристъл Палас",
           "odd": 1.74,
           "prediction": "2",
-          "statusIcon": "fas fa-hourglass-half"
+          "statusIcon": "fas fa-check-circle text-success-main"
         }
       ]
     }
@@ -129,8 +129,8 @@
       "game": "Брайтън - Астън Вила",
       "odd": 2.17,
       "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "3-4",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -141,24 +141,26 @@
       "game": "Бърнли - Кристъл Палас",
       "odd": 1.74,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "0-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
     },
     {
       "date": "03.12",
-      "time": "22:15",
-      "game": "Лийдс - Челси",
-      "odd": 1.97,
+      "time": "21:30",
+      "game": "Уулвърхямптън - Нотингам Форест",
+      "odd": 2.33,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "0-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
-    },
+    }
+  ],
+  "vipPrognoses": [
     {
       "date": "03.12",
       "time": "21:30",
@@ -170,20 +172,6 @@
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
-    }
-  ],
-  "vipPrognoses": [
-    {
-      "date": "03.12",
-      "time": "22:15",
-      "game": "Лийдс - Челси",
-      "odd": 1.97,
-      "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
     },
     {
       "date": "03.12",
@@ -193,28 +181,28 @@
       "prediction": "2",
       "statusIcon": "fas fa-hourglass-half",
       "result": "",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     }
   ],
   "monthlyStats": [
     {
       "month": "Декември",
       "year": "2025",
-      "wins": 4,
+      "wins": 7,
       "losses": 1,
       "postponed": 0,
-      "successRate": 80
+      "successRate": 88
     }
   ],
   "dashboard": {
     "dailyChallenge": {
       "date": "03.12.2025г.",
-      "time": "22:15",
-      "game": "Лийдс - Челси",
+      "time": "21:30",
+      "game": "Уулвърхямптън - Нотингам Форест",
       "prediction": "2",
-      "odd": 1.97
+      "odd": 2.33
     },
     "lastVip": {
       "date": "29.11.2025г.",
