@@ -7,6 +7,11 @@
     --border: #2c2c3a;
     --shadow: 0 4px 12px rgba(0,0,0,0.5);
     --card-radius: 14px;
+    --mobile-menu-width: 250px; /* Дефиниране на CSS променлива за широчината на мобилното меню */
+    --muted-2: #AEB2C6; /* Добавена променлива, използвана по-долу */
+    --success: #00ff00; /* Добавена променлива, използвана по-долу */
+    --danger: #ff4c4c; /* Добавяне на червен цвят за пълен контрол */
+    --pending: #ffcc00; /* НОВА: Жълт/Кехлибарен цвят за 'Изчаква' */
 }
 
 /* Общи стилове */
@@ -34,13 +39,13 @@ header {
 header .logo {
     justify-self: start;
     margin: 0;
-    padding: 0; /* премахваме padding, ако искаш чисто изображение */
-    background: transparent; /* напълно прозрачен фон */
-    border: none; /* махаме граница, ако има */
-    box-shadow: none; /* махаме сенки */
+    padding: 0; 
+    background: transparent; 
+    border: none; 
+    box-shadow: none; 
 }
 header .logo img {
-    max-height: 60px; /* можеш да увеличиш според нуждите */
+    max-height: 60px; 
     display: block;
 }
 header .ad-card {
@@ -65,7 +70,7 @@ header .date-time {
     text-align: center;
     font-weight: 700;
     color: #fff;
-    justify-self: end; /* премества часовника вдясно */
+    justify-self: end; 
     margin: 0; 
 }
 
@@ -143,7 +148,7 @@ main {
     border: 2px solid var(--border);
     box-shadow: 0 8px 20px rgba(0,0,0,0.6);
     text-align: center;
-    font-size: 28px; /* Променено */
+    font-size: 28px; 
     font-weight: 700;
     color: #fff;
     text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
@@ -190,41 +195,56 @@ main {
     margin: 0 8px;
 }
 
-/* Colored text classes */
-.green-text { color: #00ff00; }
-.red-text { color: #ff4c4c; }
+/* Colored text classes (СТАНДАРТНИ) */
+.green-text { color: var(--success); }
+.red-text { color: var(--danger); }
 .blue-text { color: #4c8cff; }
 
+
 /* === СТИЛОВЕ ЗА VIP ПРОГНОЗИ === */
-@keyframes flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+/* КОРЕКЦИЯ: Променена анимация, за да не изчезва текстът */
+@keyframes neon-flash {
+    0%, 100% { text-shadow: 0 0 5px rgba(0, 255, 0, 0.7); }
+    50% { text-shadow: 0 0 10px rgba(0, 255, 0, 1), 0 0 20px rgba(0, 255, 0, 0.5); } 
 }
 
 .green-text-vip {
-    color: #00ff00; /* Ярко зелено */
-    animation: flash 1.5s ease-in-out infinite;
+    color: var(--success); 
+    animation: neon-flash 1.5s ease-in-out infinite;
     display: inline-block;
     font-weight: 900;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
     transition: all 0.3s ease;
 }
+
+/* КОРЕКЦИЯ: НОВ клас за зелен цвят на VIP статус без анимация, ако не искаш да мига */
+.vip-status-win {
+    color: var(--success);
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
+}
+
+.vip-status-lose {
+    color: var(--danger);
+    font-weight: 900;
+    text-shadow: 0 0 5px rgba(255, 0, 0, 0.7);
+}
+
 
 /* Добавяме и ефект при задържане на мишката за десктоп */
 .menu li:has(.green-text-vip):hover {
     box-shadow: 0 6px 20px rgba(0, 255, 0, 0.4);
-    border-color: #00ff00;
+    border-color: var(--success);
 }
 
 /* Клас за целия VIP блок */
 .vip-card-container {
     background: linear-gradient(135deg, #1a1a2e, #0a012e); 
     padding: 30px; 
-    border: 2px solid #00ff00;
+    border: 2px solid var(--success);
 }
 
 .vip-card-container h3 {
-    color: #00ff00; 
+    color: var(--success); 
     text-align: center; 
     margin-bottom: 20px; 
     font-size: 24px;
@@ -246,7 +266,7 @@ main {
 
 /* Клас за бутона */
 .action-button {
-    background: linear-gradient(90deg, #00ff00 0%, #10a300 100%);
+    background: linear-gradient(90deg, var(--success) 0%, #10a300 100%);
     color: var(--bg); /* Тъмен текст */
     border: none;
     padding: 15px 30px;
@@ -261,7 +281,7 @@ main {
 }
 
 .action-button:hover {
-    background: linear-gradient(90deg, #10a300 0%, #00ff00 100%);
+    background: linear-gradient(90deg, #10a300 0%, var(--success) 100%);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 255, 0, 0.6);
 }
@@ -269,14 +289,18 @@ main {
 /* Клас за "цензуриран/размазан" текст */
 .blurred-text {
     /* Основен размазващ ефект */
-    filter: blur(5px); /* Добавяме силно размазване */
-    pointer-events: none; /* Предотвратява маркиране с мишката */
-    user-select: none; /* Предотвратява маркиране на текст в повечето браузъри */
-    color: transparent !important; /* Прави текста невидим */
-    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important; /* Добавя размазан бял "шум" */
+    filter: blur(5px); 
+    pointer-events: none; 
+    user-select: none; 
+    color: transparent !important; 
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.8) !important; 
     font-weight: 700;
     cursor: default; 
-    transition: filter 0.3s ease; /* Добавяме плавен преход при евентуални промени */
+    transition: filter 0.3s ease; 
+    /* БЛОКИРАНЕ НА СЕЛЕКЦИЯТА */
+    -webkit-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
 }
 
 /* Принуждаваме да няма цвят на селекция, ако все пак браузърът позволи селекция */
@@ -311,7 +335,8 @@ footer {
     .menu li { flex: 0 0 auto; }
 }
 @media (max-width:768px) {
-    header { grid-template-columns: 1fr; gap: 10px; text-align: center; }
+    /* КОРИГИРАНО: Добавен е padding-right, за да не се застъпва с menu-toggle */
+    header { grid-template-columns: 1fr; gap: 10px; text-align: center; padding-right: 70px; }
     header .logo, header .ad-card { margin: 0 auto; } /* date-time е скрит от долния media query */
     .menu ul { display: block; }
     .menu li { margin: 8px 0; }
@@ -322,14 +347,14 @@ footer {
 }
 
 /* Цветове за класиране */
-.ranking-table tbody tr:nth-child(-n+4) { /* първи 4 отбора */
-    background-color: rgba(72, 133, 255, 0.2); /* светлосиньо */
+.ranking-table tbody tr:nth-child(-n+4) { 
+    background-color: rgba(72, 133, 255, 0.2); 
 }
-.ranking-table tbody tr:nth-child(5) { /* 5-ти отбор */
-    background-color: rgba(255, 165, 0, 0.2); /* светлооранжево */
+.ranking-table tbody tr:nth-child(5) { 
+    background-color: rgba(255, 165, 0, 0.2); 
 }
-.ranking-table tbody tr:nth-last-child(-n+3) { /* последните 3 отбора */
-    background-color: rgba(255, 0, 0, 0.2); /* светлочервено */
+.ranking-table tbody tr:nth-last-child(-n+3) { 
+    background-color: rgba(255, 0, 0, 0.2); 
 }
 
 .ranking-legend {
@@ -350,66 +375,66 @@ footer {
 
 /* Цветове съответно на таблицата */
 .ranking-legend .champions {
-    background-color: rgba(72, 133, 255, 0.3); /* синьо */
+    background-color: rgba(72, 133, 255, 0.3); 
     color: #0451c5;
 }
 .ranking-legend .europa {
-    background-color: rgba(255, 165, 0, 0.3); /* оранжево */
+    background-color: rgba(255, 165, 0, 0.3); 
     color: #b35b00;
 }
 .ranking-legend .relegation {
-    background-color: rgba(255, 0, 0, 0.3); /* червено */
+    background-color: rgba(255, 0, 0, 0.3); 
     color: #c50000;
 }
 
 .discord-card {
-  background: #7289da; /* Discord син */
-  border-radius: 16px;
-  padding: 16px;
-  max-width: 500px;
-  margin: 20px auto;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background: #7289da; 
+    border-radius: 16px;
+    padding: 16px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .discord-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
 }
 
 .discord-link {
-  text-decoration: none;
-  color: #fff;
-  display: block;
+    text-decoration: none;
+    color: #fff;
+    display: block;
 }
 
 .discord-card-content {
-  display: flex;
-  align-items: center;
-  gap: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
 }
 
 .discord-icon {
-  width: 50px;
-  height: 50px;
+    width: 50px;
+    height: 50px;
 }
 
 .discord-text h3 {
-  margin: 0 0 6px 0;
-  font-size: 20px;
+    margin: 0 0 6px 0;
+    font-size: 20px;
 }
 
 .discord-text p {
-  margin: 0;
-  font-size: 14px;
-  opacity: 0.9;
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
 }
 
 .section-divider {
-  border: 0;
-  height: 2px;
-  background: linear-gradient(to right, transparent, var(--accent-2), transparent);
-  margin: 20px 0;
+    border: 0;
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--accent-2), transparent);
+    margin: 20px 0;
 }
 
 body {
@@ -418,7 +443,7 @@ body {
 
 .derby-inline {
     display: inline-block;
-    margin-left: 6px; /* разстояние от текста на мача */
+    margin-left: 6px; 
     background: #ff4c4c;
     color: #fff;
     font-size: 10px;
@@ -430,8 +455,8 @@ body {
 }
 
 /* =========================
-   Фишове таблици
-   ========================= */
+    Фишове таблици
+    ========================= */
 .fiche-card {
     background: var(--panel);
     border-radius: var(--card-radius);
@@ -467,6 +492,7 @@ body {
 }
 .fiche-table th {
     background: var(--accent);
+    font-weight: 700;
 }
 .fiche-table tbody tr:nth-child(even) {
     background: rgba(255,255,255,0.05);
@@ -480,7 +506,7 @@ body {
     text-align: center;
     font-weight: 700;
     font-size: 16px;
-    color: #00ff00;
+    color: var(--success);
     margin: 8px 0 0 0;
 }
 
@@ -491,7 +517,7 @@ body {
     font-family: 'Poppins', 'Inter', sans-serif;
 
     /* Градиент за текста */
-    background: linear-gradient(90deg, #ffffff 0%, #00ff00 50%, #ff0000 100%);
+    background: linear-gradient(90deg, #ffffff 0%, var(--success) 50%, var(--danger) 100%);
     background-size: 200% 100%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -506,7 +532,7 @@ body {
 }
 
 /* Класове за оцветяване на стойности (премахване на инлайн стиловете) */
-.stat-value-positive { color: #00ff00; } /* Ярко зелено */
+.stat-value-positive { color: var(--success); } /* Ярко зелено */
 .stat-value-neutral { color: #ffcc00; } /* Жълто/Кехлибар (за 0.00 или неутрално) */
 .stat-value-info { color: #7289da; } /* Discord синьо/Лилаво */
 .stat-value-default { color: #fff; } /* Бяло */
@@ -640,7 +666,7 @@ body {
 }
 
 .pricing-card.popular .title {
-    color: #00ff00; /* Ярко зелено за Popular */
+    color: var(--success); /* Ярко зелено за Popular */
 }
 
 .pricing-card .price {
@@ -724,7 +750,7 @@ body {
     animation: pulse 1.5s infinite;
     /* Уверете се, че цветът на бутона е видим */
     background: #00cc00; 
-    border-color: #00ff00;
+    border-color: var(--success);
 }
 
 /* Ако използваш стандартен стил за бутона: */
@@ -785,7 +811,7 @@ body {
 
 /* 1. VIP Card Styling */
 .vip-info-card {
-    border-color: #00ff00;
+    border-color: var(--success);
     background: radial-gradient(circle at top left, rgba(0, 255, 0, 0.1) 0%, rgba(26, 26, 46, 1) 100%);
 }
 .vip-info-card i {
@@ -804,7 +830,7 @@ body {
 .stats-info-card .stat-large {
     font-size: 36px;
     font-weight: 900;
-    color: #00ff00;
+    color: var(--success);
     margin: 10px 0;
 }
 
@@ -819,33 +845,37 @@ body {
 
 /* 4. Responsible Card Styling */
 .responsible-info-card {
-    border-color: #ff4c4c;
-    cursor: default; /* Не се клика */
+    border-color: var(--danger);
+    cursor: default; 
     background: var(--panel);
 }
 .responsible-info-card:hover {
-    transform: none; /* Без анимация */
+    transform: none; 
     box-shadow: var(--shadow);
 }
 .responsible-info-card i {
-    color: #ff4c4c;
+    color: var(--danger);
 }
 
 
 /* Colored text classes */
-.green-text { color: #00ff00; }
-.red-text { color: #ff4c4c; }
+.green-text { color: var(--success); }
+.red-text { color: var(--danger); }
 .blue-text { color: #4c8cff; }
 
-/* === СТИЛОВЕ ЗА VIP ПРОГНОЗИ === */
-@keyframes neon-flash {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.3; }
+/* === СТИЛОВЕ ЗА VIP ПРОГНОЗИ (Neon Flash) === */
+@keyframes neon-flash-new {
+    0%, 100% { opacity: 1; text-shadow: 0 0 5px rgba(0, 255, 0, 0.7); }
+    50% { opacity: 0.9; text-shadow: 0 0 15px rgba(0, 255, 0, 1); } 
 }
+
 .neon-flash {
-    animation: neon-flash 1.5s ease-in-out infinite;
+    animation: neon-flash-new 1.5s ease-in-out infinite;
     display: inline-block;
 }
+
+/* Премахваме старата, проблемна дефиниция на green-text-vip с opacity */
+/*
 .green-text-vip {
     color: #00ff00;
     animation: neon-flash 1.5s ease-in-out infinite;
@@ -854,9 +884,11 @@ body {
     text-shadow: 0 0 5px rgba(0, 255, 0, 0.7);
     transition: all 0.3s ease;
 }
+*/
+
 .vip-card-container {
     padding: 30px;
-    border: 3px solid #00ff00;
+    border: 3px solid var(--success);
     box-shadow: 0 0 20px rgba(0, 255, 0, 0.3);
 }
 .blurred-text {
@@ -864,37 +896,18 @@ body {
     transition: filter 0.3s;
 }
 .vip-card-container:hover .blurred-text {
-    filter: blur(0px); /* Може да се активира с JS */
+    filter: blur(0px); 
 }
+
 
 .white-text {
-  color: white;
+    color: white;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* =========================
-   Мобилно меню за мобилни устройства
-   ========================= */
-
-/* Дефиниране на CSS променлива за широчината на мобилното меню */
-:root {
-    --mobile-menu-width: 250px;
-}
+    Мобилно меню за мобилни устройства
+    ========================= */
 
 /* Скриване на мобилното меню по подразбиране */
 .mobile-menu {
@@ -906,8 +919,9 @@ body {
 
     /* Скриваме десктоп часовника и десктоп менюто */
     .date-time,
-    aside.menu {
-        display: none;
+    /* КОРИГИРАНО: Използваме само .menu и добавяме !important, за да скрием менюто */
+    .menu { 
+        display: none !important;
     }
 
     /* Показваме бутон за мобилно меню на мястото на часовника */
@@ -1016,3 +1030,150 @@ body {
 
 }
 
+
+/* styles.css (СТИЛОВЕ ЗА НОВИТЕ ПРОФЕСИОНАЛНИ КАРТИЧКИ) */
+
+.minimal-card {
+    padding: 15px; 
+    position: relative;
+    text-align: center;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--muted-2);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-bottom: 8px;
+}
+
+.vip-title i {
+    color: var(--success); 
+    margin-right: 5px;
+}
+
+/* --- DAILY CHALLENGE СЕКЦИЯ --- */
+
+.match-group {
+    padding: 5px 0 10px 0;
+}
+
+.match-game {
+    font-size: 1.2rem;
+    font-weight: 900;
+    margin: 0 0 5px 0;
+    color: var(--muted);
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.match-date-time {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--accent); 
+}
+
+.prognosis-summary {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.summary-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px;
+}
+
+.summary-label {
+    font-size: 0.75rem;
+    color: var(--muted-2);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+}
+
+.summary-value {
+    font-size: 1.2rem;
+    font-weight: 900;
+    color: var(--muted);
+}
+
+.large-odd {
+    font-size: 1.8rem;
+    color: var(--success); 
+}
+
+/* --- LAST VIP FICHE СЕКЦИЯ (ОПРОСТЕНА ВЕРСИЯ) --- */
+
+.fiche-matches-list {
+    text-align: left;
+    padding: 5px 0;
+}
+
+.fiche-matches-list p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    font-size: 0.9rem;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.05);
+}
+
+.fiche-matches-list p:last-of-type {
+    border-bottom: none;
+    margin-bottom: 10px;
+}
+
+.fiche-date-row .label {
+    font-weight: 600;
+    color: var(--muted-2);
+    width: 30%;
+}
+
+.fiche-matches-list .value {
+    font-weight: 400;
+    color: var(--muted);
+    width: 70%;
+    text-align: right;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.fiche-date-row .value {
+    color: var(--accent-2); 
+    font-weight: 700;
+}
+
+.fiche-footer {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 15px;
+}
+
+.status-box {
+    /* Фон за статуса */
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    padding: 5px 10px;
+}
+
+
+/* НОВИ СТИЛОВЕ: Оцветяване на VIP Статуса на началната страница */
+.status-box #lv-status.status-winning {
+    color: var(--success) !important;
+}
+
+.status-box #lv-status.status-losing {
+    color: var(--danger) !important;
+}
+
+.status-box #lv-status.status-pending {
+    color: var(--pending) !important;
+}
