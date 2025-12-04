@@ -60,6 +60,30 @@
           "statusIcon": "fas fa-check-circle text-success-main"
         }
       ]
+    },
+    {
+      "title": "Фиш №3 ( VIP )",
+      "isVIP": true,
+      "totalOdd": 5.06,
+      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
+      "matches": [
+        {
+          "date": "03.12",
+          "time": "21:30",
+          "game": "Уулвърхямптън - Нотингам Форест",
+          "odd": 2.33,
+          "prediction": "2",
+          "statusIcon": "fas fa-check-circle text-success-main"
+        },
+        {
+          "date": "03.12",
+          "time": "21:30",
+          "game": "Брайтън - Астън Вила",
+          "odd": 2.17,
+          "prediction": "1",
+          "statusIcon": "fas fa-check-circle text-success-main"
+        }
+      ]
     }
   ],
   "prognoses": [
@@ -70,7 +94,7 @@
       "odd": 2.35,
       "prediction": "2",
       "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3:2",
+      "result": "3:2 (РИ)",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -130,7 +154,7 @@
       "odd": 2.17,
       "prediction": "1",
       "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-4",
+      "result": "3-4 (РИ)",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -221,5 +245,3 @@
     }
   }
 }
-
-
