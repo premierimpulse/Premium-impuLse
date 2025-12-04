@@ -182,34 +182,21 @@
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
-    }
-  ],
-  "vipPrognoses": [
-    {
-      "date": "03.12",
-      "time": "21:30",
-      "game": "Уулвърхямптън - Нотингам Форест",
-      "odd": 2.33,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "0-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
     },
     {
-      "date": "03.12",
-      "time": "21:30",
-      "game": "Брайтън - Астън Вила",
-      "odd": 2.17,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-4",
+      "date": "04.12",
+      "time": "22:00",
+      "game": "Лацио - Милан",
+      "odd": 2.37,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
     }
   ],
+  "vipPrognoses": [],
   "monthlyStats": [
     {
       "month": "Декември",
@@ -222,9 +209,9 @@
   ],
   "dashboard": {
     "dailyChallenge": {
-      "date": "03.12.2025г.",
-      "time": "21:30",
-      "game": "Уулвърхямптън - Нотингам Форест",
+      "date": "04.12.2025г.",
+      "time": "22:00",
+      "game": "Лацио - Милан",
       "prediction": "2",
       "odd": 2.33
     },
