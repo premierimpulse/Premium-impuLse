@@ -17,7 +17,7 @@
           "game": "Щутгарт - Байерн Мюнхен",
           "odd": 1.55,
           "prediction": "2",
-          "statusIcon": "fas fa-hourglass-half"
+          "statusIcon": "fas fa-check-circle text-success-main"
         },
         {
           "date": "06.12",
@@ -163,8 +163,8 @@
       "date": "06.12",
       "time": "17:00",
       "game": "Тотнъм - Брентфорд",
-      "odd": 3.05,
-      "prediction": "2",
+      "odd": 2.34,
+      "prediction": "1",
       "statusIcon": "fas fa-hourglass-half",
       "result": "-",
       "isCensoredGame": false,
@@ -225,8 +225,8 @@
       "date": "06.12",
       "time": "17:00",
       "game": "Тотнъм - Брентфорд",
-      "odd": 3.05,
-      "prediction": "2",
+      "odd": 2.34,
+      "prediction": "1",
       "statusIcon": "fas fa-hourglass-half",
       "result": "-",
       "isCensoredGame": true,
@@ -266,13 +266,13 @@
     },
     "lastVip": {
       "date": "06.12.2025г.",
-      "game1": "***** - *",
-      "odd1": 3.05,
-      "game2": "***** - *",
+      "game1": "Тотнъм - Брентфорд - 1",
+      "odd1": 2.34,
+      "game2": "Домакин - Гост - ?",
       "odd2": 2.6,
       "game3": "",
       "odd3": 0,
-      "totalOdd": 7.93,
+      "totalOdd": 6.08,
       "status": "ИЗЧАКВА!"
     },
     "topAchievements": {
