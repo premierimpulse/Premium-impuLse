@@ -1,7 +1,7 @@
 {
   "generalStats": {
-    "totalPrognoses": 12,
-    "totalSuccessRate": "92%",
+    "totalPrognoses": 14,
+    "totalSuccessRate": "86%",
     "avgOdd": 2.37
   },
   "fiches": [
@@ -33,7 +33,7 @@
           "game": "Бетис - Барселона",
           "odd": 1.78,
           "prediction": "2",
-          "statusIcon": "fas fa-hourglass-half"
+          "statusIcon": "fas fa-check-circle text-success-main"
         }
       ]
     }
@@ -177,8 +177,8 @@
       "game": "Лийдс - Ливърпул",
       "odd": 4.1,
       "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-times-circle text-danger",
+      "result": "3-3",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -189,8 +189,8 @@
       "game": "Бетис - Барселона",
       "odd": 1.78,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "3-5",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -250,10 +250,10 @@
     {
       "month": "Декември",
       "year": "2025",
-      "wins": 11,
-      "losses": 1,
+      "wins": 12,
+      "losses": 2,
       "postponed": 0,
-      "successRate": 92
+      "successRate": 86
     }
   ],
   "dashboard": {
