@@ -1,7 +1,7 @@
 {
   "generalStats": {
-    "totalPrognoses": 14,
-    "totalSuccessRate": "86%",
+    "totalPrognoses": 15,
+    "totalSuccessRate": "80%",
     "avgOdd": 2.37
   },
   "fiches": [
@@ -201,8 +201,8 @@
       "game": "Атлетик Билбао - Атлетико Мадрид",
       "odd": 2.6,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-times-circle text-danger",
+      "result": "1-0",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -251,9 +251,9 @@
       "month": "Декември",
       "year": "2025",
       "wins": 12,
-      "losses": 2,
+      "losses": 3,
       "postponed": 0,
-      "successRate": 86
+      "successRate": 80
     }
   ],
   "dashboard": {
