@@ -1,14 +1,14 @@
 {
   "generalStats": {
-    "totalPrognoses": 9,
-    "totalSuccessRate": "89%",
-    "avgOdd": 2.47
+    "totalPrognoses": 12,
+    "totalSuccessRate": "92%",
+    "avgOdd": 2.37
   },
   "fiches": [
     {
       "title": "Фиш №1",
       "isVIP": false,
-      "totalOdd": 6.07,
+      "totalOdd": 6.26,
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
@@ -22,10 +22,10 @@
         {
           "date": "06.12",
           "time": "17:00",
-          "game": "Борнемут - Челси",
-          "odd": 2.2,
-          "prediction": "2",
-          "statusIcon": "fas fa-hourglass-half"
+          "game": "Евертън - Нот. Форест",
+          "odd": 2.27,
+          "prediction": "1",
+          "statusIcon": "fas fa-check-circle text-success-main"
         },
         {
           "date": "06.12",
@@ -150,11 +150,11 @@
     {
       "date": "06.12",
       "time": "17:00",
-      "game": "Борнемут - Челси",
-      "odd": 2.2,
-      "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "game": "Евертън - Нот. Форест",
+      "odd": 2.27,
+      "prediction": "1",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "3-0",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -165,8 +165,8 @@
       "game": "Тотнъм - Брентфорд",
       "odd": 2.34,
       "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "2-0",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -213,8 +213,8 @@
       "game": "Щутгарт - Байерн Мюнхен",
       "odd": 1.55,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "0-5",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -227,53 +227,53 @@
       "game": "Тотнъм - Брентфорд",
       "odd": 2.34,
       "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "2-0",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     },
     {
       "date": "06.12",
-      "time": "22:00",
-      "game": "Атлетик Билбао - Атлетико Мадрид",
-      "odd": 2.6,
-      "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
+      "time": "17:00",
+      "game": "Евертън - Нот. Форест",
+      "odd": 2.27,
+      "prediction": "1",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "3-0",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     }
   ],
   "monthlyStats": [
     {
       "month": "Декември",
       "year": "2025",
-      "wins": 8,
+      "wins": 11,
       "losses": 1,
       "postponed": 0,
-      "successRate": 89
+      "successRate": 92
     }
   ],
   "dashboard": {
     "dailyChallenge": {
       "date": "06.12.2025г.",
       "time": "17:00",
-      "game": "Борнемут - Челси",
-      "prediction": "2",
-      "odd": 2.2
+      "game": "Евертън - Нот. Форест",
+      "prediction": "1",
+      "odd": 2.27
     },
     "lastVip": {
       "date": "06.12.2025г.",
       "game1": "Тотнъм - Брентфорд - 1",
       "odd1": 2.34,
-      "game2": "Домакин - Гост - ?",
-      "odd2": 2.6,
+      "game2": "Евертън - Нот. Форест - 1",
+      "odd2": 2.27,
       "game3": "",
       "odd3": 0,
-      "totalOdd": 6.08,
-      "status": "ИЗЧАКВА!"
+      "totalOdd": 5.31,
+      "status": "ПЕЧЕЛИВШ!"
     },
     "topAchievements": {
       "maxOdd": 0,
