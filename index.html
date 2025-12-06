@@ -30,7 +30,7 @@
     <li data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
     <li data-target="vip-prognosis-content"><i class="fas fa-crown"></i> Прогнози<span class="green-text-vip">VIP</span></li>
     <li data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
-    <li data-target="payment-content"><i class="fas fa-credit-card"></i> Плащане</li>
+    <li data-target="payment-content"><i class="fas fa-credit-card"></i> Абонамент</li>
     </ul>
 </div>
 <main>
@@ -43,7 +43,7 @@
             <li id="menu-prognosis" data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
             <li id="menu-vip-prognosis" data-target="vip-prognosis-content"><i class="fas fa-crown neon-flash"></i> Прогнози <span class="green-text-vip">VIP</span></li>
             <li id="menu-statistics" data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
-            <li id="menu-payment" data-target="payment-content"><i class="fas fa-credit-card"></i> Плащане</li>
+            <li id="menu-payment" data-target="payment-content"><i class="fas fa-credit-card"></i> Абонамент</li>
             </ul>
 
 <hr class="section-divider">
@@ -51,9 +51,11 @@
         <div class="info-card responsible-info-card">
             <i class="fas fa-hand-holding-usd"></i>
             <h4>Залагай Отговорно</h4>
+    <div class="card-body">
             <p><span class="red-text">Не залагайте повече, отколкото можете да си позволите да загубите!</span></p>
         </div>
-
+        </div>
+        </div>
 <hr class="section-divider">
 
     </aside>
@@ -176,41 +178,51 @@
 </div>
 </div>
 <div id="payment-content" class="content-block hidden-content">
-    <h2 class="content-title">VIP Достъп и Абонамент</h2>
+    <h2 class="content-title">Абонамент и VIP Достъп</h2>
     <hr class="section-divider">
-    
-    <p class="section-description">
-        <span class="white-text">Изберете най-подходящия абонаментен план, за да получите достъп до всички VIP прогнози.</span>
-    </p>
 
-    <div class="pricing-grid">
-        
-        <div class="pricing-card">
-            <div class="title">1 Месец VIP</div>
-            <div class="price">60лв.</div>
-            <div class="period">Еднократно плащане</div>
-            <ul class="features">
-                <li><i class="fas fa-check green-text"></i> Достъп до всички VIP прогнози</li>
-                <li class="disabled"><i class="fas fa-times red-text"></i> Ежедневни VIP фишове</li>
-                <li class="disabled"><i class="fas fa-times red-text"></i> Експертен анализ</li>
-                <li class="disabled"><i class="fas fa-times red-text"></i> 24/7 Приоритетна поддръжка</li>
-            </ul>
-            <a href="#" class="btn btn-purchase">Абонирай се</a>
-        </div>
-        
-        <div class="pricing-card popular">
-            <div class="title">3 Месеца VIP</div>
-            <div class="price">150.00лв.</div>
-            <div class="period">Спестяваш 30.00лв.</div>
-            <ul class="features">
-                <li><i class="fas fa-check green-text"></i> Достъп до всички VIP прогнози</li>
-                <li><i class="fas fa-check green-text"></i> Ежедневни VIP фишове</li>
-                <li><i class="fas fa-check green-text"></i> Експертен анализ</li>
-                <li><i class="fas fa-check green-text"></i> 24/7 Приоритетна поддръжка</li>
-            </ul>
-            <a href="#" class="btn btn-purchase popular">Абонирай се</a>
-        </div>
+
+
+    <!-- Нова Таблица за Цени -->
+    <div class="table-container">
+        <table class="pricing-table">
+            <thead>
+                <tr>
+                    <th class="package-col">Пакет</th>
+                    <th class="price-col">Цена</th>
+                    <th class="action-col">Купи / Контакт</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="package-row">
+                    <td data-label="Пакет">1 VIP Среща</td>
+                    <td data-label="Цена">10.23€</td>
+                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
+                </tr>
+                <tr class="package-row">
+                    <td data-label="Пакет">2 VIP Срещи</td>
+                    <td data-label="Цена">17.90€</td>
+                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
+                </tr>
+                <tr class="package-row vip-fiche-row">
+                    <td data-label="Пакет">VIP Фиш</td>
+                    <td data-label="Цена">20.45€</td>
+                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
+                </tr>
+            </tbody>
+        </table>
     </div>
+    <!-- Край на Новата Таблица -->
+
+    <!-- Информацията под таблицата (запазена) -->
+    <div class="info-card minimal-card" style="margin-top: 20px;">
+        <h4 class="card-title"><i class="fas fa-info-circle"></i> Важна Информация</h4>
+        <p style="font-size: 0.9rem; color: var(--muted-2); margin-top: 10px;">
+            Всички плащания се обработват през посочения имейл адрес. За повече информация относно начините на плащане и условията за VIP достъп, моля, свържете се с нас.
+        </p>
+    </div>
+
+</div>
     
     <hr class="section-divider">
 
@@ -222,7 +234,7 @@
         <span class="payment-icon">Revolut</span>
     </div>
     <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #aaa;"><span class="white-text">За въпроси или други методи за плащане, моля, свържете се с нас.</span></p>
-    <p style="text-align: center; margin-top: 20px; font-size: 14px;"><span class="white-text">Email: <span class="green-text">premier-impulse@gmail.com</span></p>
+    <p style="text-align: center; margin-top: 20px; font-size: 14px;"><span class="white-text">Email: <a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></p>
 </div>
 <hr class="section-divider">
         </section>
@@ -231,14 +243,15 @@
         <h3 style="color: #7289da; text-align: center; margin-top: 0px;">Табло</h3>
 <hr class="section-divider">
 
-    <div class="info-card minimal-card daily-challenge-card">
-        <h4 class="card-title">DAILY CHALLENGE</h4>
-        
+<div class="info-card free-info-card daily-challenge-card"> 
+    <div class="card-header-styled">
+        <h3 class="card-title">За деня</h3>
+    </div>
+    <div class="card-body">
         <div class="match-group">
             <p class="match-game" id="daily-game">Барселона - Атлетико Мадрид</p>
             <p class="match-date-time"><span id="daily-date">02.12.2025г.</span> | <span id="daily-time">22:00</span></p>
         </div>
-
         <div class="prognosis-summary">
             <div class="summary-item">
                 <span class="summary-label">ПРОГНОЗА</span>
@@ -250,20 +263,21 @@
             </div>
         </div>
     </div>
+</div> <!-- Затваря първата карта -->
 
 <hr class="section-divider">
 
-<div class="info-card minimal-card vip-last-card">
-        <h4 class="card-title vip-title"><i class="fas fa-crown"></i> VIP ФИШ</h4>
-        
+<div class="info-card vip-info-card vip-last-card"> 
+    <div class="card-header-styled">
+        <h3 class="card-title">VIP ФИШ</h3>
+    </div>
+    <div class="card-body">
         <div class="fiche-matches-list">
             <p class="fiche-date-row"><span class="label">Дата:</span><span class="value">29.11.2025г.</span></p>
-            
             <p class="match-row"><span class="match-name-pred" id="lv-game1">Евертън - Нюкасъл - 2</span></p>
             <p class="match-row"><span class="match-name-pred" id="lv-game2">Б. Леверкузен - Б. Дортмунд - 2</span></p>
             <p class="match-row"><span class="match-name-pred" id="lv-game3">Съндърланд - Борнемут - 2</span></p>
         </div>
-
         <div class="prognosis-summary fiche-footer">
             <div class="summary-item">
                 <span class="summary-label">ОБЩ КОЕФ.</span>
@@ -275,6 +289,8 @@
             </div>
         </div>
     </div>
+</div> <!-- Затваря втората карта -->
+
 <hr class="section-divider">
 </aside>
 </main>
