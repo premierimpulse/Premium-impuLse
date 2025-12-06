@@ -1,7 +1,7 @@
 {
   "generalStats": {
-    "totalPrognoses": 8,
-    "totalSuccessRate": "88%",
+    "totalPrognoses": 9,
+    "totalSuccessRate": "89%",
     "avgOdd": 2.47
   },
   "fiches": [
@@ -187,10 +187,10 @@
       "date": "05.12",
       "time": "22:15",
       "game": "Бенфика - Спортинг",
-      "odd": 2.8,
-      "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "",
+      "odd": 2.23,
+      "prediction": "X",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "1-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -201,10 +201,10 @@
     {
       "month": "Декември",
       "year": "2025",
-      "wins": 7,
+      "wins": 8,
       "losses": 1,
       "postponed": 0,
-      "successRate": 88
+      "successRate": 89
     }
   ],
   "dashboard": {
@@ -212,8 +212,8 @@
       "date": "05.12.2025г.",
       "time": "22:15",
       "game": "Бенфика - Спортинг",
-      "prediction": "2",
-      "odd": 2.8
+      "prediction": "X",
+      "odd": 2.23
     },
     "lastVip": {
       "date": "03.12.2025г.",
