@@ -6,82 +6,34 @@
   },
   "fiches": [
     {
-      "title": "Фиш №1 ( VIP )",
-      "isVIP": true,
-      "totalOdd": 16.88,
-      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
-      "matches": [
-        {
-          "date": "29.11",
-          "time": "19:30",
-          "game": "Евертън - Нюкасъл",
-          "odd": 2.65,
-          "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
-        },
-        {
-          "date": "29.11",
-          "time": "19:30",
-          "game": "Б. Леверкузен - Б. Дортмунд",
-          "odd": 2.71,
-          "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
-        },
-        {
-          "date": "29.11",
-          "time": "17:00",
-          "game": "Съндърланд - Борнемут",
-          "odd": 2.35,
-          "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
-        }
-      ]
-    },
-    {
-      "title": "Фиш №2",
+      "title": "Фиш №1",
       "isVIP": false,
-      "totalOdd": 4.05,
+      "totalOdd": 6.07,
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
-          "date": "03.12",
-          "time": "21:30",
-          "game": "Уулвърхямптън - Нотингам Форест",
-          "odd": 2.33,
+          "date": "06.12",
+          "time": "16:30",
+          "game": "Щутгарт - Байерн Мюнхен",
+          "odd": 1.55,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "statusIcon": "fas fa-hourglass-half"
         },
         {
-          "date": "03.12",
-          "time": "21:30",
-          "game": "Бърнли - Кристъл Палас",
-          "odd": 1.74,
+          "date": "06.12",
+          "time": "17:00",
+          "game": "Борнемут - Челси",
+          "odd": 2.2,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
-        }
-      ]
-    },
-    {
-      "title": "Фиш №3 ( VIP )",
-      "isVIP": true,
-      "totalOdd": 5.06,
-      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
-      "matches": [
-        {
-          "date": "03.12",
-          "time": "21:30",
-          "game": "Уулвърхямптън - Нотингам Форест",
-          "odd": 2.33,
-          "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "statusIcon": "fas fa-hourglass-half"
         },
         {
-          "date": "03.12",
-          "time": "21:30",
-          "game": "Брайтън - Астън Вила",
-          "odd": 2.17,
-          "prediction": "1",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "date": "06.12",
+          "time": "19:30",
+          "game": "Бетис - Барселона",
+          "odd": 1.78,
+          "prediction": "2",
+          "statusIcon": "fas fa-hourglass-half"
         }
       ]
     }
@@ -194,9 +146,106 @@
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "17:00",
+      "game": "Борнемут - Челси",
+      "odd": 2.2,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "17:00",
+      "game": "Тотнъм - Брентфорд",
+      "odd": 3.05,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "19:30",
+      "game": "Лийдс - Ливърпул",
+      "odd": 4.1,
+      "prediction": "1",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "19:30",
+      "game": "Бетис - Барселона",
+      "odd": 1.78,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "22:00",
+      "game": "Атлетик Билбао - Атлетико Мадрид",
+      "odd": 2.6,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "06.12",
+      "time": "16:30",
+      "game": "Щутгарт - Байерн Мюнхен",
+      "odd": 1.55,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     }
   ],
-  "vipPrognoses": [],
+  "vipPrognoses": [
+    {
+      "date": "06.12",
+      "time": "17:00",
+      "game": "Тотнъм - Брентфорд",
+      "odd": 3.05,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
+    },
+    {
+      "date": "06.12",
+      "time": "22:00",
+      "game": "Атлетик Билбао - Атлетико Мадрид",
+      "odd": 2.6,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
+    }
+  ],
   "monthlyStats": [
     {
       "month": "Декември",
@@ -209,11 +258,11 @@
   ],
   "dashboard": {
     "dailyChallenge": {
-      "date": "05.12.2025г.",
-      "time": "22:15",
-      "game": "Бенфика - Спортинг",
-      "prediction": "X",
-      "odd": 2.23
+      "date": "06.12.2025г.",
+      "time": "17:00",
+      "game": "Борнемут - Челси",
+      "prediction": "2",
+      "odd": 2.2
     },
     "lastVip": {
       "date": "03.12.2025г.",
