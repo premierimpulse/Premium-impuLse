@@ -905,6 +905,109 @@ body {
 }
 
 
+/* -------------------------------------------------------------------------- */
+/* --- НОВИ СТИЛОВЕ ЗА ТАБЛИЦА С ЦЕНИ (payment-content) --- */
+/* -------------------------------------------------------------------------- */
+
+.table-container {
+    width: 100%;
+    overflow-x: auto; /* Позволява хоризонтално скролване на таблицата, ако е твърде тясна */
+    margin-top: 20px;
+}
+
+.pricing-table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--panel);
+    border-radius: var(--card-radius);
+    overflow: hidden; /* За да запази заоблените ъгли */
+    box-shadow: var(--shadow);
+    min-width: 300px; /* Минимална широчина на таблицата */
+}
+
+.pricing-table th, .pricing-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+    font-size: 1rem;
+}
+
+.pricing-table th {
+    background-color: var(--accent);
+    color: var(--muted);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pricing-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.package-row:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.1); /* Лека разлика в цвета на редовете */
+}
+
+.package-row:hover {
+    background-color: var(--accent); /* Ефект при посочване */
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+/* Стил за VIP Фиш реда, за да изпъква */
+.vip-fiche-row {
+    background-color: rgba(59, 20, 100, 0.4); /* По-тъмен акцентен фон */
+    font-weight: 700;
+}
+
+.contact-cell a {
+    color: var(--success); /* Цветен акцент за имейла */
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-cell a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive CSS за Мобилни Устройства (до 768px) --- */
+@media (max-width: 768px) {
+    .pricing-table, .pricing-table tbody, .pricing-table tr, .pricing-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .pricing-table thead {
+        display: none; /* Скрива заглавния ред на мобилен */
+    }
+
+    .pricing-table tr {
+        margin-bottom: 15px;
+        border: 1px solid var(--border);
+        border-radius: var(--card-radius);
+    }
+    
+    .pricing-table td {
+        text-align: right;
+        padding-left: 50%;
+        position: relative;
+    }
+
+    /* Добавяне на етикет преди стойността на мобилен */
+    .pricing-table td::before {
+        content: attr(data-label);
+        position: absolute;
+        left: 15px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: 700;
+        color: var(--muted-2);
+    }
+}
+
+
 /* =========================
     Мобилно меню за мобилни устройства
     ========================= */
@@ -1176,4 +1279,173 @@ body {
 
 .status-box #lv-status.status-pending {
     color: var(--pending) !important;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================================= */
+/* --- СТИЛОВЕ ЗА КАРТИ С ОТДЕЛЕН ЦВЯТ НА ТЕКСТА --- */
+/* ======================================================================= */
+
+/* 1. Общ контейнер (info-card) */
+.info-card {
+    position: relative;
+    border-radius: 12px;
+    padding: 0;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: var(--shadow);
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    background: var(--panel);
+}
+
+.info-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.7);
+}
+
+/* 2. VIP Лента - ЗЛАТИСТА */
+.vip-info-card::after {
+    content: "VIP";
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    background: linear-gradient(45deg, #ff1a1a, #ff7b00);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 6px 50px;
+    text-align: center;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: hotPulse 1.6s infinite ease-in-out, hotShimmer 2.5s infinite linear;
+}
+
+/* 3. HOT Лента за Free карта */
+.free-info-card::after {
+    content: "HOT";
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    background: linear-gradient(45deg, #ff1a1a, #ff7b00);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 6px 50px;
+    text-align: center;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: hotPulse 1.6s infinite ease-in-out, hotShimmer 2.5s infinite linear;
+}
+
+/* Забраняваме лента на отговорна карта */
+.responsible-info-card::after {
+    content: "18+";
+    position: absolute;
+    top: 10px;
+    right: -40px;
+    background: linear-gradient(45deg, #ff1a1a, #ff7b00);
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.8rem;
+    padding: 6px 50px;
+    text-align: center;
+    transform: rotate(45deg);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: hotPulse 1.6s infinite ease-in-out, hotShimmer 2.5s infinite linear;
+}
+
+@keyframes hotPulse {0%,100%{transform:rotate(45deg) scale(1);}50%{transform:rotate(45deg) scale(1.1);}}
+@keyframes hotShimmer {0%{background-position:0% 50%;}100%{background-position:200% 50%;}}
+
+/* 4. Заглавие */
+.card-header-styled {
+    padding: 12px 15px;
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.9rem;
+    font-weight: 900;
+    color: #fff; /* Заглавия винаги бели */
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.5);
+}
+
+.card-title {
+    font-size: 0.9rem;
+    margin: 0;
+    padding: 0;
+    color: inherit;
+    border-bottom: none;
+    letter-spacing: 2px;
+}
+
+/* 5. Съдържание */
+.card-body {
+    padding: 15px;
+    background: var(--panel);
+    border-top: 1px solid transparent;
+}
+
+/* --- VIP карта --- */
+.vip-info-card {
+    border-color: var(--accent-2);
+    color: #fff; /* Бял текст за Daily Challenge */
+}
+.vip-info-card .card-header-styled {
+    background: linear-gradient(90deg, #2b6cb0 0%, #4688cf 100%);
+    border-bottom: 2px solid var(--accent-2);
+}
+
+/* --- Free/Daily Challenge карта --- */
+.free-info-card {
+    border-color: var(--accent-2);
+    color: #fff; /* Бял текст за Daily Challenge */
+}
+.free-info-card .card-header-styled {
+    background: linear-gradient(90deg, #2b6cb0 0%, #4688cf 100%);
+    border-bottom: 2px solid var(--accent-2);
+}
+
+/* --- 18+ Карта --- */
+.responsible-info-card {
+    border-color: var(--accent-2);
+    color: #fff; /* Бял текст за Daily Challenge */
+}
+.responsible-info-card .card-header-styled {
+    background: linear-gradient(90deg, #2b6cb0 0%, #4688cf 100%);
+    border-bottom: 2px solid var(--accent-2);
+}
+
+
+/* --- DAILY CHALLENGE текст --- */
+.match-game, .match-date-time {
+    color: inherit; /* взима цвета от .info-card (бяло за free, зелено за VIP) */
+}
+
+/* --- Други елементи --- */
+.summary-label, .summary-value, .status-text {
+    color: inherit; /* всички текстове вътре във VIP или Free картите следват цвета на картата */
 }
