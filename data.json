@@ -1,7 +1,7 @@
 {
   "generalStats": {
-    "totalPrognoses": 15,
-    "totalSuccessRate": "80%",
+    "totalPrognoses": 19,
+    "totalSuccessRate": "74%",
     "avgOdd": 2.37
   },
   "fiches": [
@@ -225,8 +225,8 @@
       "game": "Каляри - Рома",
       "odd": 1.63,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-times-circle text-danger",
+      "result": "1-0",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -237,8 +237,8 @@
       "game": "Фулъм - Кристъл Палас",
       "odd": 2.85,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "1-2",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -249,8 +249,8 @@
       "game": "Валенсия - Севиля",
       "odd": 2.07,
       "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-times-circle text-danger",
+      "result": "1-1",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -261,8 +261,8 @@
       "game": "Гьозтепе - Трабзонспор",
       "odd": 3.35,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "1-2",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
@@ -271,37 +271,37 @@
   "vipPrognoses": [
     {
       "date": "07.12",
-      "time": "16:00",
-      "game": "Каляри - Рома",
-      "odd": 1.63,
+      "time": "19:00",
+      "game": "Гьозтепе - Трабзонспор",
+      "odd": 3.35,
       "prediction": "2",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "1-2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     },
     {
       "date": "07.12",
-      "time": "16:00",
-      "game": "Брайтън - Уест Хям",
-      "odd": 1.6,
-      "prediction": "1",
-      "statusIcon": "fas fa-hourglass-half",
-      "result": "-",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true,
-      "isCensoredOdd": true
+      "time": "18:30",
+      "game": "Фулъм - Кристъл Палас",
+      "odd": 2.85,
+      "prediction": "2",
+      "statusIcon": "fas fa-check-circle text-success-main",
+      "result": "1-2",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
     }
   ],
   "monthlyStats": [
     {
       "month": "Декември",
       "year": "2025",
-      "wins": 12,
-      "losses": 3,
+      "wins": 14,
+      "losses": 5,
       "postponed": 0,
-      "successRate": 80
+      "successRate": 74
     }
   ],
   "dashboard": {
@@ -314,14 +314,14 @@
     },
     "lastVip": {
       "date": "07.12.2025г.",
-      "game1": "Домакин - Гост - 2",
-      "odd1": 1.63,
-      "game2": "Домакин - Гост - 1",
-      "odd2": 1.6,
+      "game1": "Фулъм - Кристъл Палас - 2",
+      "odd1": 3.35,
+      "game2": "Гьозтепе - Трабзонспор - 2",
+      "odd2": 2.85,
       "game3": "",
       "odd3": 0,
-      "totalOdd": 2.61,
-      "status": "ИЗЧАКВА!"
+      "totalOdd": 9.55,
+      "status": "ПЕЧЕЛИВШ!"
     },
     "topAchievements": {
       "maxOdd": 0,
@@ -329,4 +329,3 @@
     }
   }
 }
-
