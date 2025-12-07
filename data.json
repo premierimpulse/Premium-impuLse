@@ -218,32 +218,80 @@
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
-    }
-  ],
-  "vipPrognoses": [
+    },
     {
-      "date": "06.12",
-      "time": "17:00",
-      "game": "Тотнъм - Брентфорд",
-      "odd": 2.34,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "2-0",
+      "date": "07.12",
+      "time": "16:00",
+      "game": "Каляри - Рома",
+      "odd": 1.63,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
     },
     {
-      "date": "06.12",
-      "time": "17:00",
-      "game": "Евертън - Нот. Форест",
-      "odd": 2.27,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-0",
+      "date": "07.12",
+      "time": "18:30",
+      "game": "Фулъм - Кристъл Палас",
+      "odd": 2.85,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
       "isCensoredGame": false,
       "isCensoredPrediction": false,
       "isCensoredOdd": false
+    },
+    {
+      "date": "07.12",
+      "time": "17:15",
+      "game": "Валенсия - Севиля",
+      "odd": 2.07,
+      "prediction": "1",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    },
+    {
+      "date": "07.12",
+      "time": "19:00",
+      "game": "Гьозтепе - Трабзонспор",
+      "odd": 3.35,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false,
+      "isCensoredOdd": false
+    }
+  ],
+  "vipPrognoses": [
+    {
+      "date": "07.12",
+      "time": "16:00",
+      "game": "Каляри - Рома",
+      "odd": 1.63,
+      "prediction": "2",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
+    },
+    {
+      "date": "07.12",
+      "time": "16:00",
+      "game": "Брайтън - Уест Хям",
+      "odd": 1.6,
+      "prediction": "1",
+      "statusIcon": "fas fa-hourglass-half",
+      "result": "-",
+      "isCensoredGame": true,
+      "isCensoredPrediction": true,
+      "isCensoredOdd": true
     }
   ],
   "monthlyStats": [
@@ -258,22 +306,22 @@
   ],
   "dashboard": {
     "dailyChallenge": {
-      "date": "06.12.2025г.",
-      "time": "17:00",
-      "game": "Евертън - Нот. Форест",
-      "prediction": "1",
-      "odd": 2.27
+      "date": "07.12.2025г.",
+      "time": "21:45",
+      "game": "Наполи - Ювентус",
+      "prediction": "2",
+      "odd": 3.25
     },
     "lastVip": {
       "date": "06.12.2025г.",
-      "game1": "Тотнъм - Брентфорд - 1",
-      "odd1": 2.34,
-      "game2": "Евертън - Нот. Форест - 1",
-      "odd2": 2.27,
+      "game1": "Домакин - Гост - 2",
+      "odd1": 1.63,
+      "game2": "Домакин - Гост - 1",
+      "odd2": 1.6,
       "game3": "",
       "odd3": 0,
-      "totalOdd": 5.31,
-      "status": "ПЕЧЕЛИВШ!"
+      "totalOdd": 2.61,
+      "status": "ИЗЧАКВА!"
     },
     "topAchievements": {
       "maxOdd": 0,
