@@ -1,331 +1,324 @@
 {
-  "generalStats": {
-    "totalPrognoses": 19,
-    "totalSuccessRate": "74%",
-    "avgOdd": 2.37
+  "siteSettings": {
+    "siteTitle": "Premier ImpuLse",
+    "logoUrl": "Logo.png",
+    "marqueeText": "🔥 Добре дошли в Premier ImpuLse! Най-добрите прогнози и анализи. Залагайте отговорно! 🔥",
+    "footerText": "© 2025 Premier ImpuLse. Всички права запазени."
   },
+  "menu": [
+    {
+      "id": "home",
+      "label": "Начало",
+      "icon": "fas fa-home"
+    },
+    {
+      "id": "fiches",
+      "label": "Фишове",
+      "icon": "fas fa-clipboard-list"
+    },
+    {
+      "id": "prognosis",
+      "label": "Прогнози",
+      "icon": "fas fa-bullseye"
+    },
+    {
+      "id": "vip",
+      "label": "VIP Зона",
+      "icon": "fas fa-crown"
+    },
+    {
+      "id": "stats",
+      "label": "Статистика",
+      "icon": "fas fa-chart-line"
+    },
+    {
+      "id": "pricing",
+      "label": "Абонамент",
+      "icon": "fas fa-credit-card"
+    }
+  ],
+  "ads": {
+    "headerBanner": {
+      "imageUrl": "",
+      "link": "",
+      "show": true
+    },
+    "sidebarLeft": {
+      "imageUrl": "",
+      "link": "",
+      "show": true
+    },
+    "sidebarRight": {
+      "imageUrl": "",
+      "link": "",
+      "show": true
+    }
+  },
+  "partners": [],
+  "sponsors": [],
   "fiches": [
     {
-      "title": "Фиш №1",
-      "isVIP": false,
+      "title": "Безплатен Фиш",
       "totalOdd": 6.26,
+      "isVIP": true,
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71",
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
-          "date": "06.12",
-          "time": "16:30",
+          "time": "06.12 16:30",
           "game": "Щутгарт - Байерн Мюнхен",
+          "prediction": "2",
           "odd": 1.55,
-          "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#ffff00"
         },
         {
-          "date": "06.12",
-          "time": "17:00",
+          "time": "06.12 17:00",
           "game": "Евертън - Нот. Форест",
-          "odd": 2.27,
           "prediction": "1",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "odd": 2.27,
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#ffff00"
         },
         {
-          "date": "06.12",
-          "time": "19:30",
+          "time": "06.12 19:30",
           "game": "Бетис - Барселона",
-          "odd": 1.78,
           "prediction": "2",
-          "statusIcon": "fas fa-check-circle text-success-main"
+          "odd": 1.78,
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#ffff00"
         }
       ]
     }
   ],
   "prognoses": [
     {
-      "date": "29.11",
-      "time": "17:00",
-      "game": "Съндърланд - Борнемут",
+      "time": "29.11 17:00",
+      "game": "Съндърланд - Борнемут (РИ)",
+      "prediction": "2",
       "odd": 2.35,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3:2 (РИ)",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "29.11",
-      "time": "19:30",
+      "time": "29.11 19:30",
       "game": "Б. Леверкузен - Б. Дортмунд",
+      "prediction": "2",
       "odd": 2.71,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1:2",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "29.11",
-      "time": "19:30",
+      "time": "29.11 19:30",
       "game": "Евертън - Нюкасъл",
+      "prediction": "2",
       "odd": 2.65,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1:4",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "01.12",
-      "time": "19:00",
+      "time": "01.12 19:00",
       "game": "Фенербахче - Галатасарай",
-      "odd": 3.35,
       "prediction": "2",
-      "statusIcon": "fas fa-times-circle text-danger",
-      "result": "1-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "odd": 3.35,
+      "statusIcon": "fas fa-times-circle status-lose",
+      "ribbonText": "LOSE",
+      "ribbonColor": "#ff4757"
     },
     {
-      "date": "02.12",
-      "time": "22:00",
-      "game": "Барселона - Атлетико Мадрид",
+      "time": "02.12 22:00",
+      "game": "Барселона - Атл. Мадрид",
+      "prediction": "1",
       "odd": 1.83,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "03.12",
-      "time": "21:30",
-      "game": "Брайтън - Астън Вила",
+      "time": "03.12 21:30",
+      "game": "Брайтън - Астън Вила (РИ)",
+      "prediction": "1",
       "odd": 2.17,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-4 (РИ)",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "03.12",
-      "time": "21:30",
+      "time": "03.12 21:30",
       "game": "Бърнли - Кристъл Палас",
+      "prediction": "2",
       "odd": 1.74,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "0-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "03.12",
-      "time": "21:30",
-      "game": "Уулвърхямптън - Нотингам Форест",
+      "time": "03.12 21:30",
+      "game": "Уулвърхямптън - Нотингам",
+      "prediction": "2",
       "odd": 2.33,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "0-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "05.12",
-      "time": "22:15",
+      "time": "05.12 22:15",
       "game": "Бенфика - Спортинг",
-      "odd": 2.23,
       "prediction": "X",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "odd": 2.23,
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "06.12",
-      "time": "17:00",
+      "time": "06.12 17:00",
       "game": "Евертън - Нот. Форест",
+      "prediction": "1",
       "odd": 2.27,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-0",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "06.12",
-      "time": "17:00",
+      "time": "06.12 17:00",
       "game": "Тотнъм - Брентфорд",
+      "prediction": "1",
       "odd": 2.34,
-      "prediction": "1",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "2-0",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "06.12",
-      "time": "19:30",
+      "time": "06.12 19:30",
       "game": "Лийдс - Ливърпул",
+      "prediction": "1",
       "odd": 4.1,
-      "prediction": "1",
-      "statusIcon": "fas fa-times-circle text-danger",
-      "result": "3-3",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-times-circle status-lose",
+      "ribbonText": "LOSE",
+      "ribbonColor": "#ff4757"
     },
     {
-      "date": "06.12",
-      "time": "19:30",
+      "time": "06.12 19:30",
       "game": "Бетис - Барселона",
+      "prediction": "2",
       "odd": 1.78,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "3-5",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "06.12",
-      "time": "22:00",
-      "game": "Атлетик Билбао - Атлетико Мадрид",
+      "time": "06.12 22:00",
+      "game": "Атлетик Билбао - Атл. Мадрид",
+      "prediction": "2",
       "odd": 2.6,
-      "prediction": "2",
-      "statusIcon": "fas fa-times-circle text-danger",
-      "result": "1-0",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-times-circle status-lose",
+      "ribbonText": "LOSE",
+      "ribbonColor": "#ff4757"
     },
     {
-      "date": "06.12",
-      "time": "16:30",
+      "time": "06.12 16:30",
       "game": "Щутгарт - Байерн Мюнхен",
+      "prediction": "2",
       "odd": 1.55,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "0-5",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "07.12",
-      "time": "16:00",
+      "time": "07.12 16:00",
       "game": "Каляри - Рома",
+      "prediction": "2",
       "odd": 1.63,
-      "prediction": "2",
-      "statusIcon": "fas fa-times-circle text-danger",
-      "result": "1-0",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-times-circle status-lose",
+      "ribbonText": "LOSE",
+      "ribbonColor": "#ff4757"
     },
     {
-      "date": "07.12",
-      "time": "18:30",
+      "time": "07.12 18:30",
       "game": "Фулъм - Кристъл Палас",
+      "prediction": "2",
       "odd": 2.85,
-      "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1-2",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     },
     {
-      "date": "07.12",
-      "time": "17:15",
+      "time": "07.12 17:15",
       "game": "Валенсия - Севиля",
-      "odd": 2.07,
       "prediction": "1",
-      "statusIcon": "fas fa-times-circle text-danger",
-      "result": "1-1",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "odd": 2.07,
+      "statusIcon": "fas fa-times-circle status-lose",
+      "ribbonText": "LOSE",
+      "ribbonColor": "#ff4757"
     },
     {
-      "date": "07.12",
-      "time": "19:00",
+      "time": "07.12 19:00",
       "game": "Гьозтепе - Трабзонспор",
-      "odd": 3.35,
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1-2",
-      "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "odd": 3.35,
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "WIN",
+      "ribbonColor": "#2ecc71"
     }
   ],
   "vipPrognoses": [
     {
-      "date": "07.12",
-      "time": "19:00",
-      "game": "Гьозтепе - Трабзонспор",
-      "odd": 3.35,
+      "time": "07.12 19:00",
+      "game": "Гьозтепе - Трабзонспор [1-2]",
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1-2",
+      "odd": 3.35,
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "VIP WIN",
+      "ribbonColor": "#2ecc71",
       "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "isCensoredPrediction": false
     },
     {
-      "date": "07.12",
-      "time": "18:30",
-      "game": "Фулъм - Кристъл Палас",
-      "odd": 2.85,
+      "time": "07.12 18:30",
+      "game": "Фулъм - Кристъл Палас [1-2]",
       "prediction": "2",
-      "statusIcon": "fas fa-check-circle text-success-main",
-      "result": "1-2",
+      "odd": 2.85,
+      "statusIcon": "fas fa-check-circle status-win",
+      "ribbonText": "VIP WIN",
+      "ribbonColor": "#2ecc71",
       "isCensoredGame": false,
-      "isCensoredPrediction": false,
-      "isCensoredOdd": false
+      "isCensoredPrediction": false
     }
   ],
   "monthlyStats": [
     {
       "month": "Декември",
-      "year": "2025",
+      "year": "",
       "wins": 14,
       "losses": 5,
-      "postponed": 0,
       "successRate": 74
     }
   ],
-  "dashboard": {
-    "dailyChallenge": {
-      "date": "07.12.2025г.",
-      "time": "21:45",
-      "game": "Наполи - Ювентус",
-      "prediction": "2",
-      "odd": 3.25
+  "pricing": [
+    {
+      "title": "1 VIP Среща",
+      "price": "10.23€",
+      "link": "mailto:premier-impulse@abv.bg",
+      "tag": ""
     },
-    "lastVip": {
-      "date": "07.12.2025г.",
-      "game1": "Фулъм - Кристъл Палас - 2",
-      "odd1": 3.35,
-      "game2": "Гьозтепе - Трабзонспор - 2",
-      "odd2": 2.85,
-      "game3": "",
-      "odd3": 0,
-      "totalOdd": 9.55,
-      "status": "ПЕЧЕЛИВШ!"
+    {
+      "title": "2 VIP Срещи",
+      "price": "17.90€",
+      "link": "mailto:premier-impulse@abv.bg",
+      "tag": "POPULAR"
     },
-    "topAchievements": {
-      "maxOdd": 0,
-      "longestStreak": ""
+    {
+      "title": "VIP Фиш",
+      "price": "20.45€",
+      "link": "mailto:premier-impulse@abv.bg",
+      "tag": "BEST VALUE"
     }
-  }
+  ]
 }
