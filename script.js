@@ -1,285 +1,208 @@
-// Динамичен час и дата
-function updateDateTime() {
-    const now = new Date();
-    // Настройване за български формат (ДД.ММ.ГГГГ ЧЧ:ММ:СС)
-    const options = {
-        day: '2-digit',
-        month: '2-digit',
-        year: 'numeric',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        hour12: false // 24-часов формат
-    };
-    document.getElementById('dateTime').textContent = now.toLocaleString('bg-BG', options);
-}
+let siteData = {};
 
-// Започваме актуализацията
-setInterval(updateDateTime, 1000);
-updateDateTime();
-
-// Функция за превключване на съдържанието
-function switchContent(targetId) {
-    // За десктоп менюто
-    document.querySelectorAll('.menu li').forEach(i => i.classList.remove('active'));
-    document.querySelectorAll(`.menu li[data-target="${targetId}"]`).forEach(i => i.classList.add('active'));
-
-    // За съдържанието
-    document.querySelectorAll('.content-block').forEach(block => {
-        block.classList.remove('active-content');
-        block.classList.add('hidden-content');
-    });
-    document.getElementById(targetId).classList.add('active-content');
-    document.getElementById(targetId).classList.remove('hidden-content');
-
-    // Скриване на мобилното меню след избор
-    document.querySelector('.mobile-menu').classList.remove('active');
-    document.querySelector('.menu-toggle').classList.remove('active');
-}
-
-// Event Listeners за менюто (desktop & mobile)
-document.querySelectorAll('[data-target]').forEach(item => {
-    item.addEventListener('click', (e) => {
-        // Проверяваме дали целта е вътрешна секция или е бутон за плащане в VIP секцията
-        const targetId = e.currentTarget.getAttribute('data-target');
-        switchContent(targetId);
-    });
-});
-
-// Event Listener за мобилното меню toggle
-document.querySelector('.menu-toggle').addEventListener('click', () => {
-    document.querySelector('.mobile-menu').classList.toggle('active');
-    document.querySelector('.menu-toggle').classList.toggle('active');
-});
-
-// -- ЗАРЕЖДАНЕ НА ДАННИ ОТ data.json --
-async function loadData() {
+async function init() {
     try {
-        // КОРЕКЦИЯ 1: Добавяне на timestamp (?v=...), за да се избегне кеширането на data.json
-        const timestamp = new Date().getTime();
-        const dataUrl = `data.json?v=${timestamp}`;
-        
-        const response = await fetch(dataUrl); // Използваме новия URL
-        if (!response.ok) {
-            throw new Error(`HTTP грешка! Статус: ${response.status}`);
-        }
-        const data = await response.json();
+        const res = await fetch(`data.json?v=${Date.now()}`);
+        siteData = await res.json();
+        renderAll();
+    } catch (e) { console.error("Error loading JSON:", e); }
+}
 
-        // 1. Попълване на Обща Статистика (Statistics)
-        document.getElementById('total-prognoses').textContent = data.generalStats.totalPrognoses;
-        
-        // --- Логика за цвят на Общата успеваемост ---
-        const successRateValueGeneral = parseInt(data.generalStats.totalSuccessRate.replace('%', ''));
-        let rateClassGeneral = '';
-        if (successRateValueGeneral >= 60) {
-            rateClassGeneral = 'green-text';
-        } else if (successRateValueGeneral < 50) {
-            rateClassGeneral = 'red-text';
-        }
-        document.getElementById('total-success-rate').innerHTML = `<span class="${rateClassGeneral}">${data.generalStats.totalSuccessRate}</span>`;
-        // --- КРАЙ НА Логика за цвят ---
-        
-        document.getElementById('avg-odd').innerHTML = `<span class="green-text">${data.generalStats.avgOdd.toFixed(2)}</span>`;
+function renderAll() {
+    renderSettings();
+    renderMenu();
+    renderAds();
+    renderSponsorsAndPartners();
+    renderContent();
+    startTime();
+}
 
-        // 2. Попълване на Фишове (Fiches)
-        const fichesContainer = document.getElementById('fiches-content');
-        // Изчистваме старото съдържание, запазваме само заглавието
-        fichesContainer.innerHTML = '<h2 class="content-title">Фишове</h2><hr class="section-divider">';
+function renderSettings() {
+    document.title = siteData.siteSettings.siteTitle;
+    document.getElementById('site-logo').src = siteData.siteSettings.logoUrl;
+    document.getElementById('marquee-text').innerHTML = siteData.siteSettings.marqueeText;
+    document.getElementById('footer-text').innerHTML = siteData.siteSettings.footerText;
+}
 
-        data.fiches.forEach(fiche => {
-            let matchesHtml = fiche.matches.map(match => {
-                const oddFormatted = match.odd > 0 ? match.odd.toFixed(2) : '-';
-                return `
-                    <tr>
-                        <td>${match.date}</td>
-                        <td>${match.time}</td>
-                        <td>${match.game}</td>
-                        <td>${oddFormatted}</td>
-                        <td>${match.prediction}</td>
-                        <td><i class="${match.statusIcon}"></i></td>
-                    </tr>
-                `;
-            }).join('');
+function renderMenu() {
+    const desktopList = document.getElementById('dynamic-menu');
+    const mobileList = document.getElementById('mobile-menu-links');
+    let html = '';
+    let mobileHtml = '';
 
-            const totalOddFormatted = fiche.totalOdd > 0 ? fiche.totalOdd.toFixed(2) : 0;
-            const vipTag = fiche.isVIP ? '<i class="fas fa-crown green-text-vip"></i>' : '';
+    siteData.menu.forEach(item => {
+        html += `<li><a onclick="switchTab('${item.id}')"><i class="${item.icon}"></i> ${item.label}</a></li>`;
+        mobileHtml += `<a onclick="switchTab('${item.id}')"><i class="${item.icon}"></i> ${item.label}</a>`;
+    });
+    desktopList.innerHTML = html;
+    mobileList.innerHTML = mobileHtml;
+}
 
-            fichesContainer.innerHTML += `
-                <div class="fiche-card card">
-                    <h3>${vipTag} ${fiche.title}</h3>
-                    <table class="fiche-table">
-                        <thead>
-                            <tr>
-                                <th>Дата</th>
-                                <th>Час</th>
-                                <th>Среща</th>
-                                <th>Коефициент</th>
-                                <th>Прогноза</th>
-                                <th>Статус</th>
-                            </tr>
-                        </thead>
-                        <tbody>${matchesHtml}</tbody>
-                    </table>
-                    <hr class="section-divider">
-                    <p><span class="fiche-total">Общ Коефициент: ${totalOddFormatted}</span></p>
-                    <p class="disclaimer"><center><span style="color: red;">${fiche.disclaimer}</span></center></p>
-                    <hr class="section-divider">
-                </div>
-                <hr class="section-divider">
-            `;
-        });
+function renderAds() {
+    const ads = siteData.ads;
+    const createAd = (ad) => ad.show ? `<a href="${ad.link}" target="_blank"><img src="${ad.imageUrl}" alt="Ad"><span class="ad-label">Реклама</span></a>` : '';
+    document.getElementById('header-ad-container').innerHTML = createAd(ads.headerBanner);
+    document.getElementById('left-ad-container').innerHTML = createAd(ads.sidebarLeft);
+    document.getElementById('right-ad-container').innerHTML = createAd(ads.sidebarRight);
+}
 
-        // 3. Попълване на Прогнози (Prognosis Content)
-        const prognosisTableBody = document.querySelector('#prognosis-content .prognosis-table tbody');
-        prognosisTableBody.innerHTML = data.prognoses.map(p => {
-            // Логика за цензуриране на играта, прогнозата и коефициента
-            const gameDisplay = p.isCensoredGame ? '-' : p.game;
-            const predictionDisplay = p.isCensoredPrediction ? '-' : p.prediction;
-            const oddDisplay = p.isCensoredOdd ? '-' : p.odd.toFixed(2);
-            const statusColorClass = p.statusIcon.includes('check-circle') ? 'green-text' : p.statusIcon.includes('times-circle') ? 'red-text' : 'stat-value-neutral';
+function renderSponsorsAndPartners() {
+    // Partners (Left)
+    const partners = siteData.partners || [];
+    document.getElementById('partners-container').innerHTML = partners.map(p => `
+        <a href="${p.url}" target="_blank" class="sponsor-item" title="${p.name}">
+            <img src="${p.logo}" alt="${p.name}">
+        </a>
+    `).join('');
+
+    // Sponsors (Right)
+    const sponsors = siteData.sponsors || [];
+    document.getElementById('sponsors-container').innerHTML = sponsors.map(s => `
+        <a href="${s.url}" target="_blank" class="sponsor-item" title="${s.name}">
+            <img src="${s.logo}" alt="${s.name}">
+        </a>
+    `).join('');
+}
+
+function renderContent() {
+    // 1. Fiches (Only in Fiches tab)
+    const fichesContainer = document.getElementById('fiches-content');
+    
+    fichesContainer.innerHTML = siteData.fiches.map(f => {
+        const matchesHtml = f.matches.map(m => {
+            const ribbonColor = m.ribbonColor || 'transparent';
+            const ribbonText = m.ribbonText ? `<span class="ribbon-badge" style="background:${ribbonColor}">${m.ribbonText}</span>` : '';
+            const ribbonMarker = `<div class="ribbon-marker" style="background:${ribbonColor}; box-shadow: 0 0 8px ${ribbonColor};"></div>`;
 
             return `
                 <tr>
-                    <td>${p.date} / ${p.time}</td>
-                    <td>${gameDisplay}</td>
-                    <td>${predictionDisplay}</td>
-                    <td>${oddDisplay}</td>
-                    <td>${p.result}</td>
-                    <td><i class="${p.statusIcon} ${statusColorClass}"></i></td>
+                    <td class="ribbon-cell">${ribbonMarker}</td>
+                    <td><span style="color:#aaa; font-size:0.8em">${m.time}</span><br>${m.game} ${ribbonText}</td>
+                    <td style="font-weight:bold; color:var(--accent)">${m.prediction}</td>
+                    <td>${m.odd.toFixed(2)}</td>
+                    <td><i class="${m.statusIcon}"></i></td>
                 </tr>
             `;
         }).join('');
 
-        // 4. Попълване на VIP Прогнози (VIP Prognosis Content)
-        const vipTableBody = document.querySelector('#vip-prognosis-content .prognosis-table tbody');
-        vipTableBody.innerHTML = data.vipPrognoses.map(p => {
-            // В VIP секцията цензурата е ЗАДЪЛЖИТЕЛНА
-            const gameDisplay = p.isCensoredGame ? '***' : p.game;
-            const predictionDisplay = p.isCensoredPrediction ? '*' : p.prediction;
-            const oddDisplay = p.isCensoredOdd ? '*' : p.odd.toFixed(2);
-            const statusColorClass = p.statusIcon.includes('check-circle') ? 'green-text' : p.statusIcon.includes('times-circle') ? 'red-text' : 'stat-value-neutral';
-
-            return `
-                <tr class="blurred-text">
-                    <td>${p.date} / ${p.time}</td>
-                    <td>${gameDisplay}</td>
-                    <td>${predictionDisplay}</td>
-                    <td>${oddDisplay}</td>
-                    <td><i class="${p.statusIcon} ${statusColorClass}"></i></td>
-                </tr>
-            `;
-        }).join('');
-
-        // 5. Попълване на Месечна Статистика (Monthly Stats)
-        const monthlyStatsTableBody = document.querySelector('#monthly-stats-table tbody');
-        // Изчистване на статичните примерни данни
-        monthlyStatsTableBody.innerHTML = '';
-
-        data.monthlyStats.forEach(stat => {
-            const successRate = stat.successRate > 0 ? `${stat.successRate}%` : '0%';
-            const rateColorClass = stat.successRate >= 60 ? 'green-text' : stat.successRate > 0 ? 'yellow-text' : 'white-text';
-            const winsColorClass = stat.wins > 0 ? 'green-text' : 'white-text';
-            const lossesColorClass = stat.losses > 0 ? 'red-text' : 'white-text';
-
-            monthlyStatsTableBody.innerHTML += `
-                <tr data-month="${stat.month}.${stat.year}">
-                    <td>${stat.month}</td>
-                    <td><span class="${winsColorClass}">${stat.wins}</span></td>
-                    <td><span class="${lossesColorClass}">${stat.losses}</span></td>
-                    <td><span class="stat-value-neutral">${stat.postponed}</span></td>
-                    <td><span class="success-rate"><span class="${rateColorClass}">${successRate}</span></span></td>
-                </tr>
-            `;
-        });
-
-        // script.js (СЕКЦИЯ 6)
-
-        // 6. Попълване на Таблото (Dashboard)
-        const d = data.dashboard;
-
-        // Daily Challenge
-        document.getElementById('daily-date').textContent = d.dailyChallenge.date;
-        document.getElementById('daily-time').textContent = d.dailyChallenge.time;
-        document.getElementById('daily-game').textContent = d.dailyChallenge.game;
-        document.getElementById('daily-prediction').textContent = d.dailyChallenge.prediction;
-        document.getElementById('daily-odd').textContent = d.dailyChallenge.odd.toFixed(2);
-
-
-        // Last VIP (в info-card)
-        const lv = d.lastVip;
-        const lastVipCard = document.querySelector('.vip-last-card');
-
-        // КОРЕКЦИЯ 3: Актуализираме датата. Търсим span с клас .value, не .match-name-full.
-        // Според index.html: <p class="fiche-date-row"><span class="label">Дата:</span><span class="value">...</span></p>
-        const dateElement = lastVipCard.querySelector('.fiche-matches-list p:nth-child(1) .value');
-        if (dateElement) {
-            dateElement.textContent = lv.date;
-        }
-
-        // КОРЕКЦИЯ 4: Актуализираме мачовете. Използваме директните ID-та, за да е по-надеждно.
-        document.getElementById('lv-game1').textContent = lv.game1;
-        document.getElementById('lv-game2').textContent = lv.game2;
-        document.getElementById('lv-game3').textContent = lv.game3;
-
-
-        // Общ Коефициент
-        // Този селектор е вече точен: <span id="lv-total-odd">
-        lastVipCard.querySelector('#lv-total-odd').textContent = lv.totalOdd.toFixed(2); 
-
-        // Статус
-        // --- Логика за оцветяване ---
-        const statusElement = document.getElementById('lv-status'); // Вземане на елемента по ID
-
-        if (statusElement) {
-            statusElement.textContent = lv.status; 
+        return `
+        <div class="card">
+            <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px; margin-bottom:10px;">
+                <h3 style="margin:0; width:100%; text-align:center; color: ${f.isVIP ? 'gold' : 'white'}">
+                    ${f.isVIP ? '<i class="fas fa-crown"></i>' : ''} ${f.title}
+                </h3>
+            </div>
             
-            // Премахване на всички стари класове за цвят
-            statusElement.classList.remove('green-text-vip', 'red-text', 'white-text', 'status-winning', 'status-losing', 'status-pending', 'summary-value'); 
+            ${f.ribbonText ? `
+            <div style="text-align:center; margin-bottom:10px;">
+                <span style="background:${f.ribbonColor || '#ccc'}; color:#000; font-weight:bold; padding:2px 8px; border-radius:4px; font-size:0.8rem;">${f.ribbonText}</span>
+            </div>` : ''}
 
-            // Нормализиране на текста за проверка (премахва '!' и '.')
-            const statusText = (lv.status || '').toUpperCase().trim().replace(/!/g, '').replace(/\./g, ''); 
+            <table class="custom-table">
+                <thead><tr><th style="width:10px"></th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr></thead>
+                <tbody>
+                    ${matchesHtml}
+                </tbody>
+            </table>
+            <div style="text-align:center; margin-top:10px; font-weight:bold;">Общ коефициент: <span style="color:var(--accent); font-size:1.2em;">${f.totalOdd.toFixed(2)}</span></div>
+            <div style="color:#777; font-size:0.8rem; margin-top:5px; text-align:center;">${f.disclaimer}</div>
+        </div>
+    `}).join('');
 
-            // Добавяне на новия клас
-            if (statusText.includes('ПЕЧЕЛИВШ')) {
-                statusElement.classList.add('status-winning');
-            } else if (statusText.includes('ГУБЕЩ')) {
-                statusElement.classList.add('status-losing');
-            } else if (statusText.includes('ИЗЧАКВА')) {
-                statusElement.classList.add('status-pending');
-            } else {
-                // Ако няма статус или е различен, връщаме го към основния стил
-                statusElement.classList.add('summary-value');
-            }
-            
-            // Премахваме всички инлайн стилове
-            statusElement.style.background = 'none';
-        }
-        // --- КРАЙ НА Логика за оцветяване ---
+    // 2. Free Prognosis
+    document.getElementById('prognosis-tbody').innerHTML = siteData.prognoses.map(p => createRow(p)).join('');
 
+    // 3. VIP Prognosis
+    document.getElementById('vip-tbody').innerHTML = siteData.vipPrognoses.map(p => createRow(p, true)).join('');
 
-        // Top Achievements (Селекторите са ОК)
-        const ta = d.topAchievements;
-        document.querySelector('.info-card.stats-info-card:nth-child(4) p:nth-of-type(1) .stat-value-positive').textContent = ta.maxOdd.toFixed(2);
-        document.querySelector('.info-card.stats-info-card:nth-child(4) p:nth-of-type(2) .stat-value-positive').textContent = ta.longestStreak;
+    // 4. Pricing
+    document.getElementById('pricing-grid').innerHTML = siteData.pricing.map(plan => `
+        <div style="background:rgba(255,255,255,0.05); padding:20px; border-radius:10px; text-align:center; border:1px solid rgba(255,255,255,0.1); position:relative;">
+            ${plan.tag ? `<div style="position:absolute; top:-10px; right:10px; background:var(--accent); color:black; font-weight:900; font-size:0.7rem; padding:2px 8px; border-radius:4px;">${plan.tag}</div>` : ''}
+            <h3 style="margin-top:10px;">${plan.title}</h3>
+            <div style="font-size:2rem; font-weight:900; color:var(--primary); margin:15px 0;">${plan.price}</div>
+            <a href="${plan.link}" style="display:inline-block; background:white; color:black; text-decoration:none; padding:10px 20px; font-weight:bold; border-radius:20px;">КУПИ</a>
+        </div>
+    `).join('');
 
-        // Update success rate card (Селекторите са ОК)
-        const statLarge = document.querySelector('.info-card.stats-info-card[data-target="statistics-content"] .stat-large');
-        const successRateValue = parseInt(data.generalStats.totalSuccessRate.replace('%', ''));
-        statLarge.textContent = data.generalStats.totalSuccessRate;
-        if (successRateValue >= 60) {
-            statLarge.classList.add('green-text');
-            statLarge.classList.remove('red-text');
-        } else if (successRateValue < 50) {
-            statLarge.classList.add('red-text');
-            statLarge.classList.remove('green-text');
-        } else {
-            statLarge.classList.remove('green-text', 'red-text');
-        }
-
-    } catch (error) {
-        console.error("Грешка при обработка на данни:", error);
-    }
+    // 5. Monthly Stats
+    document.getElementById('monthly-stats-body').innerHTML = siteData.monthlyStats.map(s => `
+        <tr>
+            <td>${s.month} ${s.year}</td>
+            <td class="status-win">${s.wins}</td>
+            <td class="status-lose">${s.losses}</td>
+            <td style="font-weight:bold; color:var(--text-main)">${s.successRate}%</td>
+        </tr>
+    `).join('');
 }
 
-// Извикваме функцията за зареждане на данни при зареждане на страницата
-document.addEventListener('DOMContentLoaded', loadData);
+function createRow(match, isVip = false) {
+    const game = (isVip && match.isCensoredGame) ? '<span class="vip-blur">HIDDEN GAME</span>' : match.game;
+    const pred = (isVip && match.isCensoredPrediction) ? '<span class="vip-blur">1X2</span>' : match.prediction;
+    const odd = (isVip && match.isCensoredOdd) ? '<span class="vip-blur">0.00</span>' : match.odd.toFixed(2);
+    
+    const ribbonColor = match.ribbonColor || 'transparent';
+    const ribbonText = match.ribbonText ? `<span class="ribbon-badge" style="background:${ribbonColor}">${match.ribbonText}</span>` : '';
+    const ribbonMarker = `<div class="ribbon-marker" style="background:${ribbonColor}; box-shadow: 0 0 8px ${ribbonColor};"></div>`;
+
+    // ПРОМЯНА: Разделени клетки за Час и Мач, за да пасне на заглавната част (6 колони)
+    return `
+        <tr>
+            <td class="ribbon-cell">${ribbonMarker}</td>
+            <td style="white-space:nowrap; color:#aaa; font-weight:bold;">${match.time}</td>
+            <td style="text-align:left;">${game} ${ribbonText}</td>
+            <td style="color:var(--accent); font-weight:bold">${pred}</td>
+            <td>${odd}</td>
+            <td><i class="${match.statusIcon}"></i></td>
+        </tr>
+    `;
+}
+
+function switchTab(tabId) {
+    document.querySelectorAll('.content-section').forEach(el => el.classList.add('hidden'));
+    
+    let targetId = tabId + '-content';
+    if(tabId === 'home') targetId = 'home-content';
+    
+    const target = document.getElementById(targetId);
+    if(target) target.classList.remove('hidden');
+    else document.getElementById('home-content').classList.remove('hidden'); 
+
+    document.querySelector('.mobile-menu-overlay').classList.remove('active');
+}
+
+// ПРОМЯНА: Нова логика за дата и час на български
+function startTime() {
+    const days = ['Неделя', 'Понеделник', 'Вторник', 'Сряда', 'Четвъртък', 'Петък', 'Събота'];
+    
+    setInterval(() => {
+        const now = new Date();
+        
+        // Взимаме деня от седмицата
+        const dayName = days[now.getDay()];
+        
+        // Форматираме датата: 12.12.2025
+        const day = String(now.getDate()).padStart(2, '0');
+        const month = String(now.getMonth() + 1).padStart(2, '0');
+        const year = now.getFullYear();
+        const dateString = `${day}.${month}.${year}г.`;
+        
+        // Форматираме часа: 15:32
+        const timeString = now.toLocaleTimeString('bg-BG', {hour:'2-digit', minute:'2-digit'});
+        
+        // Сглобяваме крайния низ
+        document.getElementById('clock').innerText = `Дата: ${dayName}, ${dateString} / Час: ${timeString}`;
+    }, 1000);
+}
+
+document.querySelector('.menu-toggle').addEventListener('click', () => {
+    document.querySelector('.mobile-menu-overlay').classList.add('active');
+});
+document.querySelector('.close-menu').addEventListener('click', () => {
+    document.querySelector('.mobile-menu-overlay').classList.remove('active');
+});
+const style = document.createElement('style');
+style.innerHTML = `.hidden { display: none !important; }`;
+document.head.appendChild(style);
+
+init();
