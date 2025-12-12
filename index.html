@@ -1,319 +1,134 @@
 <!DOCTYPE html>
 <html lang="bg">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Premier ImpuLse</title>
-<link rel="stylesheet" href="styles.css">
-<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premier ImpuLse</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-  
-<header>
-    <div class="logo">
-        <img src="Logo.png" alt="Logo">
+
+    <div class="marquee-container">
+        <div class="marquee-content" id="marquee-text">Loading news...</div>
     </div>
-    <div class="ad-card">Premier impuLse</div>
-    <div class="date-time" id="dateTime"></div>
 
-    <div class="menu-toggle">
-        <span></span>
-        <span></span>
-        <span></span>
-    </div>
-</header>
-<div class="mobile-menu">
-  <ul>
-    <li data-target="welcome-content"><i class="fas fa-home"></i> Начало</li>
-    <li data-target="fiches-content"><i class="fas fa-clipboard-list"></i> Фишове</li>
-    <li data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
-    <li data-target="vip-prognosis-content"><i class="fas fa-crown"></i> Прогнози<span class="green-text-vip">VIP</span></li>
-    <li data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
-    <li data-target="payment-content"><i class="fas fa-credit-card"></i> Абонамент</li>
-    </ul>
-</div>
-<main>
-    <aside class="menu">
-        <h2><span style="color: #7289da;"><i class="fas fa-bars"></i> Меню</span></h2>
-<hr class="section-divider">
-        <ul>
-            <li id="menu-home" data-target="welcome-content" class="active"><i class="fas fa-home"></i> Начало</li>
-            <li id="menu-fiches" data-target="fiches-content"><i class="fas fa-clipboard-list"></i> Фишове</li>
-            <li id="menu-prognosis" data-target="prognosis-content"><i class="fas fa-bullseye"></i> Прогнози</li>
-            <li id="menu-vip-prognosis" data-target="vip-prognosis-content"><i class="fas fa-crown neon-flash"></i> Прогнози <span class="green-text-vip">VIP</span></li>
-            <li id="menu-statistics" data-target="statistics-content"><i class="fas fa-chart-line"></i> Статистика</li>
-            <li id="menu-payment" data-target="payment-content"><i class="fas fa-credit-card"></i> Абонамент</li>
-            </ul>
-
-<hr class="section-divider">
-
-        <div class="info-card responsible-info-card">
-            <i class="fas fa-hand-holding-usd"></i>
-            <h4>Залагай Отговорно</h4>
-    <div class="card-body">
-            <p><span class="red-text">Не залагайте повече, отколкото можете да си позволите да загубите!</span></p>
-        </div>
-        </div>
-        </div>
-<hr class="section-divider">
-
-    </aside>
-
-    <section class="content">
-        <div id="welcome-content" class="content-block active-content">
-            <div class="welcome-card">
-                Добре дошли в Premier impuLse!
+    <header>
+        <div class="header-inner">
+            <div class="logo">
+                <img src="Logo.png" id="site-logo" alt="Logo">
+            </div>
+            <nav class="desktop-menu">
+                <ul id="dynamic-menu"></ul>
+            </nav>
+            <div class="header-actions">
+                <div id="clock" style="font-weight:700; color:var(--accent); font-size: 0.9rem;">Loading...</div>
+                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
             </div>
         </div>
+    </header>
 
-<div id="fiches-content" class="content-block hidden-content">
-    <h2 class="content-title">Фишове</h2>
-</div>
+    <div class="mobile-menu-overlay">
+        <div class="close-menu"><i class="fas fa-times"></i></div>
+        <div id="mobile-menu-links"></div>
+    </div>
 
-        <div id="prognosis-content" class="content-block hidden-content">
-            <h2 class="content-title">Прогнози ( Декември )</h2>
-<hr class="section-divider">
-            <div class="prognosis-list-container card">
-                <table class="prognosis-table">
-                    <thead>
-                        <tr>
-                            <th>Дата/Час</th>
-                            <th>Среща</th>
-                            <th>Прогноза</th>
-                            <th>Коефициент</th>
-                            <th>Резултат</th>
-                            <th>Статус</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        </tbody>
-                </table>
-            </div>
-<hr class="section-divider">
-        </div>
+    <div class="container" style="max-width:1600px; margin:20px auto; padding:0 15px;">
+        <div id="header-ad-container" class="ad-slot header-ad"></div>
+    </div>
 
-<div id="vip-prognosis-content" class="content-block hidden-content">
-    <h2 class="content-title"><i class="fas fa-crown neon-flash"></i> Прогнози<span class="green-text-vip">VIP</span></h2>
-    <hr class="section-divider">
-    <div class="card vip-card-container">
-        <h3>Ексклузивни Прогнози с Висок Процент на Успеваемост</h3>
-        <p>
-            <center>Достъп до нашите **най-добри анализи** и **селекции**! VIP прогнозите са специално подбрани и предлагат най-високо съотношение риск/печалба.</center>
-        </p>
-
-        <div style="text-align: center; margin-bottom: 25px;">
-            <button id="vip-access-button" class="action-button" data-target="payment-content">
-                <i class="fas fa-lock-open"></i> Вземи VIP Достъп Сега!
-            </button>
-        </div>
-
-        <h4>Следващи VIP Срещи (Само за абонати)</h4>
+    <div class="main-container">
         
-        <div class="prognosis-list-container card" style="background: var(--bg); padding: 10px;">
-            <table class="prognosis-table">
-                <thead>
-                    <tr>
-                        <th>Дата/Час</th>
-                        <th>Среща</th>
-                        <th>Прогноза</th>
-                        <th>Коефициент</th>
-                        <th>Статус</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    </tbody>
-            </table>
-        </div>
-    </div>
-    <hr class="section-divider">
-</div>
-
-<div id="statistics-content" class="content-block hidden-content">
-    <h2 class="content-title">Обща Статистика и Ефективност</h2>
-    <hr class="section-divider">
-    
-    <div class="stats-grid">
-        
-        <div class="stat-card">
-            <div class="value stat-value-default" id="total-prognoses">4</div>
-            <div class="label">Общ Брой Прогнози</div>
-        </div>
-        
-        <div class="stat-card">
-            <div class="value stat-value-info" id="total-success-rate"><span class="green-text">75%</span></div>
-            <div class="label">Обща Успеваемост</div>
-        </div>
-
-        <div class="stat-card">
-            <div class="value stat-value-neutral" id="avg-odd"><span class="green-text">2.47</span></div>
-            <div class="label">Среден Коефициент</div>
-        </div>
-    </div>
-    <hr class="section-divider">
-
-    <h3 class="content-title" style="color: var(--muted); margin-bottom: 20px;">Месечен Отчет</h3>
-    
-    <div class="card" style="background: var(--panel); padding: 10px;">
-        <div style="overflow-x: auto;">
-            <table class="stats-table" id="monthly-stats-table">
-                <thead>
-                    <tr>
-                        <th>Месец</th>
-                        <th>Печеливши</th>
-                        <th>Губещи</th>
-                        <th>Отложени</th>
-                        <th>Успеваемост</th> 
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr data-month="12.2025"><td>Декември</td><td><span class="green-text">3</span></td><td><span class="red-text">0</span></td><td><span class="stat-value-neutral">0</span></td><td><span class="success-rate"><span class="green-text">100%</span></span></td></tr>
-                    <tr data-month="01.2026"><td>Януари</td><td><span class="green-text">0</span></td><td><span class="red-text">1</span></td><td><span class="stat-value-neutral">0</span></td><td><span class="success-rate"><span class="red-text">0%</span></span></td></tr>
-                    <tr data-month="02.2026"><td>Февруари</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
-                    <tr data-month="03.2026"><td>Март</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
-                    <tr data-month="04.2026"><td>Април</td><td></td><td></td><td></td><td><span class="success-rate">0%</span></td></tr>
-                </tbody>
-            </table>
-        </div>
-</div>
-</div>
-<div id="payment-content" class="content-block hidden-content">
-    <h2 class="content-title">Абонамент и VIP Достъп</h2>
-    <hr class="section-divider">
-
-
-
-    <!-- Нова Таблица за Цени -->
-    <div class="table-container">
-        <table class="pricing-table">
-            <thead>
-                <tr>
-                    <th class="package-col">Пакет</th>
-                    <th class="price-col">Цена</th>
-                    <th class="action-col">Купи / Контакт</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="package-row">
-                    <td data-label="Пакет">1 VIP Среща</td>
-                    <td data-label="Цена">10.23€</td>
-                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
-                </tr>
-                <tr class="package-row">
-                    <td data-label="Пакет">2 VIP Срещи</td>
-                    <td data-label="Цена">17.90€</td>
-                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
-                </tr>
-                <tr class="package-row vip-fiche-row">
-                    <td data-label="Пакет">VIP Фиш</td>
-                    <td data-label="Цена">20.45€</td>
-                    <td data-label="Контакт" class="contact-cell"><a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- Край на Новата Таблица -->
-
-    <!-- Информацията под таблицата (запазена) -->
-    <div class="info-card minimal-card" style="margin-top: 20px;">
-        <h4 class="card-title"><i class="fas fa-info-circle"></i> Важна Информация</h4>
-        <p style="font-size: 0.9rem; color: var(--muted-2); margin-top: 10px;">
-            Всички плащания се обработват през посочения имейл адрес. За повече информация относно начините на плащане и условията за VIP достъп, моля, свържете се с нас.
-        </p>
-    </div>
-
-</div>
-    
-    <hr class="section-divider">
-
-<hr class="section-divider">
-    <h3 class="content-title" style="color: var(--muted);">Методи за плащане</h3>
-    <div class="payment-methods">
-        <span class="payment-icon">Банков превод</span>
-        <span class="payment-icon">PayPal</span>
-        <span class="payment-icon">Revolut</span>
-    </div>
-    <p style="text-align: center; margin-top: 20px; font-size: 14px; color: #aaa;"><span class="white-text">За въпроси или други методи за плащане, моля, свържете се с нас.</span></p>
-    <p style="text-align: center; margin-top: 20px; font-size: 14px;"><span class="white-text">Email: <a href="mailto:premier-impulse@abv.bg">premier-impulse@abv.bg</a></p>
-</div>
-<hr class="section-divider">
-        </section>
-
-<aside class="analysis">
-        <h3 style="color: #7289da; text-align: center; margin-top: 0px;">Табло</h3>
-<hr class="section-divider">
-
-<div class="info-card free-info-card daily-challenge-card"> 
-    <div class="card-header-styled">
-        <h3 class="card-title">За деня</h3>
-    </div>
-    <div class="card-body">
-        <div class="match-group">
-            <p class="match-game" id="daily-game"></p>
-            <p class="match-date-time"><span id="daily-date"></span> | <span id="daily-time"></span></p>
-        </div>
-        <div class="prognosis-summary">
-            <div class="summary-item">
-                <span class="summary-label">ПРОГНОЗА</span>
-                <span class="summary-value" id="daily-prediction"></span>
+        <aside class="sidebar" id="sidebar-left">
+            <div class="card">
+                <h3 class="section-title">Партньори</h3>
+                <div id="partners-container" class="sponsor-grid"></div>
             </div>
-            <div class="summary-item coefficient-box">
-                <span class="summary-label">КОЕФИЦИЕНТ</span>
-                <span class="summary-value large-odd" id="daily-odd"></span>
+            <div id="left-ad-container" class="ad-slot sidebar-ad"></div>
+        </aside>
+
+        <main class="content-area">
+            
+            <div id="home-content" class="content-section">
+                <div class="card" style="background: linear-gradient(135deg, var(--secondary), var(--bg-panel)); padding: 40px 20px;">
+                    <h1 style="font-size:2.5rem; margin-bottom:10px;">ДОБРЕ ДОШЛИ В PREMIER IMPULSE</h1>
+                    <p style="color:var(--text-muted); font-size: 1.2rem;">Професионални футболни прогнози и статистика.</p>
+                </div>
             </div>
-        </div>
-    </div>
-</div> <!-- Затваря първата карта -->
 
-<hr class="section-divider">
+            <div id="fiches-content" class="content-section hidden"></div>
 
-<div class="info-card vip-info-card vip-last-card"> 
-    <div class="card-header-styled">
-        <h3 class="card-title">VIP ФИШ</h3>
-    </div>
-    <div class="card-body">
-        <div class="fiche-matches-list">
-            <p class="fiche-date-row"><span class="label">Дата:</span><span class="value"></span></p>
-            <p class="match-row"><span class="match-name-pred" id="lv-game1"></span></p>
-            <p class="match-row"><span class="match-name-pred" id="lv-game2"></span></p>
-            <p class="match-row"><span class="match-name-pred" id="lv-game3"></span></p>
-        </div>
-        <div class="prognosis-summary fiche-footer">
-            <div class="summary-item">
-                <span class="summary-label">ОБЩ КОЕФ.</span>
-                <span class="summary-value large-odd" id="lv-total-odd"></span>
+            <div id="prognosis-content" class="content-section hidden">
+                <div class="card">
+                    <h2 class="section-title">Безплатни Прогнози</h2>
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th style="width:10px"></th><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr>
+                        </thead>
+                        <tbody id="prognosis-tbody"></tbody>
+                    </table>
+                </div>
             </div>
-            <div class="summary-item status-box">
-                <span class="summary-label">СТАТУС</span>
-                <span class="summary-value status-text" id="lv-status"></span>
+
+            <div id="vip-content" class="content-section hidden">
+                <div class="card" style="border-color: var(--accent);">
+                    <h2 class="section-title" style="color:var(--accent);">VIP ЗОНА <i class="fas fa-crown"></i></h2>
+                    <div style="margin-bottom:20px;">
+                        <button onclick="switchTab('pricing')" style="background:var(--accent); color:black; border:none; padding:12px 30px; font-weight:900; cursor:pointer; border-radius:5px; font-size:1rem;">ВЗЕМИ ДОСТЪП</button>
+                    </div>
+                    <table class="custom-table">
+                        <thead>
+                            <tr><th style="width:10px"></th><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr>
+                        </thead>
+                        <tbody id="vip-tbody"></tbody>
+                    </table>
+                </div>
             </div>
-        </div>
+
+            <div id="pricing-content" class="content-section hidden">
+                 <div class="card">
+                    <h2 class="section-title">Абонаментни Планове</h2>
+                    <div id="pricing-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px;"></div>
+                 </div>
+            </div>
+            
+            <div id="stats-content" class="content-section hidden">
+                <div class="card">
+                    <h2 class="section-title">Месечна Статистика</h2>
+                    <table class="custom-table">
+                         <thead><tr><th>Месец</th><th>Победи</th><th>Загуби</th><th>% Успех</th></tr></thead>
+                        <tbody id="monthly-stats-body"></tbody>
+                    </table>
+                </div>
+            </div>
+
+        </main>
+
+        <aside class="sidebar" id="sidebar-right">
+            <div class="card">
+                <h3 class="section-title">Спонсори</h3>
+                <div id="sponsors-container" class="sponsor-grid"></div>
+            </div>
+            <div id="right-ad-container" class="ad-slot sidebar-ad"></div>
+        </aside>
+
     </div>
-</div> <!-- Затваря втората карта -->
 
-<hr class="section-divider">
-</aside>
-</main>
-<footer>
-    | &copy; 2025 Premier impuLse. Всички права запазени. | 🔞 Моля, залагайте отговорно. Съдържанието е само за лица над 18 години. | 
-</footer>
+    <footer>
+        <p id="footer-text"></p>
+        <div style="margin-top:10px; color:var(--danger);">🔞 Залагайте отговорно! 18+</div>
+    </footer>
 
-  <!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/69340027689edc197f6a14b1/1jbpi16jn';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
-
-<script src="script.js"></script>
-
+    <script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true; s1.src='https://embed.tawk.to/69340027689edc197f6a14b1/1jbpi16jn';
+    s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
-
