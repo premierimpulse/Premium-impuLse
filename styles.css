@@ -236,3 +236,93 @@ footer {
     header { width: 100%; margin: 0; }
     .header-content { padding: 0 15px; }
 }
+
+/* --- MOBILE MENU STYLES --- */
+
+/* Навигационният контейнер вътре в overlay-a */
+.mobile-menu-overlay nav {
+    width: 100%;
+    text-align: center;
+}
+
+/* Списъкът с връзки */
+.mobile-menu-overlay ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 25px; /* Разстояние между линковете */
+}
+
+/* Самите линкове */
+.mobile-menu-overlay a {
+    font-family: var(--font-head);
+    font-size: 1.8rem; /* Голям шрифт за лесно натискане */
+    font-weight: 700;
+    color: var(--text);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-block;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Ефекти при hover върху линковете на мобилно */
+.mobile-menu-overlay a:hover,
+.mobile-menu-overlay a.active {
+    color: var(--accent);
+    text-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
+    transform: scale(1.05);
+}
+
+/* Декоративна линия под линка при hover */
+.mobile-menu-overlay a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--accent);
+    transition: width 0.3s ease, left 0.3s ease;
+    box-shadow: 0 0 10px var(--accent);
+}
+
+.mobile-menu-overlay a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Бутон за затваряне (X) */
+.mobile-close-btn {
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2001;
+    line-height: 1;
+}
+
+.mobile-close-btn:hover {
+    color: var(--danger);
+    transform: rotate(90deg) scale(1.1);
+    text-shadow: 0 0 10px var(--danger);
+}
+
+/* Малък детайл за лого или текст вътре в менюто */
+.mobile-menu-footer {
+    position: absolute;
+    bottom: 40px;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    opacity: 0.6;
+}
