@@ -5,130 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premier ImpuLse</title>
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
 
-    <div class="marquee-container">
-        <div class="marquee-content" id="marquee-text">Loading news...</div>
+    <div class="marquee-wrapper">
+        <div class="marquee-content" id="marquee-text">Loading...</div>
     </div>
 
-    <header>
-        <div class="header-inner">
-            <div class="logo">
+    <header class="glass-panel">
+        <div class="header-content">
+            <div class="logo-container">
                 <img src="Logo.png" id="site-logo" alt="Logo">
             </div>
-            <nav class="desktop-menu">
+            
+            <nav class="desktop-nav">
                 <ul id="dynamic-menu"></ul>
             </nav>
-            <div class="header-actions">
-                <div id="clock" style="font-weight:700; color:var(--accent); font-size: 0.9rem;">Loading...</div>
-                <div class="menu-toggle"><i class="fas fa-bars"></i></div>
-            </div>
+
+            <button class="menu-toggle" onclick="toggleMobileMenu()"><i class="fas fa-bars"></i></button>
         </div>
     </header>
 
-    <div class="mobile-menu-overlay">
-        <div class="close-menu"><i class="fas fa-times"></i></div>
-        <div id="mobile-menu-links"></div>
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <button onclick="toggleMobileMenu()" style="position:absolute; top:20px; right:20px; background:none; border:none; color:white; font-size:2rem;"><i class="fas fa-times"></i></button>
+        <div class="mobile-links" id="mobile-menu-links"></div>
     </div>
 
-    <div class="container" style="max-width:1600px; margin:20px auto; padding:0 15px;">
-        <div id="header-ad-container" class="ad-slot header-ad"></div>
-    </div>
-
-    <div class="main-container">
+    <div class="main-layout">
         
-        <aside class="sidebar" id="sidebar-left">
-            <div class="card">
-                <h3 class="section-title">Партньори</h3>
-                <div id="partners-container" class="sponsor-grid"></div>
-            </div>
-            <div id="left-ad-container" class="ad-slot sidebar-ad"></div>
+        <aside class="sidebar glass-panel">
+            <h3 class="sidebar-title">Партньори</h3>
+            <div id="partners-container" style="display:flex; flex-direction:column; gap:10px; width:100%;"></div>
+            <div id="ad-left" class="ad-container mt-20"></div>
         </aside>
 
         <main class="content-area">
             
-            <div id="home-content" class="content-section">
-                <div class="card" style="background: linear-gradient(135deg, var(--secondary), var(--bg-panel)); padding: 40px 20px;">
-                    <h1 style="font-size:2.5rem; margin-bottom:10px;">ДОБРЕ ДОШЛИ В PREMIER IMPULSE</h1>
-                    <p style="color:var(--text-muted); font-size: 1.2rem;">Професионални футболни прогнози и статистика.</p>
+            <div id="ad-header" class="ad-container"></div>
+
+            <div id="home-content" class="tab-section active fade-in">
+                <div class="hero-card glass-panel">
+                    <h1 id="hero-title">Premier ImpuLse</h1>
+                    <p id="hero-subtitle">Професионални футболни прогнози и статистика</p>
+                    <div class="hero-actions">
+                        <button onclick="switchTab('vip')" class="btn-glow">VIP Зона</button>
+                        <button onclick="switchTab('fiches')" class="btn-outline">Виж Фишове</button>
+                    </div>
+                </div>
+
+                <div class="glass-panel mt-20" style="padding:20px; text-align:center;">
+                    <h3 style="color:var(--accent); margin:0 0 10px 0;">Месечна Успеваемост</h3>
+                    <div id="home-stats-display" style="font-size:3rem; font-weight:900; color:white;">0%</div>
                 </div>
             </div>
 
-            <div id="fiches-content" class="content-section hidden"></div>
+            <div id="fiches-content" class="tab-section hidden fade-in">
+                <h2 class="text-center" style="margin-bottom:20px;">🔥 Фишове</h2>
+                <div id="fiches-container"></div>
+            </div>
 
-            <div id="prognosis-content" class="content-section hidden">
-                <div class="card">
-                    <h2 class="section-title">Безплатни Прогнози</h2>
-                    <table class="custom-table">
-                        <thead>
-                            <tr><th style="width:10px"></th><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr>
-                        </thead>
+            <div id="prognosis-content" class="tab-section hidden fade-in">
+                <h2 class="text-center" style="margin-bottom:20px;">⚽ Безплатни Прогнози</h2>
+                <div class="glass-panel">
+                    <table class="pro-table">
+                        <thead><tr><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr></thead>
                         <tbody id="prognosis-tbody"></tbody>
                     </table>
                 </div>
             </div>
 
-            <div id="vip-content" class="content-section hidden">
-                <div class="card" style="border-color: var(--accent);">
-                    <h2 class="section-title" style="color:var(--accent);">VIP ЗОНА <i class="fas fa-crown"></i></h2>
-                    <div style="margin-bottom:20px;">
-                        <button onclick="switchTab('pricing')" style="background:var(--accent); color:black; border:none; padding:12px 30px; font-weight:900; cursor:pointer; border-radius:5px; font-size:1rem;">ВЗЕМИ ДОСТЪП</button>
-                    </div>
-                    <table class="custom-table">
-                        <thead>
-                            <tr><th style="width:10px"></th><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr>
-                        </thead>
+            <div id="vip-content" class="tab-section hidden fade-in">
+                <div style="text-align:center; margin-bottom:20px;">
+                    <h2 style="color:var(--gold); display:inline-block; margin-right:15px;"><i class="fas fa-crown"></i> VIP ЗОНА</h2>
+                    <button onclick="switchTab('pricing')" class="btn-glow" style="background:var(--gold); color:black; font-size:0.8rem; padding:8px 15px;">Купи Достъп</button>
+                </div>
+                <div class="glass-panel" style="border:1px solid var(--gold);">
+                    <table class="pro-table vip-table">
+                        <thead><tr><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr></thead>
                         <tbody id="vip-tbody"></tbody>
                     </table>
                 </div>
             </div>
 
-            <div id="pricing-content" class="content-section hidden">
-                 <div class="card">
-                    <h2 class="section-title">Абонаментни Планове</h2>
-                    <div id="pricing-grid" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:15px;"></div>
-                 </div>
+            <div id="pricing-content" class="tab-section hidden fade-in">
+                <h2 class="text-center" style="margin-bottom:20px;">💎 Абонаментни Планове</h2>
+                <div id="pricing-grid" class="pricing-grid"></div>
             </div>
-            
-            <div id="stats-content" class="content-section hidden">
-                <div class="card">
-                    <h2 class="section-title">Месечна Статистика</h2>
-                    <table class="custom-table">
-                         <thead><tr><th>Месец</th><th>Победи</th><th>Загуби</th><th>% Успех</th></tr></thead>
+
+            <div id="stats-content" class="tab-section hidden fade-in">
+                <h2 class="text-center" style="margin-bottom:20px;">📊 Статистика</h2>
+                <div class="glass-panel">
+                    <table class="pro-table">
+                        <thead><tr><th>Месец</th><th>Победи</th><th>Загуби</th><th>Успех</th></tr></thead>
                         <tbody id="monthly-stats-body"></tbody>
                     </table>
                 </div>
             </div>
 
+            <div id="ad-content-bottom" class="ad-container mt-20"></div>
+
         </main>
 
-        <aside class="sidebar" id="sidebar-right">
-            <div class="card">
-                <h3 class="section-title">Спонсори</h3>
-                <div id="sponsors-container" class="sponsor-grid"></div>
-            </div>
-            <div id="right-ad-container" class="ad-slot sidebar-ad"></div>
+        <aside class="sidebar glass-panel">
+            <h3 class="sidebar-title">Спонсори</h3>
+            <div id="sponsors-container" style="display:flex; flex-direction:column; gap:10px; width:100%;"></div>
+            <div id="ad-right" class="ad-container mt-20"></div>
         </aside>
 
     </div>
 
     <footer>
-        <p id="footer-text"></p>
-        <div style="margin-top:10px; color:var(--danger);">🔞 Залагайте отговорно! 18+</div>
+        <p id="footer-text">© 2025 Premier ImpuLse</p>
+        <div style="color:var(--danger); font-size:0.8rem; margin-top:5px;">🔞 Залагайте отговорно!</div>
     </footer>
 
-    <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-    s1.async=true; s1.src='https://embed.tawk.to/69340027689edc197f6a14b1/1jbpi16jn';
-    s1.charset='UTF-8'; s1.setAttribute('crossorigin','*');
-    s0.parentNode.insertBefore(s1,s0);
-    })();
-    </script>
     <script src="script.js"></script>
 </body>
 </html>
