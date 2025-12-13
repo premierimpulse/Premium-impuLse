@@ -38,11 +38,12 @@
         <aside class="sidebar glass-panel">
             <h3 class="sidebar-title">Партньори</h3>
             <div id="partners-container" style="display:flex; flex-direction:column; gap:10px; width:100%;"></div>
+            <h3 class="sidebar-title">Реклама</h3>
             <div id="ad-left" class="ad-container mt-20"></div>
         </aside>
 
         <main class="content-area">
-            
+
             <div id="ad-header" class="ad-container"></div>
 
             <div id="home-content" class="tab-section active fade-in">
@@ -66,28 +67,44 @@
                 <div id="fiches-container"></div>
             </div>
 
-            <div id="prognosis-content" class="tab-section hidden fade-in">
-                <h2 class="text-center" style="margin-bottom:20px;">⚽ Безплатни Прогнози</h2>
-                <div class="glass-panel">
-                    <table class="pro-table">
-                        <thead><tr><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr></thead>
-                        <tbody id="prognosis-tbody"></tbody>
-                    </table>
-                </div>
-            </div>
+<div id="prognosis-content" class="tab-section hidden fade-in">
+    <h2 class="text-center" style="margin-bottom:20px;">⚽ Безплатни Прогнози</h2>
+    <div class="glass-panel">
+        <table class="pro-table">
+            <thead>
+                <tr>
+                    <th>Дата/Час</th>
+                    <th>Среща</th>
+                    <th>Информация</th> <th>Прогноза</th>
+                    <th>Коеф.</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody id="prognosis-tbody"></tbody>
+        </table>
+    </div>
+</div>
 
-            <div id="vip-content" class="tab-section hidden fade-in">
-                <div style="text-align:center; margin-bottom:20px;">
-                    <h2 style="color:var(--gold); display:inline-block; margin-right:15px;"><i class="fas fa-crown"></i> VIP ЗОНА</h2>
-                    <button onclick="switchTab('pricing')" class="btn-glow" style="background:var(--gold); color:black; font-size:0.8rem; padding:8px 15px;">Купи Достъп</button>
-                </div>
-                <div class="glass-panel" style="border:1px solid var(--gold);">
-                    <table class="pro-table vip-table">
-                        <thead><tr><th>Час</th><th>Мач</th><th>Прогноза</th><th>Коеф.</th><th>Статус</th></tr></thead>
-                        <tbody id="vip-tbody"></tbody>
-                    </table>
-                </div>
-            </div>
+<div id="vip-content" class="tab-section hidden fade-in">
+    <div style="text-align:center; margin-bottom:20px;">
+        <h2 style="color:var(--gold); display:inline-block; margin-right:15px;"><i class="fas fa-crown"></i> VIP Фиш</h2>
+        <button onclick="switchTab('pricing')" class="btn-glow" style="background:var(--gold); color:black; font-size:0.8rem; padding:8px 15px;">Купи Достъп</button>
+    </div>
+    <div class="glass-panel" style="border:1px solid var(--gold);">
+        <table class="pro-table vip-table">
+            <thead>
+                <tr>
+                    <th>Дата/Час</th>
+                    <th>Среща</th>
+                    <th>Информация</th> <th>Прогноза</th>
+                    <th>Коеф.</th>
+                    <th>Статус</th>
+                </tr>
+            </thead>
+            <tbody id="vip-tbody"></tbody>
+        </table>
+    </div>
+</div>
 
             <div id="pricing-content" class="tab-section hidden fade-in">
                 <h2 class="text-center" style="margin-bottom:20px;">💎 Абонаментни Планове</h2>
@@ -111,6 +128,7 @@
         <aside class="sidebar glass-panel">
             <h3 class="sidebar-title">Спонсори</h3>
             <div id="sponsors-container" style="display:flex; flex-direction:column; gap:10px; width:100%;"></div>
+            <h3 class="sidebar-title">Реклама</h3>
             <div id="ad-right" class="ad-container mt-20"></div>
         </aside>
 
