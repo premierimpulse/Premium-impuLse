@@ -17,13 +17,23 @@ function renderAll() {
     document.getElementById('footer-text').innerHTML = siteData.siteSettings.footerText;
     document.getElementById('hero-title').innerText = siteData.siteSettings.siteTitle;
 
-    // Menu
+    // Menu (Both Desktop and Mobile)
     const dMenu = document.getElementById('dynamic-menu');
     const mMenu = document.getElementById('mobile-menu-links');
     dMenu.innerHTML = ''; mMenu.innerHTML = '';
+    
     (siteData.menu || []).forEach(item => {
+        // Desktop Link
         dMenu.innerHTML += `<li><a onclick="switchTab('${item.id}')" id="nav-${item.id}"><i class="${item.icon}"></i> ${item.label}</a></li>`;
-        mMenu.innerHTML += `<a onclick="switchTab('${item.id}')"><i class="${item.icon}"></i> ${item.label}</a>`;
+        
+        // Mobile Link (Note: Added onclick handler manually to ensure menu closes)
+        const mobileLink = document.createElement('a');
+        mobileLink.innerHTML = `<i class="${item.icon}"></i> ${item.label}`;
+        mobileLink.onclick = function() {
+            switchTab(item.id);
+            toggleMobileMenu(); // Затваря менюто след клик
+        };
+        mMenu.appendChild(mobileLink);
     });
 
     // Ads
@@ -44,7 +54,7 @@ function renderAll() {
     document.getElementById('prognosis-tbody').innerHTML = (siteData.prognoses || []).map(m => createMatchRow(m, false)).join('');
     document.getElementById('vip-tbody').innerHTML = (siteData.vipPrognoses || []).map(m => createMatchRow(m, true)).join('');
 
-    // 2. Fiches (Fixed Table Layout)
+    // 2. Fiches
     document.getElementById('fiches-container').innerHTML = (siteData.fiches || []).map(f => {
         const matchesHtml = f.matches.map(m => {
             const ribbon = m.ribbonText ? `<span class="ribbon-badge" style="background:${m.ribbonColor || '#ffd700'}">${m.ribbonText}</span>` : '';
@@ -58,7 +68,6 @@ function renderAll() {
             </div>`;
         }).join('');
         
-        // Fiche Main Ribbon
         const ficheRibbon = f.ribbonText ? `<span class="ribbon-badge" style="background:${f.ribbonColor || '#ffd700'}; font-size:0.8rem; padding:4px 8px;">${f.ribbonText}</span>` : '';
 
         return `
@@ -94,6 +103,7 @@ function renderAll() {
     document.getElementById('monthly-stats-body').innerHTML = statsHtml;
     if(siteData.monthlyStats?.[0]) document.getElementById('home-stats-display').innerText = siteData.monthlyStats[0].successRate + "%";
     
+    // Set default tab
     switchTab('home');
 }
 
@@ -117,65 +127,24 @@ function switchTab(id) {
     document.querySelectorAll('.tab-section').forEach(e => e.classList.add('hidden'));
     const t = document.getElementById(id === 'home' ? 'home-content' : id + '-content');
     if(t) { t.classList.remove('hidden'); t.classList.add('fade-in'); window.scrollTo(0,0); }
+    
+    // Update active nav state
     document.querySelectorAll('.desktop-nav a').forEach(a => a.classList.remove('active'));
     const nav = document.getElementById('nav-' + id);
     if(nav) nav.classList.add('active');
-    document.getElementById('mobile-menu').classList.remove('active');
 }
 
-function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('active'); }
-
-init();
-
-
-// --- MOBILE MENU LOGIC ---
-
-// Функция за превключване на менюто
 function toggleMobileMenu() {
     const menu = document.getElementById('mobile-menu');
-    const body = document.body;
-
-    // Превключва класа .active
     menu.classList.toggle('active');
-
-    // Спира скролирането на сайта, когато менюто е отворено
+    
+    // Stop scrolling when menu is open
     if (menu.classList.contains('active')) {
-        body.style.overflow = 'hidden';
-        populateMobileMenu(); // Викаме функцията за зареждане на линкове
+        document.body.style.overflow = 'hidden';
     } else {
-        body.style.overflow = 'auto';
+        document.body.style.overflow = 'auto';
     }
 }
 
-// Функция за копиране на линковете в мобилното меню
-function populateMobileMenu() {
-    const mobileLinksContainer = document.getElementById('mobile-menu-links');
-    
-    // Ако вече има линкове, не ги добавяме пак
-    if (mobileLinksContainer.innerHTML.trim() !== "") return;
-
-    // Дефинираме линковете (същите като за десктоп)
-    // Можеш да промениш тези стойности според нуждите си
-    const menuItems = [
-        { name: 'Начало', action: "switchTab('home')" },
-        { name: 'Фишове', action: "switchTab('fiches')" },
-        { name: 'Прогнози', action: "switchTab('prognosis')" },
-        { name: 'VIP Зона', action: "switchTab('vip')" },
-        { name: 'Цени', action: "switchTab('pricing')" },
-        { name: 'Статистика', action: "switchTab('stats')" }
-    ];
-
-    // Генерираме HTML
-    menuItems.forEach(item => {
-        const link = document.createElement('a');
-        link.href = "#";
-        link.innerText = item.name;
-        // Когато се кликне на линк: изпълнява действието И затваря менюто
-        link.onclick = function(e) {
-            e.preventDefault();
-            eval(item.action); // Изпълнява switchTab функцията
-            toggleMobileMenu(); // Затваря мобилното меню
-        };
-        mobileLinksContainer.appendChild(link);
-    });
-}
+// Start app
+init();
