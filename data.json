@@ -39,60 +39,38 @@
   ],
   "ads": {
     "headerBanner": {
-      "imageUrl": "",
+      "imageUrl": "https://i.ibb.co/hxvLjK3G/1.png",
       "link": "",
       "show": true
     },
     "sidebarLeft": {
-      "imageUrl": "",
+      "imageUrl": "https://i.ibb.co/bgK9gvz3/2.png",
       "link": "",
       "show": true
     },
     "sidebarRight": {
-      "imageUrl": "",
+      "imageUrl": "https://i.ibb.co/bgK9gvz3/2.png",
+      "link": "",
+      "show": true
+    },
+    "contentBottom": {
+      "imageUrl": "https://i.ibb.co/hxvLjK3G/1.png",
       "link": "",
       "show": true
     }
   },
-  "partners": [],
-  "sponsors": [],
-  "fiches": [
+  "partners": [
     {
-      "title": "Безплатен Фиш",
-      "totalOdd": 6.26,
-      "isVIP": true,
-      "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71",
-      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
-      "matches": [
-        {
-          "time": "06.12 16:30",
-          "game": "Щутгарт - Байерн Мюнхен",
-          "prediction": "2",
-          "odd": 1.55,
-          "statusIcon": "fas fa-check-circle status-win",
-          "ribbonText": "Free",
-          "ribbonColor": "#ffff00"
-        },
-        {
-          "time": "06.12 17:00",
-          "game": "Евертън - Нот. Форест",
-          "prediction": "1",
-          "odd": 2.27,
-          "statusIcon": "fas fa-check-circle status-win",
-          "ribbonText": "Free",
-          "ribbonColor": "#ffff00"
-        },
-        {
-          "time": "06.12 19:30",
-          "game": "Бетис - Барселона",
-          "prediction": "2",
-          "odd": 1.78,
-          "statusIcon": "fas fa-check-circle status-win",
-          "ribbonText": "Free",
-          "ribbonColor": "#ffff00"
-        }
-      ]
+      "name": "",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/0/0f/Betano-logo-5.png",
+      "url": "https://www.betano.bg/"
+    }
+  ],
+  "sponsors": [
+    {
+      "name": "",
+      "logo": "https://www.playtech.com/app/uploads/2024/03/Bet365-Logo.png",
+      "url": "https://www.bet365.com/#/HO/"
     }
   ],
   "prognoses": [
@@ -103,7 +81,9 @@
       "odd": 2.35,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "29.11 19:30",
@@ -112,7 +92,9 @@
       "odd": 2.71,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "29.11 19:30",
@@ -121,7 +103,9 @@
       "odd": 2.65,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "01.12 19:00",
@@ -130,7 +114,9 @@
       "odd": 3.35,
       "statusIcon": "fas fa-times-circle status-lose",
       "ribbonText": "LOSE",
-      "ribbonColor": "#ff4757"
+      "ribbonColor": "#ff4757",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "02.12 22:00",
@@ -139,7 +125,9 @@
       "odd": 1.83,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "03.12 21:30",
@@ -148,7 +136,9 @@
       "odd": 2.17,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "03.12 21:30",
@@ -157,7 +147,9 @@
       "odd": 1.74,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "03.12 21:30",
@@ -166,7 +158,9 @@
       "odd": 2.33,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "05.12 22:15",
@@ -175,7 +169,9 @@
       "odd": 2.23,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 17:00",
@@ -184,7 +180,9 @@
       "odd": 2.27,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 17:00",
@@ -193,7 +191,9 @@
       "odd": 2.34,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 19:30",
@@ -202,7 +202,9 @@
       "odd": 4.1,
       "statusIcon": "fas fa-times-circle status-lose",
       "ribbonText": "LOSE",
-      "ribbonColor": "#ff4757"
+      "ribbonColor": "#ff4757",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 19:30",
@@ -211,7 +213,9 @@
       "odd": 1.78,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 22:00",
@@ -220,7 +224,9 @@
       "odd": 2.6,
       "statusIcon": "fas fa-times-circle status-lose",
       "ribbonText": "LOSE",
-      "ribbonColor": "#ff4757"
+      "ribbonColor": "#ff4757",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "06.12 16:30",
@@ -229,7 +235,9 @@
       "odd": 1.55,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "07.12 16:00",
@@ -238,7 +246,9 @@
       "odd": 1.63,
       "statusIcon": "fas fa-times-circle status-lose",
       "ribbonText": "LOSE",
-      "ribbonColor": "#ff4757"
+      "ribbonColor": "#ff4757",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "07.12 18:30",
@@ -247,7 +257,9 @@
       "odd": 2.85,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "07.12 17:15",
@@ -256,7 +268,9 @@
       "odd": 2.07,
       "statusIcon": "fas fa-times-circle status-lose",
       "ribbonText": "LOSE",
-      "ribbonColor": "#ff4757"
+      "ribbonColor": "#ff4757",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "07.12 19:00",
@@ -265,7 +279,9 @@
       "odd": 3.35,
       "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "WIN",
-      "ribbonColor": "#2ecc71"
+      "ribbonColor": "#2ecc71",
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     }
   ],
   "vipPrognoses": [
@@ -275,8 +291,8 @@
       "prediction": "2",
       "odd": 3.35,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "VIP WIN",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -286,39 +302,86 @@
       "prediction": "2",
       "odd": 2.85,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "VIP WIN",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
-    }
-  ],
-  "monthlyStats": [
-    {
-      "month": "Декември",
-      "year": "",
-      "wins": 14,
-      "losses": 5,
-      "successRate": 74
     }
   ],
   "pricing": [
     {
       "title": "1 VIP Среща",
       "price": "10.23€",
-      "link": "mailto:premier-impulse@abv.bg",
-      "tag": ""
+      "tag": "",
+      "tagColor": "#00ff9d",
+      "link": "mailto:premier-impulse@abv.bg"
     },
     {
       "title": "2 VIP Срещи",
       "price": "17.90€",
-      "link": "mailto:premier-impulse@abv.bg",
-      "tag": "POPULAR"
+      "tag": "POPULAR",
+      "tagColor": "#00ff9d",
+      "link": "mailto:premier-impulse@abv.bg"
     },
     {
       "title": "VIP Фиш",
       "price": "20.45€",
-      "link": "mailto:premier-impulse@abv.bg",
-      "tag": "BEST VALUE"
+      "tag": "BEST VALUE",
+      "tagColor": "#ff0000",
+      "link": "mailto:premier-impulse@abv.bg"
+    }
+  ],
+  "monthlyStats": [
+    {
+      "month": "Декември",
+      "wins": 14,
+      "losses": 5,
+      "successRate": 74
+    }
+  ],
+  "fiches": [
+    {
+      "title": "Безплатен Фиш",
+      "totalOdd": 6.26,
+      "isVIP": false,
+      "ribbonText": "Печеливш",
+      "ribbonColor": "#2ecc71",
+      "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
+      "matches": [
+        {
+          "time": "06.12 16:30",
+          "game": "Щутгарт - Байерн Мюнхен",
+          "prediction": "2",
+          "odd": 1.55,
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#00ff00",
+          "isCensoredGame": false,
+          "isCensoredPrediction": false
+        },
+        {
+          "time": "06.12 17:00",
+          "game": "Евертън - Нот. Форест",
+          "prediction": "1",
+          "odd": 2.27,
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#00ff00",
+          "isCensoredGame": false,
+          "isCensoredPrediction": false
+        },
+        {
+          "time": "06.12 19:30",
+          "game": "Бетис - Барселона",
+          "prediction": "2",
+          "odd": 1.78,
+          "statusIcon": "fas fa-check-circle status-win",
+          "ribbonText": "Free",
+          "ribbonColor": "#00ff00",
+          "isCensoredGame": false,
+          "isCensoredPrediction": false
+        }
+      ]
     }
   ]
 }
