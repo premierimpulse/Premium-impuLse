@@ -33,7 +33,7 @@ body {
 .fade-in { animation: fadeIn 0.6s ease-out; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* --- MARQUEE (SUPER SLOW) --- */
+/* --- MARQUEE --- */
 .marquee-wrapper {
     background: var(--primary);
     color: white;
@@ -47,7 +47,6 @@ body {
 }
 .marquee-content {
     display: inline-block;
-    /* 100s за много бавно движение */
     animation: marquee 100s linear infinite; 
     padding-left: 100%;
 }
@@ -115,7 +114,7 @@ header {
     border-left: 2px solid var(--accent);
 }
 
-/* --- HERO SECTION (FIXED DESIGN) --- */
+/* --- HERO SECTION --- */
 .hero-card {
     text-align: center;
     padding: 50px 20px;
@@ -125,7 +124,6 @@ header {
     font-family: var(--font-head);
     font-size: 3rem;
     margin: 0;
-    /* Gradient text effect */
     background: linear-gradient(to right, #ffffff, #a0a0a0);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -165,14 +163,13 @@ header {
 .pro-table tr:hover td { background: rgba(255,255,255,0.02); }
 .pro-table td.game-cell { text-align: left; font-weight: 600; }
 
-/* --- FICHES (FIXED TABLE LAYOUT) --- */
+/* --- FICHES --- */
 .fiche-box { margin-bottom: 25px; border-radius: 12px; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
 .fiche-header { padding: 15px; background: rgba(0,0,0,0.3); display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
 .fiche-body { padding: 0; }
-/* Grid layout for fiche rows to align perfectly */
 .match-row-fiche {
     display: grid;
-    grid-template-columns: 60px 1fr 100px; /* Час | Мач | Прогноза/Коеф */
+    grid-template-columns: 60px 1fr 100px;
     padding: 12px 15px;
     border-bottom: 1px solid rgba(255,255,255,0.05);
     align-items: center;
@@ -186,7 +183,7 @@ header {
 .price-card:hover { transform: translateY(-5px); border-color: var(--primary); }
 .price-tag { position: absolute; top: 15px; right: 15px; font-size: 0.7rem; font-weight: 900; padding: 3px 8px; border-radius: 4px; text-transform: uppercase; color: #000; }
 
-/* --- ADS (CENTERED) --- */
+/* --- ADS --- */
 .ad-container { 
     display: flex; 
     justify-content: center; 
@@ -194,22 +191,23 @@ header {
     margin: 15px 0;
     width: 100%; 
 }
-.ad-container a { display: inline-block; } /* Важно за центрирането */
+.ad-container a { display: inline-block; }
 .ad-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: block; }
 
-/* Sidebar & Buttons */
+/* Buttons */
 .btn-glow { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
 .btn-glow:hover { box-shadow: 0 0 15px var(--primary); }
 .btn-outline { background: transparent; border: 1px solid white; color: white; padding: 10px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
 .btn-outline:hover { background: rgba(255,255,255,0.1); }
 
-.sidebar { padding: 20px; display: flex; flex-direction: column; gap: 15px; align-items: center; } /* Center items in sidebar */
+/* Sidebar */
+.sidebar { padding: 20px; display: flex; flex-direction: column; gap: 15px; align-items: center; }
 .sidebar-title { width: 100%; color: var(--accent); text-transform: uppercase; font-size: 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; margin-bottom: 5px; text-align: center; }
 .promo-card { display: block; text-align: center; padding: 10px; background: rgba(255,255,255,0.03); border-radius: 8px; text-decoration: none; color: white; transition: 0.3s; width: 100%; box-sizing: border-box; }
 .promo-card:hover { background: rgba(255,255,255,0.08); }
 .promo-card img { max-width: 80px; height: auto; margin-bottom: 5px; }
 
-/* --- FOOTER (CENTERED) --- */
+/* Footer */
 footer {
     width: 100%;
     text-align: center;
@@ -224,11 +222,10 @@ footer {
     align-items: center;
 }
 
-/* Mobile */
-.mobile-menu-overlay { position: fixed; inset: 0; background: rgba(5,5,10,0.98); z-index: 2000; display: flex; flex-direction: column; align-items: center; justify-content: center; transform: translateX(100%); transition: 0.3s; }
-.mobile-menu-overlay.active { transform: translateX(0); }
-.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; }
+/* Mobile Toggle Button */
+.menu-toggle { display: none; background: none; border: none; color: white; font-size: 1.5rem; cursor: pointer; }
 
+/* --- RESPONSIVE MEDIA QUERY --- */
 @media (max-width: 1024px) {
     .main-layout { grid-template-columns: 1fr; width: 100%; padding: 0 10px; box-sizing: border-box; }
     .sidebar, .desktop-nav { display: none; }
@@ -237,34 +234,32 @@ footer {
     .header-content { padding: 0 15px; }
 }
 
-/* --- MOBILE MENU OVERLAY --- */
+/* --- MOBILE MENU OVERLAY (FIXED STYLES) --- */
 .mobile-menu-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100vh;
-    background: rgba(10, 11, 30, 0.98); /* Почти плътно тъмно */
-    backdrop-filter: blur(15px);         /* Силно замъгляване отзад */
-    z-index: 9999;                       /* Най-отгоре */
+    background: rgba(10, 11, 30, 0.98); /* Тъмен фон */
+    backdrop-filter: blur(15px);         /* Blur ефект */
+    z-index: 9999;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%);         /* Скрито надясно по подразбиране */
-    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* "Мазен" слайд ефект */
+    transform: translateX(100%);         /* Скрито */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease, visibility 0.4s;
     opacity: 0;
     visibility: hidden;
 }
 
-/* Класът, който JS ще добавя, за да покаже менюто */
 .mobile-menu-overlay.active {
-    transform: translateX(0);
+    transform: translateX(0); /* Показване */
     opacity: 1;
     visibility: visible;
 }
 
-/* Контейнер за линковете */
 .mobile-links {
     display: flex;
     flex-direction: column;
@@ -272,7 +267,7 @@ footer {
     text-align: center;
 }
 
-/* Стилове на самите линкове */
+/* Линковете вътре в менюто */
 .mobile-links a {
     font-family: var(--font-head);
     font-size: 2rem;
@@ -284,16 +279,15 @@ footer {
     transition: all 0.3s ease;
     position: relative;
     display: inline-block;
+    cursor: pointer;
 }
 
-/* Ефект при задържане (Hover) */
 .mobile-links a:hover {
     color: var(--accent);
     transform: scale(1.1);
     text-shadow: 0 0 20px var(--accent);
 }
 
-/* Малка черта под линка при hover */
 .mobile-links a::after {
     content: '';
     position: absolute;
@@ -311,7 +305,6 @@ footer {
     left: 0;
 }
 
-/* Бутонът за затваряне (X) */
 .mobile-menu-overlay button {
     cursor: pointer;
     transition: transform 0.3s ease, color 0.3s ease;
@@ -323,4 +316,3 @@ footer {
     color: var(--danger) !important;
     text-shadow: 0 0 15px var(--danger);
 }
-
