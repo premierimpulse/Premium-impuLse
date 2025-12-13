@@ -191,8 +191,23 @@ header {
     margin: 15px 0;
     width: 100%; 
 }
-.ad-container a { display: inline-block; }
-.ad-container img { max-width: 100%; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: block; }
+
+.ad-container a { 
+    display: inline-block; 
+}
+
+.ad-container img { 
+    width: 100%;             /* Запълва ширината на по-малки екрани */
+    max-width: 728px;        /* Максимална ширина за десктоп */
+    max-height: 90px;        /* Максимална височина */
+    height: auto;            /* Запазва пропорциите */
+    object-fit: contain;     /* Побира картинката в рамката без да я изкривява */
+    
+    /* Декорация */
+    border-radius: 8px; 
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); 
+    display: block; 
+}
 
 /* Buttons */
 .btn-glow { background: var(--primary); color: white; border: none; padding: 10px 25px; border-radius: 6px; font-weight: bold; cursor: pointer; transition: 0.3s; }
@@ -316,5 +331,6 @@ footer {
     color: var(--danger) !important;
     text-shadow: 0 0 15px var(--danger);
 }
+
 
 
