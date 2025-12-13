@@ -47,7 +47,7 @@ body {
 }
 .marquee-content {
     display: inline-block;
-    animation: marquee 100s linear infinite; 
+    animation: marquee 40s linear infinite; 
     padding-left: 100%;
 }
 @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-100%); } }
@@ -316,3 +316,4 @@ footer {
     color: var(--danger) !important;
     text-shadow: 0 0 15px var(--danger);
 }
+
