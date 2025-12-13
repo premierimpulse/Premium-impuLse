@@ -331,3 +331,40 @@ footer {
     color: var(--danger) !important;
     text-shadow: 0 0 15px var(--danger);
 }
+
+
+/* --- STATUS ICONS COLORS --- */
+.status-win { 
+    color: #2ecc71; /* Зелено */
+    text-shadow: 0 0 8px rgba(46, 204, 113, 0.4);
+}
+.status-lose { 
+    color: #ff4757; /* Червено */
+    text-shadow: 0 0 8px rgba(255, 71, 87, 0.4);
+}
+.status-pending, .fa-hourglass-half { 
+    color: #ffd700; /* Жълто */
+    text-shadow: 0 0 8px rgba(255, 215, 0, 0.4);
+}
+
+/* --- INFO BADGE (New Column) --- */
+.info-cell {
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.info-badge {
+    display: inline-block;
+    padding: 3px 8px;
+    border-radius: 4px;
+    color: #000; /* Черен текст за контраст върху цветен фон */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+/* Корекция за таблиците във фишовете, за да се събират */
+.fiche-box .pro-table th, 
+.fiche-box .pro-table td {
+    padding: 8px 4px;
+    font-size: 0.8rem;
+}
