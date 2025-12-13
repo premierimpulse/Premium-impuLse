@@ -237,92 +237,90 @@ footer {
     .header-content { padding: 0 15px; }
 }
 
-/* --- MOBILE MENU STYLES --- */
-
-/* Навигационният контейнер вътре в overlay-a */
-.mobile-menu-overlay nav {
+/* --- MOBILE MENU OVERLAY --- */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
     width: 100%;
+    height: 100vh;
+    background: rgba(10, 11, 30, 0.98); /* Почти плътно тъмно */
+    backdrop-filter: blur(15px);         /* Силно замъгляване отзад */
+    z-index: 9999;                       /* Най-отгоре */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transform: translateX(100%);         /* Скрито надясно по подразбиране */
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); /* "Мазен" слайд ефект */
+    opacity: 0;
+    visibility: hidden;
+}
+
+/* Класът, който JS ще добавя, за да покаже менюто */
+.mobile-menu-overlay.active {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+}
+
+/* Контейнер за линковете */
+.mobile-links {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
     text-align: center;
 }
 
-/* Списъкът с връзки */
-.mobile-menu-overlay ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 25px; /* Разстояние между линковете */
-}
-
-/* Самите линкове */
-.mobile-menu-overlay a {
+/* Стилове на самите линкове */
+.mobile-links a {
     font-family: var(--font-head);
-    font-size: 1.8rem; /* Голям шрифт за лесно натискане */
-    font-weight: 700;
+    font-size: 2rem;
     color: var(--text);
     text-decoration: none;
     text-transform: uppercase;
+    font-weight: 800;
     letter-spacing: 2px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    display: inline-block;
+    transition: all 0.3s ease;
     position: relative;
-    padding: 10px 0;
+    display: inline-block;
 }
 
-/* Ефекти при hover върху линковете на мобилно */
-.mobile-menu-overlay a:hover,
-.mobile-menu-overlay a.active {
+/* Ефект при задържане (Hover) */
+.mobile-links a:hover {
     color: var(--accent);
-    text-shadow: 0 0 15px rgba(0, 255, 157, 0.6);
-    transform: scale(1.05);
+    transform: scale(1.1);
+    text-shadow: 0 0 20px var(--accent);
 }
 
-/* Декоративна линия под линка при hover */
-.mobile-menu-overlay a::after {
+/* Малка черта под линка при hover */
+.mobile-links a::after {
     content: '';
     position: absolute;
-    bottom: 0;
-    left: 50%;
     width: 0;
-    height: 2px;
+    height: 3px;
+    bottom: -5px;
+    left: 50%;
     background: var(--accent);
     transition: width 0.3s ease, left 0.3s ease;
     box-shadow: 0 0 10px var(--accent);
 }
 
-.mobile-menu-overlay a:hover::after {
+.mobile-links a:hover::after {
     width: 100%;
     left: 0;
 }
 
-/* Бутон за затваряне (X) */
-.mobile-close-btn {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    background: none;
-    border: none;
-    color: var(--text-muted);
-    font-size: 2.5rem;
+/* Бутонът за затваряне (X) */
+.mobile-menu-overlay button {
     cursor: pointer;
-    transition: all 0.3s ease;
-    z-index: 2001;
-    line-height: 1;
+    transition: transform 0.3s ease, color 0.3s ease;
+    z-index: 10000;
 }
 
-.mobile-close-btn:hover {
-    color: var(--danger);
-    transform: rotate(90deg) scale(1.1);
-    text-shadow: 0 0 10px var(--danger);
+.mobile-menu-overlay button:hover {
+    transform: rotate(90deg) scale(1.2);
+    color: var(--danger) !important;
+    text-shadow: 0 0 15px var(--danger);
 }
 
-/* Малък детайл за лого или текст вътре в менюто */
-.mobile-menu-footer {
-    position: absolute;
-    bottom: 40px;
-    color: var(--text-muted);
-    font-size: 0.8rem;
-    letter-spacing: 1px;
-    opacity: 0.6;
-}
