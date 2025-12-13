@@ -59,29 +59,17 @@
       "show": true
     }
   },
-  "partners": [
-    {
-      "name": "premier-impulse@abv.bg",
-      "logo": "",
-      "url": ""
-    }
-  ],
-  "sponsors": [
-    {
-      "name": "premier-impulse@abv.bg",
-      "logo": "",
-      "url": ""
-    }
-  ],
+  "partners": [],
+  "sponsors": [],
   "prognoses": [
     {
       "time": "29.11 / 17:00",
-      "game": "Съндърланд - Борнемут (РИ)",
+      "game": "Съндърланд - Борнемут",
       "prediction": "2",
       "odd": 2.35,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -91,8 +79,8 @@
       "prediction": "2",
       "odd": 2.71,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -102,8 +90,8 @@
       "prediction": "2",
       "odd": 2.65,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -113,8 +101,8 @@
       "prediction": "2",
       "odd": 3.35,
       "statusIcon": "fas fa-times-circle status-lose",
-      "ribbonText": "Губещ",
-      "ribbonColor": "#ff4757",
+      "ribbonText": "Derby",
+      "ribbonColor": "#ff0000",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -124,19 +112,19 @@
       "prediction": "1",
       "odd": 1.83,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "Derby",
+      "ribbonColor": "#ff0000",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
     {
       "time": "03.12 / 21:30",
-      "game": "Брайтън - Астън Вила (РИ)",
+      "game": "Брайтън - Астън Вила",
       "prediction": "1",
       "odd": 2.17,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -146,8 +134,8 @@
       "prediction": "2",
       "odd": 1.74,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -157,8 +145,8 @@
       "prediction": "2",
       "odd": 2.33,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -168,8 +156,8 @@
       "prediction": "X",
       "odd": 2.23,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "Derby",
+      "ribbonColor": "#ff0000",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -179,8 +167,8 @@
       "prediction": "1",
       "odd": 2.27,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -190,8 +178,8 @@
       "prediction": "1",
       "odd": 2.34,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -201,8 +189,8 @@
       "prediction": "1",
       "odd": 4.1,
       "statusIcon": "fas fa-times-circle status-lose",
-      "ribbonText": "Губещ",
-      "ribbonColor": "#ff4757",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -212,8 +200,8 @@
       "prediction": "2",
       "odd": 1.78,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -223,8 +211,8 @@
       "prediction": "2",
       "odd": 2.6,
       "statusIcon": "fas fa-times-circle status-lose",
-      "ribbonText": "Губещ",
-      "ribbonColor": "#ff4757",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -234,8 +222,8 @@
       "prediction": "2",
       "odd": 1.55,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -245,8 +233,8 @@
       "prediction": "2",
       "odd": 1.63,
       "statusIcon": "fas fa-times-circle status-lose",
-      "ribbonText": "Губещ",
-      "ribbonColor": "#ff4757",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -256,8 +244,8 @@
       "prediction": "2",
       "odd": 2.85,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -267,8 +255,8 @@
       "prediction": "1",
       "odd": 2.07,
       "statusIcon": "fas fa-times-circle status-lose",
-      "ribbonText": "Губещ",
-      "ribbonColor": "#ff4757",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -278,8 +266,8 @@
       "prediction": "2",
       "odd": 3.35,
       "statusIcon": "fas fa-check-circle status-win",
-      "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonText": "VIP",
+      "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -289,8 +277,8 @@
       "prediction": "2",
       "odd": 2.01,
       "statusIcon": "fas fa-hourglass-half",
-      "ribbonText": "Изчаква",
-      "ribbonColor": "#ffd700",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
@@ -300,8 +288,8 @@
       "prediction": "1",
       "odd": 1.63,
       "statusIcon": "fas fa-hourglass-half",
-      "ribbonText": "Изчаква",
-      "ribbonColor": "#ffd700",
+      "ribbonText": "Free",
+      "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     }
@@ -309,7 +297,7 @@
   "vipPrognoses": [
     {
       "time": "07.12 19:00",
-      "game": "Гьозтепе - Трабзонспор [1-2]",
+      "game": "Гьозтепе - Трабзонспор",
       "prediction": "2",
       "odd": 3.35,
       "statusIcon": "fas fa-check-circle status-win",
@@ -320,7 +308,7 @@
     },
     {
       "time": "07.12 18:30",
-      "game": "Фулъм - Кристъл Палас [1-2]",
+      "game": "Фулъм - Кристъл Палас",
       "prediction": "2",
       "odd": 2.85,
       "statusIcon": "fas fa-check-circle status-win",
@@ -367,7 +355,7 @@
       "totalOdd": 6.26,
       "isVIP": false,
       "ribbonText": "Печеливш",
-      "ribbonColor": "#2ecc71",
+      "ribbonColor": "#00ff00",
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
@@ -419,8 +407,8 @@
           "prediction": "2",
           "odd": 2.01,
           "statusIcon": "fas fa-hourglass-half",
-          "ribbonText": "Изчаква",
-          "ribbonColor": "#ffd700",
+          "ribbonText": "Free",
+          "ribbonColor": "#00ff00",
           "isCensoredGame": false,
           "isCensoredPrediction": false
         },
@@ -430,8 +418,8 @@
           "prediction": "1",
           "odd": 1.63,
           "statusIcon": "fas fa-hourglass-half",
-          "ribbonText": "Изчаква",
-          "ribbonColor": "#ffd700",
+          "ribbonText": "Free",
+          "ribbonColor": "#00ff00",
           "isCensoredGame": false,
           "isCensoredPrediction": false
         }
