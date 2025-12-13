@@ -126,3 +126,56 @@ function switchTab(id) {
 function toggleMobileMenu() { document.getElementById('mobile-menu').classList.toggle('active'); }
 
 init();
+
+
+// --- MOBILE MENU LOGIC ---
+
+// Функция за превключване на менюто
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobile-menu');
+    const body = document.body;
+
+    // Превключва класа .active
+    menu.classList.toggle('active');
+
+    // Спира скролирането на сайта, когато менюто е отворено
+    if (menu.classList.contains('active')) {
+        body.style.overflow = 'hidden';
+        populateMobileMenu(); // Викаме функцията за зареждане на линкове
+    } else {
+        body.style.overflow = 'auto';
+    }
+}
+
+// Функция за копиране на линковете в мобилното меню
+function populateMobileMenu() {
+    const mobileLinksContainer = document.getElementById('mobile-menu-links');
+    
+    // Ако вече има линкове, не ги добавяме пак
+    if (mobileLinksContainer.innerHTML.trim() !== "") return;
+
+    // Дефинираме линковете (същите като за десктоп)
+    // Можеш да промениш тези стойности според нуждите си
+    const menuItems = [
+        { name: 'Начало', action: "switchTab('home')" },
+        { name: 'Фишове', action: "switchTab('fiches')" },
+        { name: 'Прогнози', action: "switchTab('prognosis')" },
+        { name: 'VIP Зона', action: "switchTab('vip')" },
+        { name: 'Цени', action: "switchTab('pricing')" },
+        { name: 'Статистика', action: "switchTab('stats')" }
+    ];
+
+    // Генерираме HTML
+    menuItems.forEach(item => {
+        const link = document.createElement('a');
+        link.href = "#";
+        link.innerText = item.name;
+        // Когато се кликне на линк: изпълнява действието И затваря менюто
+        link.onclick = function(e) {
+            e.preventDefault();
+            eval(item.action); // Изпълнява switchTab функцията
+            toggleMobileMenu(); // Затваря мобилното меню
+        };
+        mobileLinksContainer.appendChild(link);
+    });
+}
