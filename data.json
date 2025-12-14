@@ -362,7 +362,7 @@
   ],
   "vipPrognoses": [
     {
-      "time": "14.12 / 16:00",
+      "time": "14.12 / --:--",
       "game": "Съндърланд - Нюкасъл",
       "prediction": "2",
       "odd": 0,
@@ -373,7 +373,7 @@
       "isCensoredPrediction": true
     },
     {
-      "time": "14.12 / 16:00",
+      "time": "14.12 / --:--",
       "game": "Нот. Форест - Тотнъм",
       "prediction": "2",
       "odd": 0,
