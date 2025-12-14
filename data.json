@@ -365,7 +365,7 @@
       "time": "14.12 / 16:00",
       "game": "Съндърланд - Нюкасъл",
       "prediction": "2",
-      "odd": -,
+      "odd": 0,
       "statusIcon": "fas fa-hourglass-half",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
@@ -376,7 +376,7 @@
       "time": "14.12 / 16:00",
       "game": "Нот. Форест - Тотнъм",
       "prediction": "2",
-      "odd": -,
+      "odd": 0,
       "statusIcon": "fas fa-hourglass-half",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
@@ -536,4 +536,3 @@
     }
   ]
 }
-
