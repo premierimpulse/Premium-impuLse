@@ -298,7 +298,7 @@
       "game": "Кристъл Палас - Ман. Сити",
       "prediction": "2",
       "odd": 1.87,
-      "statusIcon": "fas fa-hourglass-half",
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "Free",
       "ribbonColor": "#00ff00",
       "isCensoredGame": false,
@@ -309,29 +309,29 @@
       "game": "Уест Хям - Астън Вила",
       "prediction": "2",
       "odd": 2.08,
-      "statusIcon": "fas fa-hourglass-half",
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "Free",
       "ribbonColor": "#00ff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
     {
-      "time": "14.12 / --:--",
-      "game": "VIP - VIP",
-      "prediction": "-",
-      "odd": 0,
-      "statusIcon": "fas fa-hourglass-half",
+      "time": "14.12 / 16:00",
+      "game": "Съндърланд - Нюкасъл ",
+      "prediction": "1",
+      "odd": 3.3,
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
       "isCensoredGame": false,
       "isCensoredPrediction": false
     },
     {
-      "time": "14.12 / --:--",
-      "game": "VIP - VIP",
-      "prediction": "-",
-      "odd": 0,
-      "statusIcon": "fas fa-hourglass-half",
+      "time": "14.12 / 16:00",
+      "game": "Нот. Форест - Тотнъм",
+      "prediction": "1",
+      "odd": 2.65,
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
       "isCensoredGame": false,
@@ -342,7 +342,7 @@
       "game": "Дженоа - Интер",
       "prediction": "2",
       "odd": 1.57,
-      "statusIcon": "fas fa-hourglass-half",
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "Free",
       "ribbonColor": "#00ff00",
       "isCensoredGame": false,
@@ -353,7 +353,7 @@
       "game": "Алавес - Реал Мадрид",
       "prediction": "2",
       "odd": 1.64,
-      "statusIcon": "fas fa-hourglass-half",
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "Free",
       "ribbonColor": "#00ff00",
       "isCensoredGame": false,
@@ -364,24 +364,24 @@
     {
       "time": "14.12 / --:--",
       "game": "Съндърланд - Нюкасъл",
-      "prediction": "2",
-      "odd": 0,
-      "statusIcon": "fas fa-hourglass-half",
+      "prediction": "1",
+      "odd": 3.3,
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     },
     {
       "time": "14.12 / --:--",
       "game": "Нот. Форест - Тотнъм",
-      "prediction": "2",
-      "odd": 0,
-      "statusIcon": "fas fa-hourglass-half",
+      "prediction": "1",
+      "odd": 2.65,
+      "statusIcon": "fas fa-check-circle status-win",
       "ribbonText": "VIP",
       "ribbonColor": "#ffff00",
-      "isCensoredGame": true,
-      "isCensoredPrediction": true
+      "isCensoredGame": false,
+      "isCensoredPrediction": false
     }
   ],
   "pricing": [
@@ -410,9 +410,9 @@
   "monthlyStats": [
     {
       "month": "Декември",
-      "wins": 16,
+      "wins": 22,
       "losses": 5,
-      "successRate": 76
+      "successRate": 81
     }
   ],
   "fiches": [
@@ -495,8 +495,8 @@
       "title": "Безплатен Фиш / 14.12.2025г. ",
       "totalOdd": 5.35,
       "isVIP": false,
-      "ribbonText": "Изчаква",
-      "ribbonColor": "#ffff00",
+      "ribbonText": "Печеливш",
+      "ribbonColor": "#00ff00",
       "disclaimer": "*Прогнозите са само експертно мнение и не гарантират печалба.",
       "matches": [
         {
@@ -504,7 +504,7 @@
           "game": "Уест Хям - Астън Вила",
           "prediction": "2",
           "odd": 2.08,
-          "statusIcon": "fas fa-hourglass-half",
+          "statusIcon": "fas fa-check-circle status-win",
           "ribbonText": "Free",
           "ribbonColor": "#00ff00",
           "isCensoredGame": false,
@@ -515,7 +515,7 @@
           "game": "Дженоа - Интер",
           "prediction": "2",
           "odd": 1.57,
-          "statusIcon": "fas fa-hourglass-half",
+          "statusIcon": "fas fa-check-circle status-win",
           "ribbonText": "Free",
           "ribbonColor": "#00ff00",
           "isCensoredGame": false,
@@ -523,10 +523,10 @@
         },
         {
           "time": "14.12 / 22:00",
-          "game": "Алавес vs Реал Мадрид",
+          "game": "Алавес - Реал Мадрид",
           "prediction": "2",
           "odd": 1.64,
-          "statusIcon": "fas fa-hourglass-half",
+          "statusIcon": "fas fa-check-circle status-win",
           "ribbonText": "Free",
           "ribbonColor": "#00ff00",
           "isCensoredGame": false,
